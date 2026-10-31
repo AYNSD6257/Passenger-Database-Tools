@@ -38,6 +38,12 @@ test('domestic trip via same country stays domestic',()=>{
   const plan=buildJourneyPlan({origin:'US',destination:'US',transits:['US']});
   assert.equal(plan.kind,'us-domestic');
   assert.ok(plan.items.some(i=>i.id==='id'));
+  assert.ok(plan.items.some(i=>i.id==='domestic-connection-1'));
+});
+test('domestic connection with selected airport links to the operator map',()=>{
+  const plan=buildJourneyPlan({origin:'US',destination:'US',transits:[{country:'US',airport:'IAD'}]});
+  assert.ok(plan.items.some(i=>i.id==='airport-context-1'));
+  assert.ok(plan.resources.some(r=>r.id==='airport-IAD'));
 });
 test('invalid connection arrays and mismatched airports are rejected',()=>{
   assert.equal(MAX_CONNECTIONS,5);

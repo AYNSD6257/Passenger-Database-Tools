@@ -81,7 +81,7 @@ export function buildJourneyPlan({
     items.push(task('airline-policy-review','Review '+operatingCarrier.name+' passenger policies',
       'Rules depend on fare, ticket, route and operating carrier for each segment. Check each airline on multi-carrier journeys.',
       operatingCarrier.name+' — baggage policy',operatingCarrier.links.baggage));
-    notices.push('Selected airline: '+operatingCarrier.name+'. If any flight is operated by another carrier, review that carrier separately.');
+    notices.push('Selected airline: '+operatingCarrier.name+'. If any part of the itinerary is operated by a different carrier, check that carrier separately.');
     addResource(resources,'airline-'+airline,operatingCarrier.name+' — baggage and fees',
       'Check your booking for applicable allowances.',operatingCarrier.links.baggage);
   }
@@ -106,7 +106,7 @@ export function buildJourneyPlan({
           'Government '+OFFICIAL_PORTALS[code].coverage+' information for connection '+number+' in '+name,
           OFFICIAL_PORTALS[code].url);
         if(OFFICIAL_PORTALS[code].coverage==='regional')
-          notices.push('Connection '+number+' ('+name+'): EU/Schengen link is a regional overview, NOT complete national transit/entry guidance.');
+          notices.push('Connection '+number+' ('+name+'): EU/Schengen link is a regional overview only, NOT complete national transit/entry guidance.');
       } else notices.push('Connection '+number+' ('+name+'): no reviewed government transit source is available. Consult the national immigration authority or embassy.');
       if(stop.airport){
         const airport=getAirport(stop.airport);
@@ -128,6 +128,23 @@ export function buildJourneyPlan({
         notices.push('For '+destinationName+', the EU/Schengen link is a REGIONAL overview, not complete national immigration guidance.');
     }else notices.push('We do not yet have a reviewed immigration-authority link for '+destinationName+'. Find its official government or embassy website.');
   } else if(kind==='other-domestic') notices.push('For domestic travel in '+destinationName+', check local ID and screening rules with the airline and competent authorities.');
+  // Domestic connections still need a distinct transfer reminder and airport map.
+  if(!crossBorder){
+    for(const [index,stop] of connections.entries()){
+      const number=index+1,name=validateCountry(stop.country,'domestic connection');
+      items.push(task('domestic-connection-'+number,'Review domestic connection '+number+' in '+name,
+        'Confirm operating airlines, arrival and departure terminals, luggage transfer, screening, and any applicable local document checks.',
+        'Check the airport and operating airline',null));
+      if(stop.airport){
+        const airport=getAirport(stop.airport);
+        items.push(task('airport-context-'+number,'Review '+airport.code+' airport connections',
+          'Use the airport-operator map for wayfinding. The app does not validate your terminal, flight or connection time.',
+          airport.name+' — airport map',airport.url));
+        addResource(resources,'airport-'+airport.code,airport.name+' ('+airport.code+') — airport map',
+          'Airport-operator wayfinding information; verify current operational details.',airport.url);
+      }
+    }
+  }
   if(origin==='US')addResource(resources,'tsa','TSA — U.S. airport screening','Official U.S. departure screening and packing guidance',SOURCES.tsa);
   if(destination==='US')addResource(resources,'cbp','CBP — Entering the United States','Official U.S. border and customs guidance',SOURCES.cbp);
   if(crossBorder)addResource(resources,'iata','IATA — Travel documentation','Reference only; verify with all relevant government authorities',SOURCES.iata);

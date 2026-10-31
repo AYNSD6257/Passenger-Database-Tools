@@ -6,7 +6,7 @@ const has = (plan, id) => plan.items.some((item) => item.id === id);
 test('international journey uses route, citizenship, purpose, and transit context', () => {
   const plan = buildJourneyPlan({ origin: 'US', destination: 'GB', citizenship: 'IN', transit: 'DE', purpose: 'study', extras: ['medication'] });
   assert.equal(plan.kind, 'international');
-  assert.match(plan.summary, /United States → United Kingdom.*Germany.*Study.*India/);
+  assert.match(plan.summary, /United States → Germany → United Kingdom.*Study.*India/);
   assert.ok(has(plan, 'visa'));
   assert.ok(has(plan, 'transit-context'));
   assert.ok(has(plan, 'medicine'));
