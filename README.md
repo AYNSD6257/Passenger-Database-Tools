@@ -8,12 +8,14 @@ A mobile-friendly, **independent educational prototype** helping airline passeng
 
 ## Included now
 
-- Interactive domestic-U.S. vs. international travel preparation checklists
+- Personalized Journey Builder: departure country, destination, passport-issuing country, optional single transit country, and trip purpose
+- Automatically distinguished international, U.S. domestic, and other domestic preparation checklists
 - Extra prompts for travel with minors, accessibility needs, pets, and medication
 - Review-progress tracker, reset, and print-friendly view
+- Curated official destination and transit links for the U.S., U.K., Canada, and Australia; explicit coverage warnings elsewhere
 - Links to official travel-information sources
 - Responsive layout and accessible semantic form controls
-- No analytics, cookies, account registration, personal-document upload, or persistent storage
+- No analytics, cookies, account registration, personal-document upload, or persistent storage. Journey selections exist only in the current tab
 - Automated tests using Node.js (no third-party npm packages)
 
 ## Run locally
@@ -45,7 +47,7 @@ Changes should be reviewed and tested before the portal is used by real passenge
 
 ## Scope and future roadmap
 
-See [Project plan](docs/PROJECT_PLAN.md), [Official sources](docs/SOURCES.md), and [Safety and privacy policy](docs/PRIVACY_AND_SAFETY.md). Priority additions are an airline-policy reference catalog, destination-government links, localized language support, structured content review dates, and optional authorized rule-data integrations. Do not copy airline systems or scrape licensed Timatic data.
+See [Project plan](docs/PROJECT_PLAN.md), [Official sources](docs/SOURCES.md), and [Safety and privacy policy](docs/PRIVACY_AND_SAFETY.md). Priority additions are an expanded reviewed country-source catalog, airline-policy references, localized language support, structured content review dates, and optional authorized rule-data integrations. Do not copy airline systems or scrape licensed Timatic data.
 
 ## Developer notes
 
@@ -53,9 +55,14 @@ See [Project plan](docs/PROJECT_PLAN.md), [Official sources](docs/SOURCES.md), a
 - Styling: `styles.css`
 - Browser interaction: `app.js`
 - Checklist data + logic: `src/checklist.mjs`
+- Itinerary builder, limited country registry, and official resource links: `src/journey.mjs`
 - Tests: `tests/checklist.test.mjs`
 - GitHub Actions CI: `.github/workflows/ci.yml`
 
 ## Licensing
 
 **No license is granted yet.** Choose a license before accepting external contributions or reuse. Add a `LICENSE` file when you have made that decision.
+
+## Journey Builder limitations
+
+The country selector is a starter list, not a complete list of countries or legal nationalities. The optional transit selector supports one country; travelers with multiple foreign connections must check each additional stop. Choosing a passport-issuing country does **not** capture residence permits, multiple nationalities, document type, travel date, previous visas, or airline-specific rules. No selected combination produces a visa decision or boarding authorization. Official government links are curated only for the U.S., U.K., Canada, and Australia at this stage; for others the app explicitly warns about limited coverage. Checklist completion is a review tracker, never evidence that a passenger meets entry requirements.

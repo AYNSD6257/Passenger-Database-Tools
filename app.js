@@ -1,30 +1,49 @@
-import { buildChecklist } from './src/checklist.mjs';
+import { COUNTRIES, PURPOSE_OPTIONS, buildJourneyPlan } from './src/journey.mjs';
 
 const checklistEl = document.getElementById('checklist');
 const progressTextEl = document.getElementById('progress-text');
 const progressPercentEl = document.getElementById('progress-percent');
 const progressTrackEl = document.getElementById('progress-track');
 const progressFillEl = document.getElementById('progress-fill');
+const routeSummaryEl = document.getElementById('route-summary');
+const routeCategoryEl = document.getElementById('route-category');
+const routeLinksEl = document.getElementById('route-links');
+const routeNoticesEl = document.getElementById('route-notices');
 const reviewed = new Set();
 let items = [];
 
-function selectedJourney() {
-  return document.querySelector('input[name="journey"]:checked').value;
+function fillSelect(id, options, selected, includeNone = false) {
+  const select = document.getElementById(id);
+  if (includeNone) select.add(new Option('No transit / nonstop', ''));
+  for (const option of options) select.add(new Option(option.name ?? option.label, option.code ?? option.value));
+  select.value = selected;
 }
+fillSelect('origin', COUNTRIES, 'US');
+fillSelect('destination', COUNTRIES, 'GB');
+fillSelect('citizenship', COUNTRIES, 'US');
+fillSelect('transit', COUNTRIES, '', true);
+fillSelect('purpose', PURPOSE_OPTIONS, 'tourism');
 
-function selectedExtras() {
-  return [...document.querySelectorAll('input[name="extra"]:checked')].map((el) => el.value);
+function readJourney() {
+  const form = document.getElementById('journey-form');
+  return {
+    origin: form.elements.origin.value,
+    destination: form.elements.destination.value,
+    citizenship: form.elements.citizenship.value,
+    transit: form.elements.transit.value,
+    purpose: form.elements.purpose.value,
+    extras: [...form.querySelectorAll('input[name="extra"]:checked')].map((el) => el.value)
+  };
 }
 
 function updateProgress() {
   const count = items.filter((item) => reviewed.has(item.id)).length;
   const percent = items.length ? Math.round((count / items.length) * 100) : 0;
-  progressTextEl.textContent = `${count} of ${items.length} steps reviewed`;
-  progressPercentEl.textContent = `${percent}%`;
+  progressTextEl.textContent = count + ' of ' + items.length + ' steps reviewed';
+  progressPercentEl.textContent = percent + '%';
   progressTrackEl.setAttribute('aria-valuenow', String(percent));
-  progressFillEl.style.width = `${percent}%`;
+  progressFillEl.style.width = percent + '%';
 }
-
 function makeItem(item) {
   const article = document.createElement('article');
   article.className = 'task';
@@ -54,7 +73,7 @@ function makeItem(item) {
     source.href = item.source;
     source.target = '_blank';
     source.rel = 'noopener noreferrer';
-    source.textContent = `${item.sourceLabel} ↗`;
+    source.textContent = item.sourceLabel + ' ↗';
     article.append(source);
   } else {
     const note = document.createElement('span');
@@ -64,11 +83,44 @@ function makeItem(item) {
   }
   return article;
 }
-
+function renderResources(plan) {
+  routeLinksEl.replaceChildren();
+  for (const resource of plan.resources) {
+    const link = document.createElement('a');
+    link.className = 'route-link';
+    link.href = resource.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    const title = document.createElement('strong');
+    title.textContent = resource.title + ' ↗';
+    const detail = document.createElement('span');
+    detail.textContent = resource.description;
+    link.append(title, detail);
+    routeLinksEl.append(link);
+  }
+  const heading = document.createElement('h3');
+  heading.textContent = 'Important limitations to review';
+  const list = document.createElement('ul');
+  for (const notice of plan.notices) {
+    const li = document.createElement('li');
+    li.textContent = notice;
+    list.append(li);
+  }
+  routeNoticesEl.replaceChildren(heading, list);
+}
 function render() {
-  items = buildChecklist(selectedJourney(), selectedExtras());
+  const plan = buildJourneyPlan(readJourney());
+  items = plan.items;
   const visibleIds = new Set(items.map((item) => item.id));
   for (const id of reviewed) if (!visibleIds.has(id)) reviewed.delete(id);
+  routeSummaryEl.textContent = plan.summary;
+  routeCategoryEl.textContent = ({
+    international: 'International journey',
+    'us-domestic': 'U.S. domestic journey',
+    'other-domestic': 'Domestic journey (outside U.S.)',
+    unspecified: 'Route needs verification'
+  })[plan.kind];
+  renderResources(plan);
   checklistEl.replaceChildren();
   let currentGroup = '';
   for (const item of items) {
@@ -84,7 +136,9 @@ function render() {
   updateProgress();
 }
 
-document.querySelectorAll('input[name="journey"], input[name="extra"]').forEach((el) => el.addEventListener('change', render));
+// Do not carry completed checkboxes to a different itinerary.
+document.querySelectorAll('#journey-form select').forEach((el) => el.addEventListener('change', () => { reviewed.clear(); render(); }));
+document.querySelectorAll('input[name="extra"]').forEach((el) => el.addEventListener('change', render));
 document.getElementById('reset').addEventListener('click', () => { reviewed.clear(); render(); });
 document.getElementById('print').addEventListener('click', () => window.print());
 render();

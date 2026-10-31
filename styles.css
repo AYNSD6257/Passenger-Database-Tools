@@ -71,3 +71,32 @@ button { cursor: pointer; border-radius: 10px; padding: 12px 18px; font: inherit
 @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .resource-grid { grid-template-columns: repeat(2, 1fr); } .hero { padding-top: 45px; } }
 @media (max-width: 570px) { .shell { padding-left: 16px; padding-right: 16px; } .header-label { display: none; } .hero { padding-top: 37px; } .hero-description { font-size: 16px; } .panel { padding: 20px; } .resource-grid { grid-template-columns: 1fr; } }
 @media print { .site-header, .controls, .sources, .site-footer, .panel-footer, .warning, .footer-note { display: none !important; } body { background: #fff; } .hero { padding: 0 0 10px; } .hero h1 { font-size: 28px; } .hero-description { font-size: 12px; } .layout { display: block; } .panel { border: 0; box-shadow: none; padding: 0; } .task { break-inside: avoid; } .task-source { color: #555; } }
+
+
+/* Personalized Journey Builder */
+.form-description { color: #647587; font-size: 13px; line-height: 1.55; margin: -6px 0 20px; }
+.journey-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px 11px; }
+.form-field { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.form-field.full { grid-column: 1 / -1; }
+.form-field span { color: #2d4357; font-size: 12px; font-weight: 750; line-height: 1.45; }
+.form-field small { color: #718596; font-weight: 500; }
+.form-field select { width: 100%; min-width: 0; background: #fff; color: #193043; border: 1px solid #cfdde5; border-radius: 9px; font: inherit; font-size: 13px; padding: 11px 8px; }
+.form-field select:hover { border-color: #098199; }
+.form-field select:focus-visible { outline: 3px solid #50a4cf; outline-offset: 2px; }
+.field-hint { font-size: 12px; color: #66798a; line-height: 1.55; margin: 15px 0 0; }
+.journey-summary { background: #eaf6f8; border: 1px solid #c7e5ec; border-radius: 12px; padding: 15px; margin-bottom: 23px; }
+.journey-badge { display: inline-block; background: #c9e7ec; color: #166273; padding: 4px 8px; border-radius: 20px; font-size: 11px; font-weight: 800; }
+.journey-summary p { color: #18364a; font-size: 14px; font-weight: 750; line-height: 1.55; margin: 10px 0 7px; overflow-wrap: anywhere; }
+.journey-summary small { font-size: 11px; line-height: 1.5; color: #4f7280; }
+.journey-links { margin-top: 22px; }
+.journey-links > p { color: #607688; font-size: 14px; line-height: 1.55; margin-top: -5px; }
+.route-link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 11px; margin-top: 18px; }
+.route-link { display: flex; flex-direction: column; gap: 9px; text-decoration: none; border: 1px solid #d9e5eb; background: #fbfdfe; border-radius: 11px; padding: 15px; }
+.route-link:hover { border-color: #0d8398; }
+.route-link strong { color: #087c91; font-size: 13px; line-height: 1.35; }
+.route-link span { color: #5e7182; font-size: 12px; line-height: 1.5; }
+.route-notices { background: #fffaf0; border: 1px solid #f1dfb5; border-radius: 11px; padding: 14px 18px; margin-top: 18px; }
+.route-notices h3 { margin: 0 0 8px; font-size: 13px; color: #725622; }
+.route-notices ul { margin: 0; padding-left: 20px; color: #655634; font-size: 12px; line-height: 1.65; }
+@media (max-width: 570px) { .journey-form-grid { grid-template-columns: 1fr; } }
+@media print { .journey-links { border: 0; padding: 10px 0; box-shadow: none; } .route-link-grid { display: none; } .route-notices { break-inside: avoid; } }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SojournNexus: a privacy-friendly checklist to help air travelers review trip documents and airport preparation steps.">
+  <meta name="description" content="SojournNexus: a privacy-friendly journey builder for passenger travel documents and airport preparation.">
   <title>SojournNexus | Passenger Travel Information Portal</title>
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./app.js"></script>
@@ -20,17 +20,22 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="eyebrow">BEFORE YOU GO</div>
       <h1 id="hero-title">Travel confidently.<br><span class="hero-gradient">Check what matters.</span></h1>
-      <p class="hero-description">Build a personal preparation checklist for your flight, including travel documents, airport guidance, baggage, and special travel needs.</p>
+      <p class="hero-description">Enter your itinerary, citizenship, and travel purpose to build a relevant preparation checklist with official resources and important reminders.</p>
       <div class="warning" role="note"><strong>Important:</strong> This is an informational planning tool, not an official document check, eligibility decision, or boarding authorization. Always confirm current rules with your airline and the relevant government authorities.</div>
     </section>
     <div class="layout">
       <section class="panel controls" aria-labelledby="plan-title">
         <div class="panel-heading"><span class="step-tag">01</span><h2 id="plan-title">Plan your journey</h2></div>
-        <fieldset>
-          <legend>Type of trip</legend>
-          <label class="choice"><input type="radio" name="journey" value="international" checked><span><strong>International flight</strong><small>Includes cross-border travel and connections</small></span></label>
-          <label class="choice"><input type="radio" name="journey" value="domestic"><span><strong>Domestic flight within the U.S.</strong><small>U.S. airport screening and airline preparation</small></span></label>
-        </fieldset>
+        <form id="journey-form" autocomplete="off">
+          <p class="form-description">Enter your route to generate a contextual preparation checklist. No passport numbers or passenger records are needed.</p>
+          <div class="journey-form-grid">
+            <label class="form-field" for="origin"><span>Departure country</span><select id="origin" name="origin" required></select></label>
+            <label class="form-field" for="destination"><span>Destination country</span><select id="destination" name="destination" required></select></label>
+            <label class="form-field" for="citizenship"><span>Passport-issuing country / citizenship</span><select id="citizenship" name="citizenship" required></select></label>
+            <label class="form-field" for="transit"><span>Transit country <small>(optional; one stop)</small></span><select id="transit" name="transit"></select></label>
+            <label class="form-field full" for="purpose"><span>Purpose of travel</span><select id="purpose" name="purpose" required></select></label>
+          </div>
+          <p class="field-hint">For multi-country connections, research every additional transit country separately. Residence status and document type can change requirements.</p>
         <fieldset class="extras">
           <legend>Additional needs <span class="optional">(select any)</span></legend>
           <label class="tick-option"><input type="checkbox" name="extra" value="minors"> Traveling with a child / minor</label>
@@ -39,9 +44,11 @@
           <label class="tick-option"><input type="checkbox" name="extra" value="medication"> Medication or medical devices</label>
         </fieldset>
         <p class="privacy-note"><span aria-hidden="true">♢</span> Your selections remain in this browser tab. No accounts, passport numbers, or personal documents are collected.</p>
+        </form>
       </section>
       <section class="panel results" aria-labelledby="checklist-title">
         <div class="panel-heading"><span class="step-tag">02</span><h2 id="checklist-title">Your preparation checklist</h2></div>
+        <div class="journey-summary"><span class="journey-badge" id="route-category"></span><p id="route-summary"></p><small>Guidance only · not a visa, document, or boarding decision</small></div>
         <div class="progress-top"><span id="progress-text" role="status" aria-live="polite">0 of 0 steps reviewed</span><span id="progress-percent">0%</span></div>
         <div class="progress-track" role="progressbar" aria-label="Checklist review progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
         <div id="checklist" class="checklist"></div>
@@ -49,6 +56,12 @@
         <p class="footer-note">Checking a box means you reviewed a step, <strong>not</strong> that you meet its legal or airline requirements.</p>
       </section>
     </div>
+    <section class="panel journey-links" aria-labelledby="journey-links-title">
+      <div class="panel-heading"><span class="step-tag">03</span><h2 id="journey-links-title">Official resources for this itinerary</h2></div>
+      <p>Selected government links are curated starting points, not automatically interpreted requirements. If your country is not yet covered, verify directly with its immigration authority or embassy.</p>
+      <div id="route-links" class="route-link-grid"></div>
+      <div id="route-notices" class="route-notices"></div>
+    </section>
     <section class="sources" aria-labelledby="sources-title">
       <div><span class="eyebrow">VERIFY WITH PRIMARY SOURCES</span><h2 id="sources-title">Trusted places to check</h2><p>Requirements depend on your itinerary, citizenship, passport, visa status, and airline. Use these official resources for current information.</p></div>
       <div class="resource-grid">

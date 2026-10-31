@@ -28,6 +28,11 @@ const DOMESTIC = [
   { id: 'screening', group: 'U.S. domestic travel', title: 'Review airport security screening rules', detail: 'Confirm prohibited items, liquids, electronics, and any screening assistance needs using current TSA guidance.', sourceLabel: 'TSA travel guidance', source: SOURCES.tsa }
 ];
 
+const DOMESTIC_OTHER = [
+  { id: 'local-id', group: 'Domestic travel outside the U.S.', title: 'Check locally accepted identity documents', detail: 'Domestic travel document requirements vary by country, route, status, and airline. Consult your airline and the country’s official aviation or security authority.', sourceLabel: 'Verify with local authorities and your airline', source: null },
+  { id: 'local-security', group: 'Domestic travel outside the U.S.', title: 'Review local airport screening and restricted items', detail: 'Check the departure airport and relevant authority for applicable screening requirements and prohibited items.', sourceLabel: 'Verify with local authorities', source: null }
+];
+
 const EXTRA = {
   minors: [
     { id: 'minor-docs', group: 'Additional needs', title: 'Check documents and rules for minors', detail: 'Airline unaccompanied-minor policies and destination consent or custody documentation can differ. Confirm before travel.', sourceLabel: 'State Department travel checklist', source: SOURCES.state }
@@ -44,7 +49,7 @@ const EXTRA = {
 };
 
 export function buildChecklist(journey = 'international', extras = []) {
-  if (!['international', 'domestic'].includes(journey)) throw new RangeError('Unsupported journey type');
+  if (!['international', 'domestic', 'domestic-other'].includes(journey)) throw new RangeError('Unsupported journey type');
   const selected = [...new Set(extras)].filter((key) => Object.hasOwn(EXTRA, key));
-  return [...CORE, ...(journey === 'international' ? INTERNATIONAL : DOMESTIC), ...selected.flatMap((key) => EXTRA[key])];
+  return [...CORE, ...(journey === 'international' ? INTERNATIONAL : journey === 'domestic' ? DOMESTIC : DOMESTIC_OTHER), ...selected.flatMap((key) => EXTRA[key])];
 }

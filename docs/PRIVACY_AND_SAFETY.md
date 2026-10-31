@@ -2,8 +2,8 @@
 
 ## Current behavior
 - This application is completely client-side and sends no passenger information to a server.
-- It collects no names, passport numbers, birthdates, nationalities, booking records, documents, or analytics.
-- Checkbox selections live only in in-memory JavaScript state. They are forgotten when the page refreshes or closes.
+- It asks for departure, destination, passport-issuing country/citizenship, optional transit country, purpose, and special travel needs. It does not collect names, passport numbers, birthdates, booking records, documents, or analytics.
+- Journey and checkbox selections live only in in-memory JavaScript state. They are forgotten when the page refreshes or closes.
 - Clicking links to external resources leaves this site; those destinations control their own privacy practices.
 - No third-party JS/CDNs, persistent cookies, localStorage, or API credentials are used.
 
