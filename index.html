@@ -57,6 +57,41 @@
       <p class="orbital-disclaimer">Visual orbit speeds and celestial sizes are illustrative. Airport markers are a curated sample, not every airport or a live flight network. Local clocks use IANA time zones. Route arcs do not establish scheduled service.</p>
     </section>
 
+    <section class="world-catalog" id="world-catalog" aria-labelledby="world-title">
+      <div class="world-heading">
+        <div><span class="eyebrow">OURAIRPORTS · FULL WORLDWIDE CATALOG</span>
+          <h2 id="world-title">Every airport. One globe.</h2>
+          <p>Explore the complete open OurAirports catalog, search airport names and codes, and highlight selected locations on the globe. These records are not proof of currently operating flights.</p></div>
+        <button type="button" id="world-load" class="primary-btn">Load worldwide airport catalog</button>
+      </div>
+      <div class="world-stat-grid">
+        <div><strong id="world-total">—</strong><span>Airport and aviation facility records</span></div>
+        <div><strong id="world-geolocated">—</strong><span>Geolocated records</span></div>
+        <div><strong id="world-scheduled">—</strong><span>Scheduled-service flags</span></div>
+        <div><strong id="world-source-time">—</strong><span>Dataset snapshot (UTC)</span></div>
+      </div>
+      <p id="world-status" role="status" aria-live="polite">The full directory loads on request so the globe starts quickly.</p>
+      <div id="world-controls" hidden>
+        <div class="world-filter-grid">
+          <label>Search airport or identifier<input type="search" id="world-search" placeholder="Airport name, IATA, ICAO, city, country or region"></label>
+          <label>Airport category<select id="world-kind">
+            <option value="scheduled">Marked as scheduled passenger service</option>
+            <option value="all">All facilities, including closed</option>
+            <option value="open">All except closed</option>
+            <option value="large">Large airports</option>
+            <option value="medium">Medium airports</option>
+            <option value="small">Small airports</option>
+            <option value="heliport">Heliports</option>
+            <option value="closed">Closed airports</option>
+          </select></label>
+          <label>Country code<select id="world-country"><option value="all">All countries</option></select></label>
+        </div>
+        <p class="world-count" id="world-count" role="status" aria-live="polite"></p>
+        <p class="world-selected" id="world-selected">Select a result to highlight it on the globe or add it to your flight itinerary.</p>
+        <div class="world-results" id="world-results"></div>
+      </div>
+      <p class="world-disclaimer">Global markers are clustered for speed. Closed airfields and heliports are included in the source but not passenger-flight choices. OurAirports does not provide complete IANA time zones, bookable flights, or visa/ETA determinations.</p>
+    </section>
     <section class="flight-planner" id="flight-planner" aria-labelledby="flight-planner-title">
       <div class="flight-planner-heading">
         <div><span class="eyebrow">FLIGHT-SPECIFIC PLANNING</span><h2 id="flight-planner-title">Design your journey</h2>

@@ -60,11 +60,21 @@ export const EXPLORER_AIRPORTS=Object.freeze([
  ...EXTRA.map(([code,name,city,country,lat,lon,timezone])=>Object.freeze({code,name,city,country,lat,lon,timezone,url:null,officialMap:false}))
 ]);
 const AIRPORT_BY_CODE=new Map(EXPLORER_AIRPORTS.map(a=>[a.code,a]));
-export function getExplorerAirport(code){return AIRPORT_BY_CODE.get(code)||null;}
+const WORLD_BY_CODE=new Map();
+export function registerWorldwideAirport(airport){
+ if(!airport||!/^OA-\\d+$/.test(airport.code)||
+    !Number.isFinite(airport.lat)||!Number.isFinite(airport.lon))
+  throw new TypeError('Invalid imported airport');
+ const record=Object.freeze({...airport,timezone:null,url:null});
+ WORLD_BY_CODE.set(record.code,record);
+ return record;
+}
+export function getExplorerAirport(code){return AIRPORT_BY_CODE.get(code)||WORLD_BY_CODE.get(code)||null;}
 export function searchExplorerAirports(query=''){const q=String(query).trim().toLowerCase();return EXPLORER_AIRPORTS.filter(a=>(a.code+' '+a.name+' '+a.city+' '+a.country).toLowerCase().includes(q));}
 export function getCountryTravelResource(country){return OFFICIAL_PORTALS[country]||null;}
 export function formatAirportClock(code,instant=new Date()){
  const airport=getExplorerAirport(code);
  if(!airport)throw new RangeError('Unknown airport code');
+ if(!airport.timezone)return 'Time zone unavailable (not in OurAirports)';
  return new Intl.DateTimeFormat('en-US',{timeZone:airport.timezone,hour:'2-digit',minute:'2-digit',hour12:false,weekday:'short',month:'short',day:'numeric'}).format(instant);
 }
