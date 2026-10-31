@@ -9,7 +9,7 @@ Travelers often do not know which steps to review before flying. A useful applic
 - Travelers with accessibility or special handling needs
 
 ## MVP (implemented)
-- Choose departure/destination countries, passport-issuing country, optional transit, and travel purpose; infer international vs. domestic checklist from itinerary
+- Choose departure/destination countries, passport-issuing country, up to five ordered transit countries (with optional listed airport), and travel purpose; infer international vs. domestic checklist from itinerary
 - Enable additional checklists for minors, assistance, animals, and medications
 - Interactive local-only progress and printable review sheet
 - Primary links to IATA, TSA and CBP; searchable directory of 9 national government resources and 13 regional EU/Schengen references
@@ -21,8 +21,8 @@ Travelers often do not know which steps to review before flying. A useful applic
 2. **Airline policy catalog — initial link directory delivered:** Add more carriers and separately reviewed official pages for check-in cutoffs, assistance, pets, and unaccompanied minors. Never hard-code unverified allowances.
 3. **Quality workflow:** Set a review cadence, warn on stale links, track approvals and change logs, and allow users to report broken references.
 4. **Internationalization:** Add accessible Urdu, Hindi, Spanish and other language translations while linking to official original-language requirements.
-5. **Expanded itinerary experience:** Support multiple transits, residence permits, travel date, and other necessary fields without storing passport data. Build jurisdiction-specific rules only with permitted, licensed, maintained authoritative sources and human review.
-6. **Optional airport guides:** Airport-specific terminals, accessibility desks, security process, and contact numbers, with date-stamped sources.
+5. **Expanded itinerary experience:** Multiple ordered transits and selected-airport map links are implemented; future work should add residence permits, travel date, and other necessary fields without storing passport data. Build jurisdiction-specific rules only with permitted, licensed, maintained authoritative sources and human review.
+6. **Airport directory — initial release:** Eleven official airport map links are searchable. Future work can add checked accessibility resources and more airports; no hard-coded terminal/gate predictions.
 
 ## Avoid
 - Unverified rules or invented visa/passport decisions

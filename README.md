@@ -8,7 +8,7 @@ A mobile-friendly, **independent educational prototype** helping airline passeng
 
 ## Included now
 
-- Personalized Journey Builder: departure country, destination, passport-issuing country, optional single transit country, and trip purpose
+- Personalized Journey Builder: departure country, destination, passport-issuing country, up to five ordered transit-country stops with optional airport selection, and trip purpose
 - Automatically distinguished international, U.S. domestic, and other domestic preparation checklists
 - Extra prompts for travel with minors, accessibility needs, pets, and medication
 - Review-progress tracker, reset, and print-friendly view
@@ -68,8 +68,17 @@ See [Project plan](docs/PROJECT_PLAN.md), [Official sources](docs/SOURCES.md), a
 
 ## Journey Builder limitations
 
-The country selector is a starter list, not a complete list of countries or legal nationalities. The optional transit selector supports one country; travelers with multiple foreign connections must check each additional stop. Choosing a passport-issuing country does **not** capture residence permits, multiple nationalities, document type, travel date, previous visas, or airline-specific rules. No selected combination produces a visa decision or boarding authorization. The directory contains 9 country-specific government resources and 13 countries mapped to a single EU/Schengen regional overview; the regional overview is not national immigration guidance. Other destinations show limited coverage. Airline policy links are informational only and omit fares, allowances, and prices. Checklist completion is a review tracker, never evidence that a passenger meets entry requirements.
+The country selector is a starter list, not a complete list of countries or legal nationalities. The Journey Builder supports up to five ordered connections, each with an optional airport selected from a limited official map directory. A selected airport does not establish a valid or bookable itinerary. Choosing a passport-issuing country does **not** capture residence permits, multiple nationalities, document type, travel date, previous visas, or airline-specific rules. No selected combination produces a visa decision or boarding authorization. The directory contains 9 country-specific government resources and 13 countries mapped to a single EU/Schengen regional overview; the regional overview is not national immigration guidance. Other destinations show limited coverage. Airline policy links are informational only and omit fares, allowances, and prices. Checklist completion is a review tracker, never evidence that a passenger meets entry requirements.
 
 ## Airline & country reference catalogs
 
 Country source coverage and airline links were editorially checked on **2026-10-30**, not continuously refreshed. See `src/catalog.mjs` and `docs/SOURCES.md` for provenance. Searches filter the local curated list; they do not search the live internet or airline reservation data. Airline baggage rules depend on operating carrier, fare type, ticket issuance date, cabin, route, loyalty status and special equipment. Missing catalog links must not be interpreted as no restriction, no visa, or no fee.
+
+
+## Airport maps and multiple connections
+
+- Add and remove up to five layover stops in order; select each stop's country and an optional airport. The list is not a flight-search engine and does not infer the correct sequence from a booking.
+- The preparation checklist displays a separate transit-country prompt for **every** stop, even repeated countries, and displays a map link for any supported airport. Reviewed country links are de-duplicated when a country occurs multiple times.
+- The separate airport directory currently contains 11 operator-hosted maps: IAD, JFK, ATL, LHR, FRA, AMS, DXB, YYZ, SIN, HND, and SYD. It is a curated sample, not global airport coverage.
+- Maps are **not** guarantees of gates, terminal accessibility, airside transfer availability, connection legality, baggage transfer, or minimum connection times. Cross-check with your itinerary, airline and airport operator.
+- All inputs are kept in current browser memory only; no passenger name, PNR, passport number, or trip history is stored.

@@ -123,3 +123,28 @@ button { cursor: pointer; border-radius: 10px; padding: 12px 18px; font: inherit
 .directory-note,.directory-empty {color: #6c7e89;font-size: 12px;line-height: 1.5;}
 @media(max-width:900px) {.directory-grid {grid-template-columns:1fr;}}
 @media print {.directory {display:none!important;}}
+
+/* Ordered connection rows and airport reference search */
+.connection-builder {border-top:1px solid #e7eff2;padding-top:16px;}
+.connection-heading {display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.connection-heading span {font-size:13px;}
+.connection-heading button {padding:8px 12px;}
+.connection-list {display:grid;gap:12px;margin:10px 0;}
+.connection-row {border:1px solid #d8e8eb;background:#f9fcfd;border-radius:11px;padding:12px;}
+.connection-row-head {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:11px;}
+.connection-row-head strong {font-size:13px;color:#155768;}
+.connection-row-head button {padding:6px 11px;font-size:12px;}
+.connection-row-fields {display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.connection-row-fields label {font-size:12px;font-weight:750;color:#385568;display:flex;flex-direction:column;gap:5px;min-width:0;}
+.connection-row-fields select {width:100%;min-width:0;background:white;border:1px solid #cbdbe4;border-radius:9px;padding:10px 6px;font:inherit;font-size:12px;}
+.connection-row-fields select:disabled {opacity:.65;}
+.connection-builder .field-hint {margin-top:7px;}
+.airport-directory {grid-column:1/-1;}
+.airport-filters {display:grid;grid-template-columns:2fr 1fr;gap:12px;margin:20px 0;}
+.airport-filters label {font-size:12px;font-weight:750;display:flex;flex-direction:column;gap:7px;}
+.airport-filters input,.airport-filters select {padding:12px;border-radius:9px;border:1px solid #cbdbe4;font:inherit;font-size:14px;min-width:0;}
+.airport-results {grid-template-columns:repeat(3,minmax(0,1fr));max-height:530px;}
+button:disabled {opacity:.5;cursor:not-allowed;}
+@media(max-width:670px){
+  .connection-row-fields,.airport-filters,.airport-results {grid-template-columns:1fr;}
+}

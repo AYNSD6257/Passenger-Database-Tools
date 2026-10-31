@@ -1,4 +1,5 @@
-import { COUNTRIES, PURPOSE_OPTIONS, buildJourneyPlan } from './src/journey.mjs';
+import { COUNTRIES, PURPOSE_OPTIONS, MAX_CONNECTIONS, buildJourneyPlan } from './src/journey.mjs';
+import { AIRPORTS, findAirports, getAirport, AIRPORT_REVIEW_DATE } from './src/airports.mjs';
 import { AIRLINES, POLICY_TOPICS, OFFICIAL_PORTALS, CATALOG_REVIEW_DATE, findCountrySources, findAirlines } from './src/catalog.mjs';
 
 const checklistEl = document.getElementById('checklist');
@@ -22,10 +23,77 @@ function fillSelect(id, options, selected, includeNone = false) {
 fillSelect('origin', COUNTRIES, 'US');
 fillSelect('destination', COUNTRIES, 'GB');
 fillSelect('citizenship', COUNTRIES, 'US');
-fillSelect('transit', COUNTRIES, '', true);
+
 fillSelect('purpose', PURPOSE_OPTIONS, 'tourism');
 fillSelect('airline', [{value:'',label:'Not selected'},...AIRLINES.map(({code,name})=>({value:code,label:name+' ('+code+')'}))], '');
 fillSelect('policy-topic', POLICY_TOPICS.map(({code,label})=>({value:code,label})), 'baggage');
+const airportCountries=[...new Set(AIRPORTS.map(a=>a.country))];
+fillSelect('airport-country',
+  [{value:'all',label:'All countries'},...COUNTRIES.filter(c=>airportCountries.includes(c.code))],
+  'all');
+function updateAddConnection(){
+  const button=document.getElementById('add-connection');
+  const count=document.querySelectorAll('.connection-row').length;
+  button.disabled=count>=MAX_CONNECTIONS;
+  button.setAttribute('aria-label','Add connection stop ('+count+' of '+MAX_CONNECTIONS+' used)');
+}
+function updateAirportOptions(row,selected=''){
+  const country=row.querySelector('.connection-country').value;
+  const select=row.querySelector('.connection-airport');
+  select.replaceChildren(new Option('Airport not specified',''));
+  for(const airport of AIRPORTS.filter(a=>a.country===country)){
+    select.add(new Option(airport.code+' — '+airport.name,airport.code));
+  }
+  select.value=selected;
+  select.disabled=!AIRPORTS.some(a=>a.country===country);
+}
+function renumberConnections(){
+  const rows=[...document.querySelectorAll('.connection-row')];
+  rows.forEach((row,i)=>{
+    row.querySelector('.connection-title').textContent='Connection '+(i+1);
+    row.querySelector('.connection-country').setAttribute('aria-label','Connection '+(i+1)+' country');
+    row.querySelector('.connection-airport').setAttribute('aria-label','Connection '+(i+1)+' airport');
+    row.querySelector('.remove-connection').setAttribute('aria-label','Remove connection '+(i+1));
+  });
+  updateAddConnection();
+}
+function addConnection(country='',airport=''){
+  if(document.querySelectorAll('.connection-row').length>=MAX_CONNECTIONS)return;
+  const row=document.createElement('div');
+  row.className='connection-row';
+  const head=document.createElement('div');
+  head.className='connection-row-head';
+  const heading=document.createElement('strong');
+  heading.className='connection-title';
+  const remove=document.createElement('button');
+  remove.type='button';
+  remove.className='remove-connection secondary-btn';
+  remove.textContent='Remove';
+  remove.addEventListener('click',()=>{row.remove();renumberConnections();reviewed.clear();render();});
+  head.append(heading,remove);
+  const countrySelect=document.createElement('select');
+  countrySelect.className='connection-country';
+  countrySelect.name='connection-country';
+  countrySelect.add(new Option('Choose transit country',''));
+  for(const entry of COUNTRIES)countrySelect.add(new Option(entry.name,entry.code));
+  countrySelect.value=country;
+  const airportSelect=document.createElement('select');
+  airportSelect.className='connection-airport';
+  airportSelect.name='connection-airport';
+  const countryLabel=document.createElement('label');
+  countryLabel.textContent='Transit country';
+  countryLabel.append(countrySelect);
+  const airportLabel=document.createElement('label');
+  airportLabel.textContent='Airport (optional)';
+  airportLabel.append(airportSelect);
+  const fields=document.createElement('div');
+  fields.className='connection-row-fields';
+  fields.append(countryLabel,airportLabel);
+  row.append(head,fields);
+  document.getElementById('connections').append(row);
+  updateAirportOptions(row,airport);
+  renumberConnections();
+}
 
 function readJourney() {
   const form = document.getElementById('journey-form');
@@ -33,7 +101,10 @@ function readJourney() {
     origin: form.elements.origin.value,
     destination: form.elements.destination.value,
     citizenship: form.elements.citizenship.value,
-    transit: form.elements.transit.value,
+    transits:[...document.querySelectorAll('.connection-row')].map(row=>({
+      country:row.querySelector('.connection-country').value,
+      airport:row.querySelector('.connection-airport').value
+    })).filter(stop=>stop.country),
     purpose: form.elements.purpose.value,
     airline: form.elements.airline.value,
     extras: [...form.querySelectorAll('input[name="extra"]:checked')].map((el) => el.value)
@@ -141,8 +212,14 @@ function render() {
 }
 
 // Do not carry completed checkboxes to a different itinerary.
-document.querySelectorAll('#journey-form select').forEach((el) => el.addEventListener('change', () => { reviewed.clear(); render(); }));
-document.querySelectorAll('input[name="extra"]').forEach((el) => el.addEventListener('change', render));
+document.getElementById('add-connection').addEventListener('click',()=>{addConnection();reviewed.clear();render();});
+document.getElementById('journey-form').addEventListener('change',event=>{
+  if(event.target.classList.contains('connection-country')){
+    updateAirportOptions(event.target.closest('.connection-row'));
+  }
+  reviewed.clear();
+  render();
+});
 document.getElementById('reset').addEventListener('click', () => { reviewed.clear(); render(); });
 document.getElementById('print').addEventListener('click', () => window.print());
 render();
@@ -210,3 +287,26 @@ document.getElementById('airline-search').addEventListener('input', renderAirlin
 document.getElementById('policy-topic').addEventListener('change', renderAirlineDirectory);
 renderCountryDirectory();
 renderAirlineDirectory();
+
+function renderAirportDirectory(){
+  const q=document.getElementById('airport-search').value;
+  const country=document.getElementById('airport-country').value;
+  const matching=findAirports(q,country);
+  const results=document.getElementById('airport-results');
+  results.replaceChildren();
+  document.getElementById('airport-count').textContent=matching.length+' airport maps available';
+  if(!matching.length){
+    const p=document.createElement('p');
+    p.className='directory-empty';
+    p.textContent='No operator map in this starter directory. Verify the airport directly.';
+    results.append(p);
+  }
+  for(const airport of matching){
+    results.append(directoryCard(airport.name+' ('+airport.code+')',
+      'AIRPORT OPERATOR',airport.city+' · Map URL checked '+AIRPORT_REVIEW_DATE+
+      '. Check terminals, gates and transfer rules with the airport and airline.',airport.url));
+  }
+}
+document.getElementById('airport-search').addEventListener('input',renderAirportDirectory);
+document.getElementById('airport-country').addEventListener('change',renderAirportDirectory);
+renderAirportDirectory();

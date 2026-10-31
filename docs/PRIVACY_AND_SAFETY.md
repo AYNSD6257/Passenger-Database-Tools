@@ -19,3 +19,7 @@ Use fictional sample records in code and tests. Never commit real boarding passe
 ## Local policy search (2026-10-30)
 
 The country and airline searches filter data bundled into the static JavaScript application. Search strings and selected carrier codes stay in browser memory only. External links are opened only when a visitor clicks them; each third-party website has its own privacy practices. No travel history, passport details, airline bookings or source-search queries are uploaded or stored by this application.
+
+## Ordered connection selections
+
+Connection countries and optional airport codes are processed in memory in the current tab. They are not sent to SojournNexus servers or analytics. Airline and airport links are third-party websites opened at the traveler's initiative. There is no claim that a listed itinerary or connection is possible or lawful.

@@ -32,11 +32,15 @@
             <label class="form-field" for="origin"><span>Departure country</span><select id="origin" name="origin" required></select></label>
             <label class="form-field" for="destination"><span>Destination country</span><select id="destination" name="destination" required></select></label>
             <label class="form-field" for="citizenship"><span>Passport-issuing country / citizenship</span><select id="citizenship" name="citizenship" required></select></label>
-            <label class="form-field" for="transit"><span>Transit country <small>(optional; one stop)</small></span><select id="transit" name="transit"></select></label>
+            <div class="form-field full connection-builder">
+              <div class="connection-heading"><span>Connection stops <small>(optional; in travel order)</small></span><button id="add-connection" class="secondary-btn" type="button">+ Add stop</button></div>
+              <div id="connections" class="connection-list"></div>
+              <small class="field-hint">Up to five stops. Select each country and, if listed, its airport. Every stop receives a separate transit reminder.</small>
+            </div>
             <label class="form-field full" for="purpose"><span>Purpose of travel</span><select id="purpose" name="purpose" required></select></label>
             <label class="form-field full" for="airline"><span>Operating airline <small>(optional)</small></span><select id="airline" name="airline"></select></label>
           </div>
-          <p class="field-hint">For multi-country connections, research every additional transit country separately. Residence status and document type can change requirements.</p>
+          <p class="field-hint">Include every stop in your ticket, even when you stay airside. Airport and country lists are limited; residence status and document type can change requirements.</p>
         <fieldset class="extras">
           <legend>Additional needs <span class="optional">(select any)</span></legend>
           <label class="tick-option"><input type="checkbox" name="extra" value="minors"> Traveling with a child / minor</label>
@@ -96,6 +100,21 @@
           <p class="directory-count" id="airline-count" role="status" aria-live="polite"></p>
           <div class="directory-results" id="airline-results"></div>
           <p class="directory-note">Not every airline has a reviewed link for every topic. A missing result does not mean a carrier does not offer that service.</p>
+        </section>
+        <section class="panel directory-panel airport-directory" aria-labelledby="airport-directory-title">
+          <h3 id="airport-directory-title">Airport maps & traveler information</h3>
+          <p>Search official airport-operator maps for terminals, facilities and wayfinding. These links do not verify specific flights, transfer permissions, gate assignments or connection times.</p>
+          <div class="airport-filters">
+            <label for="airport-search">Airport name, city, or IATA code
+              <input id="airport-search" type="search" placeholder="Try IAD, Heathrow or Toronto">
+            </label>
+            <label for="airport-country">Country
+              <select id="airport-country"></select>
+            </label>
+          </div>
+          <p class="directory-count" id="airport-count" role="status" aria-live="polite"></p>
+          <div class="directory-results airport-results" id="airport-results"></div>
+          <p class="directory-note">Official maps are starting points. Contact the airport and operating airline for current terminal and transfer details.</p>
         </section>
       </div>
       <p class="directory-note">Directory links checked 30 October 2026. This is not continuous monitoring; always recheck authoritative sources before travel.</p>

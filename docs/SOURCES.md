@@ -42,3 +42,24 @@ The airline policy directory currently covers **American, Delta, United, British
 - Keep the verified date accurate; recheck sources periodically, especially before release for passenger use.
 - For regional links, always direct travelers to the **specific national immigration / embassy source** before reliance.
 - Always confirm codeshare and interline baggage rules with the relevant operating airline(s) and ticket conditions.
+
+
+## Airport operator map directory (2026-10-30 URL checks)
+
+The initial airport references in `src/airports.mjs` point to operator-controlled maps, not automated airport-operation or connection data:
+
+| Code | Airport | Official map URL |
+| --- | --- | --- |
+| IAD | Washington Dulles | https://www.flydulles.com/travel-information/airport-and-terminal-maps |
+| JFK | New York JFK | https://www.jfkairport.com/explore-jfk/airport-map |
+| ATL | Atlanta | https://www.atl.com/maps/ |
+| LHR | Heathrow | https://www.heathrow.com/at-the-airport/airport-maps |
+| FRA | Frankfurt | https://www.frankfurt-airport.com/en/at-the-airport/orientation/airport-map.html |
+| AMS | Schiphol | https://www.schiphol.nl/en/airport-maps/ |
+| DXB | Dubai | https://dubaiairports.ae/express-maps |
+| YYZ | Toronto Pearson | https://www.torontopearson.com/en/while-you-are-here/terminal-maps |
+| SIN | Singapore Changi | https://www.changiairport.com/in/en/at-changi/map.html |
+| HND | Tokyo Haneda | https://www.tokyo-haneda.com/en/floor/floor-guide.html |
+| SYD | Sydney | https://www.sydneyairport.com/airport-guide/departing/domestic/maps |
+
+Airport links and code-to-country associations are informational only. Check the operating carrier and airport for actual flight terminals, transfer requirements, security and immigration, baggage recheck, and minimum connect times. Do not assume that connecting airside is permitted at every airport.

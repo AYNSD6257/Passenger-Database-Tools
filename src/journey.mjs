@@ -1,6 +1,7 @@
 import { buildChecklist, SOURCES } from './checklist.mjs';
 import { OFFICIAL_PORTALS, getAirline } from './catalog.mjs';
 export { OFFICIAL_PORTALS } from './catalog.mjs';
+import { getAirport } from './airports.mjs';
 
 // Starter country selection only. No nationality, visa or entry decisions are inferred.
 export const COUNTRIES = Object.freeze([
@@ -39,74 +40,115 @@ function validateCountry(code, field) {
 function addResource(resources, id, title, description, url) {
   if (!resources.some((resource) => resource.id === id)) resources.push({ id, title, description, url });
 }
-export function buildJourneyPlan({ origin = 'US', destination = 'GB', citizenship = 'US', transit = '', purpose = 'tourism', extras = [], airline = '' } = {}) {
-  const originName = validateCountry(origin, 'departure country');
-  const destinationName = validateCountry(destination, 'destination country');
-  const citizenshipName = validateCountry(citizenship, 'passport-issuing country');
-  const transitName = transit === '' ? '' : validateCountry(transit, 'transit country');
-  if (!Object.hasOwn(PURPOSES, purpose)) throw new RangeError('Unsupported purpose of travel');
+// Supports legacy single-transit string for existing integrations.
+export const MAX_CONNECTIONS = 5;
+export function normalizeConnections(transits, transit = '') {
+  const raw = transits === undefined ? (transit ? [transit] : []) : transits;
+  if (!Array.isArray(raw)) throw new TypeError('Connections must be an array');
+  if (raw.length > MAX_CONNECTIONS) throw new RangeError('Too many connection stops');
+  return raw.map((entry, index) => {
+    const stop = typeof entry === 'string' ? {country:entry,airport:''} : entry;
+    if (!stop || typeof stop !== 'object' || Array.isArray(stop)) throw new TypeError('Invalid connection');
+    const country = stop.country;
+    const airportCode = stop.airport ?? '';
+    validateCountry(country, 'country at connection ' + (index + 1));
+    if (typeof airportCode !== 'string') throw new TypeError('Airport code must be a string');
+    const airport = getAirport(airportCode);
+    if (airport && airport.country !== country) throw new RangeError('Airport country does not match connection');
+    return Object.freeze({country,airport:airportCode});
+  });
+}
+export function buildJourneyPlan({
+  origin='US', destination='GB', citizenship='US', transit='',
+  transits=undefined, purpose='tourism', extras=[], airline=''
+}={}) {
+  const originName=validateCountry(origin,'departure country');
+  const destinationName=validateCountry(destination,'destination country');
+  const citizenshipName=validateCountry(citizenship,'passport-issuing country');
+  const connections=normalizeConnections(transits,transit);
+  if (!Object.hasOwn(PURPOSES,purpose)) throw new RangeError('Unsupported purpose of travel');
   if (!Array.isArray(extras)) throw new TypeError('Extras must be an array');
-  const operatingCarrier = getAirline(airline);
-
-  const routeUnspecified = origin === 'ZZ' || destination === 'ZZ' || transit === 'ZZ';
-  const crossBorderStop = Boolean(transit && transit !== origin && transit !== destination);
-  const kind = routeUnspecified ? 'unspecified' : origin === destination && !crossBorderStop ? (origin === 'US' ? 'us-domestic' : 'other-domestic') : 'international';
-  const crossBorder = kind === 'international' || kind === 'unspecified';
-  const items = [];
-  const resources = [];
-  const notices = [];
-  items.push(task('route-review', 'Review your ' + originName + ' → ' + destinationName + ' itinerary', 'Confirm the operating airline, all stops, boarding cutoffs, and ticket details. Your selections are not sent to a server.'));
-
+  const operatingCarrier=getAirline(airline);
+  const routeUnspecified=[origin,destination,...connections.map(s=>s.country)].includes('ZZ');
+  const crossBorderStop=connections.some(s=>s.country!==origin || s.country!==destination);
+  const kind=routeUnspecified ? 'unspecified' :
+    origin===destination&&!crossBorderStop ? (origin==='US'?'us-domestic':'other-domestic') : 'international';
+  const crossBorder=kind==='international'||kind==='unspecified';
+  const items=[],resources=[],notices=[];
+  items.push(task('route-review','Review your itinerary and connecting segments',
+    'Check all flight numbers, operating airlines, airport codes, dates and connections on your ticket. An airport shown here is a user selection, not a verified flight routing.'));
   if (operatingCarrier) {
-    items.push(task('airline-policy-review','Review ' + operatingCarrier.name + ' passenger policies','Baggage and special-service rules depend on ticket, fare, status, route and the carrier operating each segment. Check every operating carrier.',operatingCarrier.name + ' — baggage policy',operatingCarrier.links.baggage));
-    notices.push('Selected airline: ' + operatingCarrier.name + '. If any part of your journey is operated by a different carrier, check that carrier separately.');
-    addResource(resources,'airline-' + airline,operatingCarrier.name + ' — baggage and fees','Operating-carrier reference; check your ticket and booking for the applicable allowance.',operatingCarrier.links.baggage);
+    items.push(task('airline-policy-review','Review '+operatingCarrier.name+' passenger policies',
+      'Rules depend on fare, ticket, route and operating carrier for each segment. Check each airline on multi-carrier journeys.',
+      operatingCarrier.name+' — baggage policy',operatingCarrier.links.baggage));
+    notices.push('Selected airline: '+operatingCarrier.name+'. If any flight is operated by another carrier, review that carrier separately.');
+    addResource(resources,'airline-'+airline,operatingCarrier.name+' — baggage and fees',
+      'Check your booking for applicable allowances.',operatingCarrier.links.baggage);
   }
   if (crossBorder) {
-    items.push(task('passport-context', 'Verify documents for a passport issued by ' + citizenshipName, 'Citizenship alone cannot establish entry or transit requirements. Check residence status, visa status, multiple passports, document type, and current rules.', 'IATA travel-document information', SOURCES.iata));
-    items.push(task('purpose-context', 'Review ' + PURPOSES[purpose].label.toLowerCase() + ' travel requirements', PURPOSES[purpose].prompt, OFFICIAL_PORTALS[destination]?.title ?? 'Find the destination government or embassy', OFFICIAL_PORTALS[destination]?.url ?? null));
-    if (transit) {
-      items.push(task('transit-context', 'Confirm connection rules for ' + transitName, 'Check transit documents, airside transfers, terminal changes, and possible border entry in ' + transitName + ', even if you do not plan to leave the airport.', OFFICIAL_PORTALS[transit]?.title ?? 'Find the transit-country immigration authority', OFFICIAL_PORTALS[transit]?.url ?? null));
-      if (transit === origin || transit === destination) notices.push('Your transit country matches the departure or destination country. Double-check your itinerary and any additional connections.');
-    } else {
-      notices.push('No transit country selected. If your flight connects through another country, add it and check each connection separately.');
+    items.push(task('passport-context','Verify documents for a passport issued by '+citizenshipName,
+      'Check nationality, residence status, visa status, other passports, document type, itinerary and current rules.',
+      'IATA travel-document information',SOURCES.iata));
+    items.push(task('purpose-context','Review '+PURPOSES[purpose].label.toLowerCase()+' travel requirements',
+      PURPOSES[purpose].prompt,OFFICIAL_PORTALS[destination]?.title??'Find the destination government or embassy',
+      OFFICIAL_PORTALS[destination]?.url??null));
+    if(!connections.length) notices.push('No connections selected. If your flight connects, add each transit country and verify its individual requirements.');
+    for(const [index,stop] of connections.entries()){
+      const number=index+1,code=stop.country,name=validateCountry(code,'connection country');
+      const id=index===0?'transit-context':'transit-context-'+number;
+      items.push(task(id,'Review connection '+number+' in '+name,
+        'Verify transit visa/authorization, airside availability, possible immigration entry, baggage recheck, onward ticket and terminal transfer for this specific stop.',
+        OFFICIAL_PORTALS[code]?.title??'Check transit country immigration authority',
+        OFFICIAL_PORTALS[code]?.url??null));
+      if(code===origin||code===destination) notices.push('Connection '+number+' matches your departure or destination country; verify the full flight sequence.');
+      if(OFFICIAL_PORTALS[code]){
+        addResource(resources,'transit-'+code,OFFICIAL_PORTALS[code].title,
+          'Government '+OFFICIAL_PORTALS[code].coverage+' information for connection '+number+' in '+name,
+          OFFICIAL_PORTALS[code].url);
+        if(OFFICIAL_PORTALS[code].coverage==='regional')
+          notices.push('Connection '+number+' ('+name+'): EU/Schengen link is a regional overview, NOT complete national transit/entry guidance.');
+      } else notices.push('Connection '+number+' ('+name+'): no reviewed government transit source is available. Consult the national immigration authority or embassy.');
+      if(stop.airport){
+        const airport=getAirport(stop.airport);
+        items.push(task('airport-context-'+number,'Review '+airport.code+' airport connections',
+          'Check the airport operator map for transfers, terminal changes and services. Flight-specific connection feasibility is not verified.',
+          airport.name+' — operator map',airport.url));
+        addResource(resources,'airport-'+airport.code,airport.name+' ('+airport.code+') — airport map',
+          'Airport-operator map, not a live gate assignment or connection guarantee.',airport.url);
+      }
     }
-    if (OFFICIAL_PORTALS[destination]) {
-      items.push(task('destination-portal', 'Read official entry guidance for ' + destinationName, 'Check the destination authority directly for travel requirements based on your complete circumstances and travel date.', OFFICIAL_PORTALS[destination].title, OFFICIAL_PORTALS[destination].url));
-      addResource(resources, 'destination-' + destination, OFFICIAL_PORTALS[destination].title, 'Official ' + OFFICIAL_PORTALS[destination].coverage + ' guidance starting point for ' + destinationName, OFFICIAL_PORTALS[destination].url);
-      if (OFFICIAL_PORTALS[destination].coverage === 'regional') notices.push('For ' + destinationName + ', the linked EU/Schengen guide is a REGIONAL overview, not country-specific entry advice. Also check the national immigration authority or embassy.');
-    } else {
-      notices.push('We do not yet have a reviewed immigration-authority link for ' + destinationName + '. Find its official government or embassy website before traveling.');
-    }
-    if (transit && transit !== destination && OFFICIAL_PORTALS[transit]) {
-      addResource(resources, 'transit-' + transit, OFFICIAL_PORTALS[transit].title, 'Official ' + OFFICIAL_PORTALS[transit].coverage + ' overview for transit in ' + transitName, OFFICIAL_PORTALS[transit].url);
-      if (OFFICIAL_PORTALS[transit].coverage === 'regional') notices.push('For transit through ' + transitName + ', EU/Schengen information is a regional overview only; consult national transit/entry guidance.');
-    }
-    else if (transit && !OFFICIAL_PORTALS[transit]) notices.push('We do not yet have a reviewed government transit link for ' + transitName + '. Check its official immigration authority.');
-  } else if (kind === 'other-domestic') {
-    notices.push('This journey is within ' + destinationName + '. Local ID and screening requirements are not covered by the U.S. TSA guidance; verify them with your airline and local authorities.');
-  }
-  if (origin === 'US') addResource(resources, 'tsa', 'TSA — U.S. airport screening', 'Official U.S. departure screening and packing guidance', SOURCES.tsa);
-  if (destination === 'US') addResource(resources, 'cbp', 'CBP — Entering the United States', 'Official U.S. border and customs information', SOURCES.cbp);
-  if (crossBorder) addResource(resources, 'iata', 'IATA — Travel documentation', 'General reference; verify with destination and transit authorities', SOURCES.iata);
-  if (routeUnspecified || citizenship === 'ZZ') notices.push('One or more countries are not in the starter list. This plan is general, not a complete review of your route or documents.');
-  notices.push('This checklist cannot determine visa eligibility, boarding eligibility, or permission to enter or transit. Verify details with official authorities and your operating airline.');
-
-  const baseKind = kind === 'us-domestic' ? 'domestic' : kind === 'other-domestic' ? 'domestic-other' : 'international';
-  const contextualBase = buildChecklist(baseKind, extras).map((item) => {
-    if (item.id === 'baggage' && operatingCarrier) return { ...item, sourceLabel: operatingCarrier.name + ' — baggage information', source: operatingCarrier.links.baggage };
-    if (item.id === 'baggage' && origin !== 'US') return { ...item, sourceLabel: 'Check your airline and departure authority', source: null };
-    if (item.id === 'entry') return { ...item, sourceLabel: OFFICIAL_PORTALS[destination]?.title ?? 'Check the destination authority', source: OFFICIAL_PORTALS[destination]?.url ?? null };
-    if (item.id === 'customs') return { ...item, sourceLabel: destination === 'US' ? 'CBP — U.S. travel' : 'Check destination customs authority', source: destination === 'US' ? SOURCES.cbp : null };
-    if ((item.id === 'minor-docs' || item.id === 'medicine') && destination !== 'US') return { ...item, sourceLabel: OFFICIAL_PORTALS[destination]?.title ?? 'Check destination government and airline', source: OFFICIAL_PORTALS[destination]?.url ?? null };
-    if (item.id === 'assistance' && origin !== 'US') return { ...item, sourceLabel: 'Check your airline and departure authority', source: null };
+    if(OFFICIAL_PORTALS[destination]){
+      items.push(task('destination-portal','Read official entry guidance for '+destinationName,
+        'Check requirements for your complete circumstances and date of travel.',
+        OFFICIAL_PORTALS[destination].title,OFFICIAL_PORTALS[destination].url));
+      addResource(resources,'destination-'+destination,OFFICIAL_PORTALS[destination].title,
+        'Official '+OFFICIAL_PORTALS[destination].coverage+' entry-information starting point for '+destinationName,
+        OFFICIAL_PORTALS[destination].url);
+      if(OFFICIAL_PORTALS[destination].coverage==='regional')
+        notices.push('For '+destinationName+', the EU/Schengen link is a REGIONAL overview, not complete national immigration guidance.');
+    }else notices.push('We do not yet have a reviewed immigration-authority link for '+destinationName+'. Find its official government or embassy website.');
+  } else if(kind==='other-domestic') notices.push('For domestic travel in '+destinationName+', check local ID and screening rules with the airline and competent authorities.');
+  if(origin==='US')addResource(resources,'tsa','TSA — U.S. airport screening','Official U.S. departure screening and packing guidance',SOURCES.tsa);
+  if(destination==='US')addResource(resources,'cbp','CBP — Entering the United States','Official U.S. border and customs guidance',SOURCES.cbp);
+  if(crossBorder)addResource(resources,'iata','IATA — Travel documentation','Reference only; verify with all relevant government authorities',SOURCES.iata);
+  if(routeUnspecified||citizenship==='ZZ')notices.push('One or more countries are not in the starter list. This plan cannot fully address the route.');
+  notices.push('No visa, boarding, minimum-connection-time or admission eligibility is determined. Recheck each connection with your airline and official authorities.');
+  const baseKind=kind==='us-domestic'?'domestic':kind==='other-domestic'?'domestic-other':'international';
+  const contextualBase=buildChecklist(baseKind,extras).map(item=>{
+    if(item.id==='baggage'&&operatingCarrier)return {...item,sourceLabel:operatingCarrier.name+' — baggage information',source:operatingCarrier.links.baggage};
+    if(item.id==='baggage'&&origin!=='US')return {...item,sourceLabel:'Check your airline and departure authority',source:null};
+    if(item.id==='entry')return {...item,sourceLabel:OFFICIAL_PORTALS[destination]?.title??'Check the destination authority',source:OFFICIAL_PORTALS[destination]?.url??null};
+    if(item.id==='customs')return {...item,sourceLabel:destination==='US'?'CBP — U.S. travel':'Check destination customs authority',source:destination==='US'?SOURCES.cbp:null};
+    if((item.id==='minor-docs'||item.id==='medicine')&&destination!=='US')
+      return {...item,sourceLabel:OFFICIAL_PORTALS[destination]?.title??'Check destination government and airline',source:OFFICIAL_PORTALS[destination]?.url??null};
+    if(item.id==='assistance'&&origin!=='US')return {...item,sourceLabel:'Check your airline and departure authority',source:null};
     return item;
   });
+  const route=[originName,...connections.map(stop=>validateCountry(stop.country,'connection country')),destinationName].join(' → ');
   return {
-    kind,
-    summary: originName + ' → ' + destinationName + (transit ? ' · via ' + transitName : '') + ' · ' + PURPOSES[purpose].label + ' · Passport: ' + citizenshipName + (operatingCarrier ? ' · Airline: ' + operatingCarrier.name : ''),
-    items: [...items, ...contextualBase],
-    resources,
-    notices
+    kind,connections,
+    summary:route+' · '+PURPOSES[purpose].label+' · Passport: '+citizenshipName+
+      (operatingCarrier?' · Airline: '+operatingCarrier.name:''),
+    items:[...items,...contextualBase],resources,notices
   };
 }
