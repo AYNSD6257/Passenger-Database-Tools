@@ -1,4 +1,4 @@
-# Project plan: TravelReady
+# Project plan: SojournNexus
 
 ## Problem
 Travelers often do not know which steps to review before flying. A useful application should organize verified links and reminders without pretending to make legal immigration or airline acceptance decisions.

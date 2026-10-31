@@ -1,6 +1,6 @@
 # Passenger-Database-Tools
 
-**TravelReady** is the first web application in this repository, building toward a passenger travel-documentation and information platform.
+**SojournNexus** — *Connecting Every Journey* — is the first web application in this repository, building toward a passenger travel-documentation and information platform.
 
 A mobile-friendly, **independent educational prototype** helping airline passengers review travel preparations for U.S. domestic and international flights. No accounts, back end, paid services, or API keys are required.
 
