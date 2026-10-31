@@ -100,3 +100,26 @@ button { cursor: pointer; border-radius: 10px; padding: 12px 18px; font: inherit
 .route-notices ul { margin: 0; padding-left: 20px; color: #655634; font-size: 12px; line-height: 1.65; }
 @media (max-width: 570px) { .journey-form-grid { grid-template-columns: 1fr; } }
 @media print { .journey-links { border: 0; padding: 10px 0; box-shadow: none; } .route-link-grid { display: none; } .route-notices { break-inside: avoid; } }
+
+/* Source directories (no client-to-server queries) */
+.directory {padding: 60px 0 20px;}
+.directory h2 {font-size: 29px;letter-spacing: -.03em;margin: 10px 0;}
+.directory-intro {max-width: 830px;line-height: 1.55;color: #64788a;font-size: 14px;}
+.directory-grid {display: grid;grid-template-columns: repeat(2,minmax(0,1fr));gap: 22px;margin-top: 22px;align-items: start;}
+.directory-panel {min-width: 0;}
+.directory-panel h3 {margin: 0 0 8px;font-size: 20px;}
+.directory-panel > p {font-size: 13px;line-height: 1.55;color: #667889;}
+.directory-filters {display: flex;flex-direction: column;gap: 7px;margin: 18px 0;}
+.directory-filters label {font-weight: 750;font-size: 12px;}
+.directory-filters input,.directory-filters select {padding: 12px 11px;border-radius: 9px;border: 1px solid #cbdbe4;background: #fff;color: #15283c;font: inherit;font-size: 14px;min-width: 0;}
+.directory-count {font-weight: 750;color: #116b80 !important;}
+.directory-results {display: grid;gap: 10px;max-height: 490px;overflow-y: auto;padding-right: 6px;}
+.directory-card {border: 1px solid #dce8ec;border-radius: 12px;padding: 14px;background: #fbfdfe;display: flex;flex-direction: column;align-items: flex-start;gap: 8px;}
+.directory-card strong {font-size: 14px;}
+.source-tag {border-radius: 20px;background: #e8f4f5;padding: 4px 8px;font-size: 10px;color: #176575;font-weight: 800;}
+.directory-card p {font-size: 12px;line-height: 1.5;color: #607383;margin: 0;}
+.directory-card a {font-size: 12px;font-weight: 750;color: #047e97;text-decoration: none;}
+.directory-card a:hover {text-decoration: underline;}
+.directory-note,.directory-empty {color: #6c7e89;font-size: 12px;line-height: 1.5;}
+@media(max-width:900px) {.directory-grid {grid-template-columns:1fr;}}
+@media print {.directory {display:none!important;}}

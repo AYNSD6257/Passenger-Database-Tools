@@ -12,12 +12,13 @@ Travelers often do not know which steps to review before flying. A useful applic
 - Choose departure/destination countries, passport-issuing country, optional transit, and travel purpose; infer international vs. domestic checklist from itinerary
 - Enable additional checklists for minors, assistance, animals, and medications
 - Interactive local-only progress and printable review sheet
-- Primary links to IATA, U.S. Department of State, TSA, and CBP; curated destination/transit official portals for U.S., U.K., Canada and Australia
+- Primary links to IATA, TSA and CBP; searchable directory of 9 national government resources and 13 regional EU/Schengen references
+- Searchable airline baggage directory (10 carriers), selected pets/service animal pages, and airline-specific baggage prompts
 - Accessible mobile-first site and core unit tests
 
 ## Next milestones
-1. **Source registry:** Add destination-country ministry / embassy directory with reviewed URL, owner, timestamp, language, and scope. Never infer eligibility from a raw web search.
-2. **Airline policy catalog:** Manually reviewed pages for baggage, check-in cutoffs, assistance, pets, and unaccompanied minors. Label differences by operating carrier, fare, route, and airport.
+1. **Source registry — expanded initial catalog:** Extend country-specific immigration-authority coverage, and add reviewed link ownership, timestamp, language, and scope. Current national and regional links are labeled separately; never infer eligibility from a search.
+2. **Airline policy catalog — initial link directory delivered:** Add more carriers and separately reviewed official pages for check-in cutoffs, assistance, pets, and unaccompanied minors. Never hard-code unverified allowances.
 3. **Quality workflow:** Set a review cadence, warn on stale links, track approvals and change logs, and allow users to report broken references.
 4. **Internationalization:** Add accessible Urdu, Hindi, Spanish and other language translations while linking to official original-language requirements.
 5. **Expanded itinerary experience:** Support multiple transits, residence permits, travel date, and other necessary fields without storing passport data. Build jurisdiction-specific rules only with permitted, licensed, maintained authoritative sources and human review.

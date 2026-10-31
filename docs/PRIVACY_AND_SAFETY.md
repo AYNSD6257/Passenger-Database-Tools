@@ -15,3 +15,7 @@
 
 ## Contributors
 Use fictional sample records in code and tests. Never commit real boarding passes, PNRs, employee screenshots, passenger names, or API keys.
+
+## Local policy search (2026-10-30)
+
+The country and airline searches filter data bundled into the static JavaScript application. Search strings and selected carrier codes stay in browser memory only. External links are opened only when a visitor clicks them; each third-party website has its own privacy practices. No travel history, passport details, airline bookings or source-search queries are uploaded or stored by this application.

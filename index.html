@@ -34,6 +34,7 @@
             <label class="form-field" for="citizenship"><span>Passport-issuing country / citizenship</span><select id="citizenship" name="citizenship" required></select></label>
             <label class="form-field" for="transit"><span>Transit country <small>(optional; one stop)</small></span><select id="transit" name="transit"></select></label>
             <label class="form-field full" for="purpose"><span>Purpose of travel</span><select id="purpose" name="purpose" required></select></label>
+            <label class="form-field full" for="airline"><span>Operating airline <small>(optional)</small></span><select id="airline" name="airline"></select></label>
           </div>
           <p class="field-hint">For multi-country connections, research every additional transit country separately. Residence status and document type can change requirements.</p>
         <fieldset class="extras">
@@ -61,6 +62,43 @@
       <p>Selected government links are curated starting points, not automatically interpreted requirements. If your country is not yet covered, verify directly with its immigration authority or embassy.</p>
       <div id="route-links" class="route-link-grid"></div>
       <div id="route-notices" class="route-notices"></div>
+    </section>
+    <section class="directory" aria-labelledby="directory-title">
+      <span class="eyebrow">OFFICIAL REFERENCE DIRECTORIES</span>
+      <h2 id="directory-title">Explore country and airline policies</h2>
+      <p class="directory-intro">Browse reviewed links to government entry-information pages and airline-authored policy pages. No live allowances or eligibility decisions are calculated.</p>
+      <div class="directory-grid">
+        <section class="panel directory-panel" aria-labelledby="country-directory-title">
+          <h3 id="country-directory-title">Country travel resources</h3>
+          <p>Country-specific and regional guidance are labeled separately. Unknown countries are not assumed to have any particular rule.</p>
+          <div class="directory-filters">
+            <label for="country-search">Search country or code</label>
+            <input id="country-search" type="search" placeholder="e.g. India, Singapore, FR">
+            <label for="country-coverage">Source coverage</label>
+            <select id="country-coverage">
+              <option value="all">All reviewed sources</option>
+              <option value="national">Country-specific government links</option>
+              <option value="regional">Regional EU / Schengen overview</option>
+            </select>
+          </div>
+          <p class="directory-count" id="country-count" role="status" aria-live="polite"></p>
+          <div class="directory-results" id="country-results"></div>
+        </section>
+        <section class="panel directory-panel" aria-labelledby="airline-directory-title">
+          <h3 id="airline-directory-title">Airline baggage & policy lookup</h3>
+          <p>Find official airline pages. Exact baggage allowances, fees, route restrictions and service conditions must be checked with the operating airline.</p>
+          <div class="directory-filters">
+            <label for="airline-search">Search airline or code</label>
+            <input id="airline-search" type="search" placeholder="e.g. Delta, Virgin, BA">
+            <label for="policy-topic">Policy topic</label>
+            <select id="policy-topic"></select>
+          </div>
+          <p class="directory-count" id="airline-count" role="status" aria-live="polite"></p>
+          <div class="directory-results" id="airline-results"></div>
+          <p class="directory-note">Not every airline has a reviewed link for every topic. A missing result does not mean a carrier does not offer that service.</p>
+        </section>
+      </div>
+      <p class="directory-note">Directory links checked 30 October 2026. This is not continuous monitoring; always recheck authoritative sources before travel.</p>
     </section>
     <section class="sources" aria-labelledby="sources-title">
       <div><span class="eyebrow">VERIFY WITH PRIMARY SOURCES</span><h2 id="sources-title">Trusted places to check</h2><p>Requirements depend on your itinerary, citizenship, passport, visa status, and airline. Use these official resources for current information.</p></div>

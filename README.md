@@ -12,7 +12,9 @@ A mobile-friendly, **independent educational prototype** helping airline passeng
 - Automatically distinguished international, U.S. domestic, and other domestic preparation checklists
 - Extra prompts for travel with minors, accessibility needs, pets, and medication
 - Review-progress tracker, reset, and print-friendly view
-- Curated official destination and transit links for the U.S., U.K., Canada, and Australia; explicit coverage warnings elsewhere
+- Searchable official country-resource directory: national links for 9 destinations and labeled EU/Schengen regional guidance for 13 more countries
+- Searchable airline policy directory with 10 carriers and official links for baggage, and selected pets/service-animal policies
+- Optional operating-airline selection connects the itinerary baggage reminder to that airline's source
 - Links to official travel-information sources
 - Responsive layout and accessible semantic form controls
 - No analytics, cookies, account registration, personal-document upload, or persistent storage. Journey selections exist only in the current tab
@@ -55,8 +57,9 @@ See [Project plan](docs/PROJECT_PLAN.md), [Official sources](docs/SOURCES.md), a
 - Styling: `styles.css`
 - Browser interaction: `app.js`
 - Checklist data + logic: `src/checklist.mjs`
-- Itinerary builder, limited country registry, and official resource links: `src/journey.mjs`
-- Tests: `tests/checklist.test.mjs`
+- Itinerary builder, country list and route-aware logic: `src/journey.mjs`
+- Curated country and airline link catalogs with review metadata: `src/catalog.mjs`
+- Tests: `tests/*.test.mjs`
 - GitHub Actions CI: `.github/workflows/ci.yml`
 
 ## Licensing
@@ -65,4 +68,8 @@ See [Project plan](docs/PROJECT_PLAN.md), [Official sources](docs/SOURCES.md), a
 
 ## Journey Builder limitations
 
-The country selector is a starter list, not a complete list of countries or legal nationalities. The optional transit selector supports one country; travelers with multiple foreign connections must check each additional stop. Choosing a passport-issuing country does **not** capture residence permits, multiple nationalities, document type, travel date, previous visas, or airline-specific rules. No selected combination produces a visa decision or boarding authorization. Official government links are curated only for the U.S., U.K., Canada, and Australia at this stage; for others the app explicitly warns about limited coverage. Checklist completion is a review tracker, never evidence that a passenger meets entry requirements.
+The country selector is a starter list, not a complete list of countries or legal nationalities. The optional transit selector supports one country; travelers with multiple foreign connections must check each additional stop. Choosing a passport-issuing country does **not** capture residence permits, multiple nationalities, document type, travel date, previous visas, or airline-specific rules. No selected combination produces a visa decision or boarding authorization. The directory contains 9 country-specific government resources and 13 countries mapped to a single EU/Schengen regional overview; the regional overview is not national immigration guidance. Other destinations show limited coverage. Airline policy links are informational only and omit fares, allowances, and prices. Checklist completion is a review tracker, never evidence that a passenger meets entry requirements.
+
+## Airline & country reference catalogs
+
+Country source coverage and airline links were editorially checked on **2026-10-30**, not continuously refreshed. See `src/catalog.mjs` and `docs/SOURCES.md` for provenance. Searches filter the local curated list; they do not search the live internet or airline reservation data. Airline baggage rules depend on operating carrier, fare type, ticket issuance date, cabin, route, loyalty status and special equipment. Missing catalog links must not be interpreted as no restriction, no visa, or no fee.

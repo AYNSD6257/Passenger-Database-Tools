@@ -29,3 +29,16 @@ These links are starting points, not a full database of legal requirements. Site
 ## Curated country-link coverage (as of 2026-10-30)
 
 The Journey Builder links directly to government entry guidance only for the United States, United Kingdom, Canada, and Australia. All other listed countries deliberately show a government-source coverage warning. The list is **not** a travel requirements database, and its review date does not guarantee any immigration rule is current. Verify all legal requirements directly with relevant authorities close to departure.
+
+## Expanded country and airline link directory — 2026-10-30
+
+`src/catalog.mjs` is the maintained canonical source for URL and coverage metadata. National entry-information resources are cataloged for **US, GB, CA, AU, IN, SG, NZ, AE, JP**. Government starting points were cross-checked through official pages. An **EU/Schengen regional overview** is offered for **FR, DE, NL, ES, IT, CH, SE, NO, DK, FI, PT, LU, BE**; it is clearly flagged as **not a replacement** for the country's national immigration authority. Other countries have no asserted official-resource coverage. The India link covers e-Visa only, and Japan uses a U.S.-based embassy guide. This source-review date is not a declaration of current entry rules.
+
+The airline policy directory currently covers **American, Delta, United, British Airways, Virgin Atlantic, Emirates, Lufthansa, Air Canada, Qatar Airways, Alaska Airlines** with official baggage-policy links. Pet and service-animal policy links are cataloged only where checked. The U.S. General Services Administration also maintains links to airline baggage, pet and service-animal policies: https://www.gsa.gov/travel/airfare-rates-city-pair-program/airline-information . No airline allowance, fee, dimension, deadline, or approval is stored or calculated in this app.
+
+### Editorial verification requirements
+
+- Treat a successful link check as evidence only that the reference page exists, **not** that rules are current, complete or applicable to a passenger.
+- Keep the verified date accurate; recheck sources periodically, especially before release for passenger use.
+- For regional links, always direct travelers to the **specific national immigration / embassy source** before reliance.
+- Always confirm codeshare and interline baggage rules with the relevant operating airline(s) and ticket conditions.

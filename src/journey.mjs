@@ -1,4 +1,6 @@
 import { buildChecklist, SOURCES } from './checklist.mjs';
+import { OFFICIAL_PORTALS, getAirline } from './catalog.mjs';
+export { OFFICIAL_PORTALS } from './catalog.mjs';
 
 // Starter country selection only. No nationality, visa or entry decisions are inferred.
 export const COUNTRIES = Object.freeze([
@@ -27,13 +29,6 @@ const PURPOSES = Object.freeze({
 });
 export const PURPOSE_OPTIONS = Object.freeze(Object.entries(PURPOSES).map(([value, data]) => Object.freeze({ value, label: data.label })));
 
-// Curated official government starting points only; no regulations are extracted.
-export const OFFICIAL_PORTALS = Object.freeze({
-  US: Object.freeze({ title: 'U.S. Department of State — Visa Wizard', url: 'https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/wizard.html' }),
-  GB: Object.freeze({ title: 'GOV.UK — Check if you need a visa', url: 'https://www.gov.uk/check-uk-visa' }),
-  CA: Object.freeze({ title: 'Canada.ca — Check visa or eTA', url: 'https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/check-visa-eta.html' }),
-  AU: Object.freeze({ title: 'Australian Government — Entering Australia', url: 'https://immi.homeaffairs.gov.au/entering-and-leaving-australia/entering-australia' })
-});
 const task = (id, title, detail, sourceLabel = 'Confirm with your airline / the relevant authority', source = null) => ({
   id, group: 'Your itinerary', title, detail, sourceLabel, source
 });
@@ -44,13 +39,14 @@ function validateCountry(code, field) {
 function addResource(resources, id, title, description, url) {
   if (!resources.some((resource) => resource.id === id)) resources.push({ id, title, description, url });
 }
-export function buildJourneyPlan({ origin = 'US', destination = 'GB', citizenship = 'US', transit = '', purpose = 'tourism', extras = [] } = {}) {
+export function buildJourneyPlan({ origin = 'US', destination = 'GB', citizenship = 'US', transit = '', purpose = 'tourism', extras = [], airline = '' } = {}) {
   const originName = validateCountry(origin, 'departure country');
   const destinationName = validateCountry(destination, 'destination country');
   const citizenshipName = validateCountry(citizenship, 'passport-issuing country');
   const transitName = transit === '' ? '' : validateCountry(transit, 'transit country');
   if (!Object.hasOwn(PURPOSES, purpose)) throw new RangeError('Unsupported purpose of travel');
   if (!Array.isArray(extras)) throw new TypeError('Extras must be an array');
+  const operatingCarrier = getAirline(airline);
 
   const routeUnspecified = origin === 'ZZ' || destination === 'ZZ' || transit === 'ZZ';
   const crossBorderStop = Boolean(transit && transit !== origin && transit !== destination);
@@ -61,6 +57,11 @@ export function buildJourneyPlan({ origin = 'US', destination = 'GB', citizenshi
   const notices = [];
   items.push(task('route-review', 'Review your ' + originName + ' → ' + destinationName + ' itinerary', 'Confirm the operating airline, all stops, boarding cutoffs, and ticket details. Your selections are not sent to a server.'));
 
+  if (operatingCarrier) {
+    items.push(task('airline-policy-review','Review ' + operatingCarrier.name + ' passenger policies','Baggage and special-service rules depend on ticket, fare, status, route and the carrier operating each segment. Check every operating carrier.',operatingCarrier.name + ' — baggage policy',operatingCarrier.links.baggage));
+    notices.push('Selected airline: ' + operatingCarrier.name + '. If any part of your journey is operated by a different carrier, check that carrier separately.');
+    addResource(resources,'airline-' + airline,operatingCarrier.name + ' — baggage and fees','Operating-carrier reference; check your ticket and booking for the applicable allowance.',operatingCarrier.links.baggage);
+  }
   if (crossBorder) {
     items.push(task('passport-context', 'Verify documents for a passport issued by ' + citizenshipName, 'Citizenship alone cannot establish entry or transit requirements. Check residence status, visa status, multiple passports, document type, and current rules.', 'IATA travel-document information', SOURCES.iata));
     items.push(task('purpose-context', 'Review ' + PURPOSES[purpose].label.toLowerCase() + ' travel requirements', PURPOSES[purpose].prompt, OFFICIAL_PORTALS[destination]?.title ?? 'Find the destination government or embassy', OFFICIAL_PORTALS[destination]?.url ?? null));
@@ -72,11 +73,15 @@ export function buildJourneyPlan({ origin = 'US', destination = 'GB', citizenshi
     }
     if (OFFICIAL_PORTALS[destination]) {
       items.push(task('destination-portal', 'Read official entry guidance for ' + destinationName, 'Check the destination authority directly for travel requirements based on your complete circumstances and travel date.', OFFICIAL_PORTALS[destination].title, OFFICIAL_PORTALS[destination].url));
-      addResource(resources, 'destination-' + destination, OFFICIAL_PORTALS[destination].title, 'Official guidance starting point for ' + destinationName, OFFICIAL_PORTALS[destination].url);
+      addResource(resources, 'destination-' + destination, OFFICIAL_PORTALS[destination].title, 'Official ' + OFFICIAL_PORTALS[destination].coverage + ' guidance starting point for ' + destinationName, OFFICIAL_PORTALS[destination].url);
+      if (OFFICIAL_PORTALS[destination].coverage === 'regional') notices.push('For ' + destinationName + ', the linked EU/Schengen guide is a REGIONAL overview, not country-specific entry advice. Also check the national immigration authority or embassy.');
     } else {
       notices.push('We do not yet have a reviewed immigration-authority link for ' + destinationName + '. Find its official government or embassy website before traveling.');
     }
-    if (transit && transit !== destination && OFFICIAL_PORTALS[transit]) addResource(resources, 'transit-' + transit, OFFICIAL_PORTALS[transit].title, 'Official guidance starting point for transit in ' + transitName, OFFICIAL_PORTALS[transit].url);
+    if (transit && transit !== destination && OFFICIAL_PORTALS[transit]) {
+      addResource(resources, 'transit-' + transit, OFFICIAL_PORTALS[transit].title, 'Official ' + OFFICIAL_PORTALS[transit].coverage + ' overview for transit in ' + transitName, OFFICIAL_PORTALS[transit].url);
+      if (OFFICIAL_PORTALS[transit].coverage === 'regional') notices.push('For transit through ' + transitName + ', EU/Schengen information is a regional overview only; consult national transit/entry guidance.');
+    }
     else if (transit && !OFFICIAL_PORTALS[transit]) notices.push('We do not yet have a reviewed government transit link for ' + transitName + '. Check its official immigration authority.');
   } else if (kind === 'other-domestic') {
     notices.push('This journey is within ' + destinationName + '. Local ID and screening requirements are not covered by the U.S. TSA guidance; verify them with your airline and local authorities.');
@@ -89,6 +94,7 @@ export function buildJourneyPlan({ origin = 'US', destination = 'GB', citizenshi
 
   const baseKind = kind === 'us-domestic' ? 'domestic' : kind === 'other-domestic' ? 'domestic-other' : 'international';
   const contextualBase = buildChecklist(baseKind, extras).map((item) => {
+    if (item.id === 'baggage' && operatingCarrier) return { ...item, sourceLabel: operatingCarrier.name + ' — baggage information', source: operatingCarrier.links.baggage };
     if (item.id === 'baggage' && origin !== 'US') return { ...item, sourceLabel: 'Check your airline and departure authority', source: null };
     if (item.id === 'entry') return { ...item, sourceLabel: OFFICIAL_PORTALS[destination]?.title ?? 'Check the destination authority', source: OFFICIAL_PORTALS[destination]?.url ?? null };
     if (item.id === 'customs') return { ...item, sourceLabel: destination === 'US' ? 'CBP — U.S. travel' : 'Check destination customs authority', source: destination === 'US' ? SOURCES.cbp : null };
@@ -98,7 +104,7 @@ export function buildJourneyPlan({ origin = 'US', destination = 'GB', citizenshi
   });
   return {
     kind,
-    summary: originName + ' → ' + destinationName + (transit ? ' · via ' + transitName : '') + ' · ' + PURPOSES[purpose].label + ' · Passport: ' + citizenshipName,
+    summary: originName + ' → ' + destinationName + (transit ? ' · via ' + transitName : '') + ' · ' + PURPOSES[purpose].label + ' · Passport: ' + citizenshipName + (operatingCarrier ? ' · Airline: ' + operatingCarrier.name : ''),
     items: [...items, ...contextualBase],
     resources,
     notices
