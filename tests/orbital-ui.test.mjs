@@ -12,8 +12,7 @@ const file=path=>readFileSync(resolve(root,path),'utf8');
 test('browser modules and main application parse as JavaScript',()=>{
  for(const path of ['app.js','src/orbital-ui.mjs','src/orbital-globe.mjs',
                      'src/explorer-data.mjs','src/itinerary.mjs']){
-  assert.doesNotThrow(()=>execFileSync(process.execPath,['--check',resolve(root,path)]),
-    {stdio:'pipe'}),path);
+  assert.doesNotThrow(()=>execFileSync(process.execPath,['--check',resolve(root,path)],{stdio:'pipe'}),path);
  }
 });
 test('orbital explorer controls expected by browser modules exist in HTML',()=>{
