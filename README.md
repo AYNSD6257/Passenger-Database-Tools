@@ -95,3 +95,12 @@ Country source coverage and airline links were editorially checked on **2026-10-
 - Celestial motion and sizes are deliberately artistic and **not to scale**. Globe coastlines are Natural Earth public-domain data via the D3 Graph Gallery sample map; simplified for performance.
 
 Modules: `src/orbital-globe.mjs`, `src/orbital-ui.mjs`, `src/explorer-data.mjs`, `src/itinerary.mjs`, `data/land.json`. New tests cover time zones and itinerary validation.
+
+
+## Complete OurAirports worldwide airport catalog
+
+We import the full public-domain OurAirports `airports.csv`, `countries.csv`, and `regions.csv` datasets through `scripts/build_airports_catalog.py`. Every original source record and column is retained under `data/ourairports/raw/`. A separate derived index in `data/airports-global/index.json` includes all airports with valid geographic coordinates; `clusters.json` groups airport counts in 4-degree geographic cells to make animation performant; `meta.json` records counts, snapshot timestamp, record types and SHA-256 source checksums. The catalog is refreshed with GitHub Actions and can be rebuilt using Python 3.12+ and the standard library only.
+
+The worldwide browser directory is **lazy-loaded** when you click "Load worldwide airport catalog"; it doesn't slow down the initial page load. You can search by name, airport codes, city, country and region; filter by scheduled-service flag or facility type; highlight a found airport on the globe; and add it as the next segment destination. All searching occurs locally in the browser. Geographic dots represent multiple facilities at zoom-out; they are not live flights.
+
+The OurAirports scheduled-service flag is not guaranteed current flight availability. Not every imported airport has an IATA code or an IANA time zone. Imported records without a separately verified time zone show "Time zone unavailable" rather than a fabricated clock. Government travel-document information is a separate curated catalog and no visa/ETA/entry eligibility is inferred from airport records.

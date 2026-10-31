@@ -45,3 +45,8 @@ Project owner/product: user. Content editor: verify official travel sources. Dev
 ## Orbital Journey Explorer — initial visual release
 
 Implemented: canvas-based rotating globe, decorative star field/Sun/Moon, curated major-airport markers, map routes based on user input, local clocks, up to six flight segments, operating airlines, traveler-supplied local planned times and departure/return date, printable summary, and existing official-resource link integration. Data is local and does not establish flight connectivity. Next milestones: authorized live route data, broader airport dataset, stronger timezone-aware itinerary checks, accessibility review, and licensed/verified document-rule integrations.
+
+
+## Full worldwide airport import
+
+The first complete OurAirports snapshot preserves all airport records and original columns in the source CSV, and provides optimized search and globe-density indices for the browser. World airport search loads on demand and offers filters for scheduled-service, open, closed, heliport, medium, large, and small facilities. Unknown airport time zones and unofficial scheduled-route claims are intentionally omitted. Next: licensed actual flight-schedule data, verified timezone enrichment, source QA, and zoom-specific marker clustering.

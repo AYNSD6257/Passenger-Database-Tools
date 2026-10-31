@@ -236,3 +236,38 @@ button:disabled {opacity:.5;cursor:not-allowed;}
  .flight-preview,.flight-live{box-shadow:none;border:0;padding:8px 0;}
  .itinerary-preview-list{display:block;}
 }
+
+/* Full OurAirports search (lazy-load from static GitHub Pages assets) */
+.world-catalog{background:linear-gradient(140deg,#f9fdff,#edf6fc);border:1px solid #d1e2eb;
+ border-radius:20px;margin:6px 0 43px;padding:28px;}
+.world-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;}
+.world-heading h2{font-size:clamp(26px,3.1vw,39px);letter-spacing:-.04em;margin:9px 0;}
+.world-heading p{font-size:14px;line-height:1.6;color:#61798b;max-width:740px;}
+.world-heading button{flex-shrink:0;}
+.world-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0;}
+.world-stat-grid>div{border:1px solid #dae9ef;background:white;border-radius:12px;padding:16px;
+ display:flex;flex-direction:column;gap:7px;}
+.world-stat-grid strong{font-size:clamp(18px,2.6vw,29px);letter-spacing:-.04em;}
+.world-stat-grid span{font-size:11px;color:#678293;line-height:1.4;}
+#world-status{color:#356b81;font-size:13px;line-height:1.55;}
+.world-filter-grid{display:grid;grid-template-columns:1.5fr 1fr .65fr;gap:11px;margin:20px 0;}
+.world-filter-grid label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:750;min-width:0;}
+.world-filter-grid input,.world-filter-grid select{padding:11px;font:inherit;font-size:13px;
+ background:white;color:#213d4e;border:1px solid #c3d8e3;border-radius:9px;min-width:0;}
+.world-count,.world-selected{font-size:12px;color:#4c7283;line-height:1.5;}
+.world-results{max-height:570px;overflow-y:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;}
+.world-result-card{background:white;border:1px solid #d7e6ed;border-radius:12px;min-width:0;
+ padding:14px;display:flex;flex-direction:column;gap:8px;}
+.world-result-card strong{font-size:13px;color:#294d5f;}
+.world-result-card span{color:#607887;font-size:12px;line-height:1.5;}
+.world-result-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;}
+.world-result-actions button{font-size:11px;padding:8px 10px;}
+.world-result-actions a{font-size:11px;font-weight:750;color:#087f96;}
+.world-disclaimer{font-size:11px;color:#728592;line-height:1.65;margin-top:17px;}
+#world-controls[hidden]{display:none;}
+@media(max-width:870px){.world-heading{flex-direction:column;align-items:start;}
+.world-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+.world-filter-grid label:first-child{grid-column:1/-1;}}
+@media(max-width:610px){.world-stat-grid,.world-results,.world-filter-grid{grid-template-columns:1fr;}
+.world-filter-grid label:first-child{grid-column:auto;}.world-catalog{padding:17px;}}
+@media print{.world-catalog{display:none!important;}}

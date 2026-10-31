@@ -1,6 +1,7 @@
 import { COUNTRIES, PURPOSE_OPTIONS, MAX_CONNECTIONS, buildJourneyPlan } from './src/journey.mjs';
 import { getExplorerAirport } from './src/explorer-data.mjs';
 import { initOrbitalExplorer } from './src/orbital-ui.mjs';
+import { initWorldAirportSearch } from './src/global-ui.mjs';
 import { AIRPORTS, findAirports, getAirport, AIRPORT_REVIEW_DATE } from './src/airports.mjs';
 import { AIRLINES, POLICY_TOPICS, OFFICIAL_PORTALS, CATALOG_REVIEW_DATE, findCountrySources, findAirlines } from './src/catalog.mjs';
 
@@ -331,4 +332,5 @@ function syncJourneyFromFlightLegs(legs){
   reviewed.clear();
   render();
 }
-initOrbitalExplorer({onTripChange:syncJourneyFromFlightLegs});
+const orbitalController=initOrbitalExplorer({onTripChange:syncJourneyFromFlightLegs});
+initWorldAirportSearch(orbitalController);

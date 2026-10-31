@@ -28,3 +28,8 @@ Connection countries and optional airport codes are processed in memory in the c
 ## Globe, flight-editor, and schedule scope
 
 The visual explorer fetches only a local bundled public-domain land outline, without remote scripts, map tiles, tracking, or external APIs. Airport selections and flight-segment fields are kept in memory until refresh. The preview stores no traveler identity or document scans. The system does not claim that selected flights operate, that a connection is feasible, or that a government has granted permission to transit/enter. Displayed planet sizes/orbit speeds are decorative, not a scientific simulation. All time-zone readouts rely on the browser's IANA time zone database.
+
+
+## Worldwide airport search privacy
+
+Worldwide airport search fetches static public airport files from the SojournNexus GitHub Pages site only after the user chooses to load them. Searches are filtered in browser memory, without sending search terms or passenger itinerary fields to an external query service. Following an OurAirports link is optional and opens an external website. Dataset records are airport/facility metadata, not traveler information.

@@ -68,3 +68,8 @@ Airport links and code-to-country associations are informational only. Check the
 ## Globe geography and timezones
 
 The globe's simplified land data in `data/land.json` was derived from the Natural Earth public-domain geographical dataset as redistributed in [D3 Graph Gallery](https://github.com/holtzy/D3-graph-gallery/blob/master/DATA/world.geojson). Latitude/longitude and IANA timezone metadata for the curated airport sample are in `src/explorer-data.mjs`. They are **approximate locators**, not a complete global airport dataset or certified airline operating timetable. The browser formats local times using IANA timezone rules available at runtime. No live flight schedule, visa database or boarding decision engine is connected.
+
+
+## Full OurAirports import
+
+The original public-domain [OurAirports](https://ourairports.com/data/) airports, countries and regions CSVs are archived in `data/ourairports/raw/`, downloaded from the [maintained GitHub mirror](https://github.com/davidmegginson/ourairports-data). The builder at `scripts/build_airports_catalog.py` generates `data/airports-global/index.json` (all valid-coordinate airport entries), `clusters.json` (geographic density groupings) and `meta.json` (counts, UTC timestamp, file hashes and schema). This does not constitute current airline flight routes, availability, immigration authorization or timezone coverage for every facility.

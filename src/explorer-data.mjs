@@ -62,7 +62,7 @@ export const EXPLORER_AIRPORTS=Object.freeze([
 const AIRPORT_BY_CODE=new Map(EXPLORER_AIRPORTS.map(a=>[a.code,a]));
 const WORLD_BY_CODE=new Map();
 export function registerWorldwideAirport(airport){
- if(!airport||!/^OA-\\d+$/.test(airport.code)||
+ if(!airport||!/^OA-\d+$/.test(airport.code)||
     !Number.isFinite(airport.lat)||!Number.isFinite(airport.lon))
   throw new TypeError('Invalid imported airport');
  const record=Object.freeze({...airport,timezone:null,url:null});
