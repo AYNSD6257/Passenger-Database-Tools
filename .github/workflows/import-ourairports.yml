@@ -1,0 +1,51 @@
+name: Import OurAirports worldwide catalog
+on:
+  push:
+    paths:
+      - 'scripts/build_airports_catalog.py'
+      - '.github/workflows/import-ourairports.yml'
+  schedule:
+    - cron: '22 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ourairports-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download full raw data and build optimized search + globe indexes
+        run: python scripts/build_airports_catalog.py
+      - name: Commit refreshed airport dataset when changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ourairports/raw data/airports-global
+          if ! git diff --cached --quiet; then
+            git commit -m "data: refresh OurAirports worldwide airport catalog"
+            git push
+          else
+            echo "Airport dataset unchanged"
+          fi
+      - name: Upload updated static Pages site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy refreshed dataset to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ github.token }}
