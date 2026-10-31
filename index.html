@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A privacy-friendly checklist to help air travelers review trip documents and airport preparation steps.">
+  <title>TravelReady | Passenger Preparation Checklist</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="./index.html" aria-label="TravelReady home"><span class="brand-icon" aria-hidden="true">✈</span><span>Travel<span class="brand-accent">Ready</span></span></a>
+      <span class="header-label">Passenger preparation portal · Prototype</span>
+    </div>
+  </header>
+  <main id="main" class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="eyebrow">BEFORE YOU GO</div>
+      <h1 id="hero-title">Travel confidently.<br><span class="hero-gradient">Check what matters.</span></h1>
+      <p class="hero-description">Build a personal preparation checklist for your flight, including travel documents, airport guidance, baggage, and special travel needs.</p>
+      <div class="warning" role="note"><strong>Important:</strong> This is an informational planning tool, not an official document check, eligibility decision, or boarding authorization. Always confirm current rules with your airline and the relevant government authorities.</div>
+    </section>
+    <div class="layout">
+      <section class="panel controls" aria-labelledby="plan-title">
+        <div class="panel-heading"><span class="step-tag">01</span><h2 id="plan-title">Plan your journey</h2></div>
+        <fieldset>
+          <legend>Type of trip</legend>
+          <label class="choice"><input type="radio" name="journey" value="international" checked><span><strong>International flight</strong><small>Includes cross-border travel and connections</small></span></label>
+          <label class="choice"><input type="radio" name="journey" value="domestic"><span><strong>Domestic flight within the U.S.</strong><small>U.S. airport screening and airline preparation</small></span></label>
+        </fieldset>
+        <fieldset class="extras">
+          <legend>Additional needs <span class="optional">(select any)</span></legend>
+          <label class="tick-option"><input type="checkbox" name="extra" value="minors"> Traveling with a child / minor</label>
+          <label class="tick-option"><input type="checkbox" name="extra" value="accessibility"> Accessibility or assistance needs</label>
+          <label class="tick-option"><input type="checkbox" name="extra" value="pets"> Traveling with an animal</label>
+          <label class="tick-option"><input type="checkbox" name="extra" value="medication"> Medication or medical devices</label>
+        </fieldset>
+        <p class="privacy-note"><span aria-hidden="true">♢</span> Your selections remain in this browser tab. No accounts, passport numbers, or personal documents are collected.</p>
+      </section>
+      <section class="panel results" aria-labelledby="checklist-title">
+        <div class="panel-heading"><span class="step-tag">02</span><h2 id="checklist-title">Your preparation checklist</h2></div>
+        <div class="progress-top"><span id="progress-text" role="status" aria-live="polite">0 of 0 steps reviewed</span><span id="progress-percent">0%</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Checklist review progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <div id="checklist" class="checklist"></div>
+        <div class="panel-footer"><button type="button" class="secondary-btn" id="reset">Reset reviewed steps</button><button type="button" class="primary-btn" id="print">Print checklist</button></div>
+        <p class="footer-note">Checking a box means you reviewed a step, <strong>not</strong> that you meet its legal or airline requirements.</p>
+      </section>
+    </div>
+    <section class="sources" aria-labelledby="sources-title">
+      <div><span class="eyebrow">VERIFY WITH PRIMARY SOURCES</span><h2 id="sources-title">Trusted places to check</h2><p>Requirements depend on your itinerary, citizenship, passport, visa status, and airline. Use these official resources for current information.</p></div>
+      <div class="resource-grid">
+        <a class="resource-card" target="_blank" rel="noopener noreferrer" href="https://www.iata.org/en/services/compliance/timatic/travel-documentation"><span class="resource-tag">GLOBAL TRAVEL DOCUMENTS</span><strong>IATA Travel Centre</strong><small>Passport, visa, and entry guidance ↗</small></a>
+        <a class="resource-card" target="_blank" rel="noopener noreferrer" href="https://travel.state.gov/en/international-travel/planning/checklist.html"><span class="resource-tag">U.S. TRAVEL GUIDANCE</span><strong>U.S. Department of State</strong><small>Country guidance and preparation ↗</small></a>
+        <a class="resource-card" target="_blank" rel="noopener noreferrer" href="https://www.tsa.gov/travel"><span class="resource-tag">U.S. AIRPORT SCREENING</span><strong>Transportation Security Administration</strong><small>ID, screening, and packing ↗</small></a>
+        <a class="resource-card" target="_blank" rel="noopener noreferrer" href="https://www.cbp.gov/travel"><span class="resource-tag">ENTERING THE UNITED STATES</span><strong>U.S. Customs and Border Protection</strong><small>Entry processes and traveler resources ↗</small></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="shell">TravelReady · Independent educational prototype · Not affiliated with an airline, airport, IATA, or government agency.</div></footer>
+</body>
+</html>
