@@ -40,3 +40,8 @@ Project owner/product: user. Content editor: verify official travel sources. Dev
 - Every destination-specific statement points to an authoritative source and last-reviewed date
 - No unsupported approval/denial decisions
 - No user identity data collected in default mode
+
+
+## Orbital Journey Explorer — initial visual release
+
+Implemented: canvas-based rotating globe, decorative star field/Sun/Moon, curated major-airport markers, map routes based on user input, local clocks, up to six flight segments, operating airlines, traveler-supplied local planned times and departure/return date, printable summary, and existing official-resource link integration. Data is local and does not establish flight connectivity. Next milestones: authorized live route data, broader airport dataset, stronger timezone-aware itinerary checks, accessibility review, and licensed/verified document-rule integrations.

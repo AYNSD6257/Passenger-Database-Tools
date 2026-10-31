@@ -49,7 +49,7 @@ const EXTRA=[
  ['NRT','Narita International','Tokyo','JP',35.7720,140.3929,'Asia/Tokyo'],
  ['KUL','Kuala Lumpur International','Kuala Lumpur','MY',2.7456,101.7072,'Asia/Kuala_Lumpur'],
  ['MNL','Ninoy Aquino International','Manila','PH',14.5086,121.0198,'Asia/Manila'],
- ['DPS','Ngurah Rai International','Bali','IN',-8.7482,115.1672,'Asia/Makassar'],
+ ['DPS','Ngurah Rai International','Bali','ID',-8.7482,115.1672,'Asia/Makassar'],
  ['AKL','Auckland International','Auckland','NZ',-37.0082,174.7850,'Pacific/Auckland'],
  ['JNB','O. R. Tambo International','Johannesburg','ZA',-26.1392,28.2460,'Africa/Johannesburg'],
  ['CAI','Cairo International','Cairo','EG',30.1219,31.4056,'Africa/Cairo'],

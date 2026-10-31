@@ -32,7 +32,7 @@ export function createOrbitalGlobe(canvas,{onSelect=()=>{}}={}){
  async function loadLand(){
   try{
    const response=await fetch('./data/land.json');
-   if(response.ok){const json=await response.json();if(Array.isArray(json.polygons))land=json.polygons;}
+   if(response.ok){const json=await response.json();if(Array.isArray(json.polygons)){land=json.polygons;if(!motion)begin();}}
   }catch{ /* Graticule and ocean remain if local geography cannot load. */ }
  }
  loadLand();

@@ -82,3 +82,16 @@ Country source coverage and airline links were editorially checked on **2026-10-
 - The separate airport directory currently contains 11 operator-hosted maps: IAD, JFK, ATL, LHR, FRA, AMS, DXB, YYZ, SIN, HND, and SYD. It is a curated sample, not global airport coverage.
 - Maps are **not** guarantees of gates, terminal accessibility, airside transfer availability, connection legality, baggage transfer, or minimum connection times. Cross-check with your itinerary, airline and airport operator.
 - All inputs are kept in current browser memory only; no passenger name, PNR, passport number, or trip history is stored.
+
+
+## Orbital Journey Explorer (visual prototype)
+
+- Interactive animated canvas globe with simplified public-domain Natural Earth land outlines (stored locally in `data/land.json`), shooting stars, decorative Sun–Earth–Moon orbital motion, accessible pause toggle, drag-to-rotate, clickable airport dots, and animated illustrative great-circle routes.
+- A **curated starter list of 54 major airports**, with approximate geographic coordinates and IANA time zones in `src/explorer-data.mjs`. It does not represent all airports, all possible flights, or actual route availability. Only the original 11 operator-map entries have checked official map URLs.
+- Live local clocks computed in the browser using `Intl.DateTimeFormat`; the device clock, time zone database and daylight saving data affect accuracy.
+- An itinerary editor for up to six manually entered flight legs, operating airlines, flight numbers, trip dates and airport-local departure/arrival times. These **are user-entered plans**, not airline schedules, live flight status, or validated tickets.
+- Flight segments are shown as route arcs; airport selection offers existing official government entry-resource links when curated. **No visa, ETA, transit or boarding eligibility is computed.** Airline and immigration requirements must be verified directly before travel.
+- Print-friendly itinerary summary. No traveler itinerary is stored or sent to a backend; closing or refreshing the tab clears it.
+- Celestial motion and sizes are deliberately artistic and **not to scale**. Globe coastlines are Natural Earth public-domain data via the D3 Graph Gallery sample map; simplified for performance.
+
+Modules: `src/orbital-globe.mjs`, `src/orbital-ui.mjs`, `src/explorer-data.mjs`, `src/itinerary.mjs`, `data/land.json`. New tests cover time zones and itinerary validation.

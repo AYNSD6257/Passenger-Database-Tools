@@ -1,4 +1,6 @@
 import { COUNTRIES, PURPOSE_OPTIONS, MAX_CONNECTIONS, buildJourneyPlan } from './src/journey.mjs';
+import { getExplorerAirport } from './src/explorer-data.mjs';
+import { initOrbitalExplorer } from './src/orbital-ui.mjs';
 import { AIRPORTS, findAirports, getAirport, AIRPORT_REVIEW_DATE } from './src/airports.mjs';
 import { AIRLINES, POLICY_TOPICS, OFFICIAL_PORTALS, CATALOG_REVIEW_DATE, findCountrySources, findAirlines } from './src/catalog.mjs';
 
@@ -310,3 +312,23 @@ function renderAirportDirectory(){
 document.getElementById('airport-search').addEventListener('input',renderAirportDirectory);
 document.getElementById('airport-country').addEventListener('change',renderAirportDirectory);
 renderAirportDirectory();
+
+function syncJourneyFromFlightLegs(legs){
+  if(!Array.isArray(legs)||!legs.length)return;
+  const stops=[legs[0].from,...legs.map(leg=>leg.to)].map(getExplorerAirport);
+  if(stops.some(a=>!a)||stops.some(a=>!COUNTRIES.some(c=>c.code===a.country)))return;
+  const origin=stops[0].country,destination=stops[stops.length-1].country;
+  const intermediate=stops.slice(1,-1);
+  document.getElementById('origin').value=origin;
+  document.getElementById('destination').value=destination;
+  document.getElementById('airline').value=legs[0].airline||'';
+  document.getElementById('connections').replaceChildren();
+  for(const airport of intermediate.slice(0,MAX_CONNECTIONS)){
+    // Only airports with curated operator map links are in the original form.
+    const curated=AIRPORTS.some(a=>a.code===airport.code)?airport.code:'';
+    addConnection(airport.country,curated);
+  }
+  reviewed.clear();
+  render();
+}
+initOrbitalExplorer({onTripChange:syncJourneyFromFlightLegs});

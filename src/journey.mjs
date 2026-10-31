@@ -16,6 +16,7 @@ export const COUNTRIES = Object.freeze([
   ['KE', 'Kenya'], ['NG', 'Nigeria'], ['SG', 'Singapore'], ['MY', 'Malaysia'],
   ['TH', 'Thailand'], ['KR', 'South Korea'], ['CN', 'China'], ['NZ', 'New Zealand'],
   ['BD', 'Bangladesh'], ['LK', 'Sri Lanka'], ['NP', 'Nepal'],
+  ['ID', 'Indonesia'], ['PH', 'Philippines'],
   ['ZZ', 'Other / not listed']
 ].map(([code, name]) => Object.freeze({ code, name })));
 

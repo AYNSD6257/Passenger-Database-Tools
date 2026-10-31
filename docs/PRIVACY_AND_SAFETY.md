@@ -23,3 +23,8 @@ The country and airline searches filter data bundled into the static JavaScript 
 ## Ordered connection selections
 
 Connection countries and optional airport codes are processed in memory in the current tab. They are not sent to SojournNexus servers or analytics. Airline and airport links are third-party websites opened at the traveler's initiative. There is no claim that a listed itinerary or connection is possible or lawful.
+
+
+## Globe, flight-editor, and schedule scope
+
+The visual explorer fetches only a local bundled public-domain land outline, without remote scripts, map tiles, tracking, or external APIs. Airport selections and flight-segment fields are kept in memory until refresh. The preview stores no traveler identity or document scans. The system does not claim that selected flights operate, that a connection is feasible, or that a government has granted permission to transit/enter. Displayed planet sizes/orbit speeds are decorative, not a scientific simulation. All time-zone readouts rely on the browser's IANA time zone database.

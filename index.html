@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SojournNexus: a privacy-friendly journey builder for passenger travel documents and airport preparation.">
+  <meta name="description" content="SojournNexus: explore an animated globe, airport local times, official travel references, and personalized flight itineraries.">
   <title>SojournNexus | Passenger Travel Information Portal</title>
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./app.js"></script>
@@ -22,6 +22,65 @@
       <h1 id="hero-title">Travel confidently.<br><span class="hero-gradient">Check what matters.</span></h1>
       <p class="hero-description">Enter your itinerary, citizenship, and travel purpose to build a relevant preparation checklist with official resources and important reminders.</p>
       <div class="warning" role="note"><strong>Important:</strong> This is an informational planning tool, not an official document check, eligibility decision, or boarding authorization. Always confirm current rules with your airline and the relevant government authorities.</div>
+    </section>
+    <section class="orbital-explorer" id="orbital-explorer" aria-labelledby="orbital-title">
+      <div class="orbital-head">
+        <div>
+          <span class="eyebrow orbital-eyebrow">ORBITAL JOURNEY EXPLORER</span>
+          <h2 id="orbital-title">The world, within reach.</h2>
+          <p>Explore airports on a rotating globe, trace your itinerary, and discover local time and official travel-document resources.</p>
+        </div>
+        <div class="orbital-head-actions"><button type="button" class="orbital-button" id="orbital-motion" aria-pressed="false">Pause animation</button></div>
+      </div>
+      <div class="orbital-stage">
+        <canvas id="orbit-canvas" role="img" aria-label="Interactive stylized rotating Earth with illuminated airports, planned route arcs, sun, moon, and shooting stars. Drag to rotate and click visible airport dots."></canvas>
+        <div class="orbital-overlay" aria-hidden="true">
+          <span class="orbital-chip"><span class="orbit-live-dot"></span> LIVE LOCAL CLOCKS</span>
+          <span class="orbital-chip">INTERACTIVE EARTH · NOT TO SCALE</span>
+        </div>
+        <aside class="orbital-information" aria-labelledby="orbital-select-title">
+          <h3 id="orbital-select-title">Explore an airport</h3>
+          <label class="orbital-select-label" for="orbital-airport-select">Airport / destination</label>
+          <select id="orbital-airport-select"></select>
+          <h4 id="selected-airport-name">Washington Dulles International (IAD)</h4>
+          <p id="selected-airport-city">Washington, DC / Dulles</p>
+          <div class="orbital-clock" id="selected-airport-time">—</div>
+          <div class="orbital-timezone" id="selected-timezone">America/New_York</div>
+          <div class="orbital-info-divider"></div>
+          <p class="orbital-info-label">PASSPORT · VISA · ETA · TRANSIT</p>
+          <p id="selected-document-status">Verify directly with official authorities for your own itinerary.</p>
+          <a id="selected-document-link" href="https://travel.state.gov/" rel="noopener noreferrer" target="_blank">Official government starting point ↗</a>
+          <a id="selected-airport-map" href="https://www.flydulles.com/" rel="noopener noreferrer" target="_blank">View official airport map ↗</a>
+        </aside>
+        <div class="orbital-bottom"><span id="orbital-airport-total">Major airports in starter explorer</span><span>Drag the globe · Select airport markers</span></div>
+      </div>
+      <p class="orbital-disclaimer">Visual orbit speeds and celestial sizes are illustrative. Airport markers are a curated sample, not every airport or a live flight network. Local clocks use IANA time zones. Route arcs do not establish scheduled service.</p>
+    </section>
+
+    <section class="flight-planner" id="flight-planner" aria-labelledby="flight-planner-title">
+      <div class="flight-planner-heading">
+        <div><span class="eyebrow">FLIGHT-SPECIFIC PLANNING</span><h2 id="flight-planner-title">Design your journey</h2>
+          <p>Build your itinerary one flight at a time. Enter the airline, flight number, departure and arrival airport-local times, and travel dates.</p></div>
+        <button id="flight-print" type="button" class="primary-btn">Print journey summary</button>
+      </div>
+      <div class="panel flight-panel">
+        <div class="flight-dates">
+          <label class="orbit-field"><span>Trip departure date</span><input type="date" id="trip-departure"></label>
+          <label class="orbit-field"><span>Return date <small>(optional)</small></span><input type="date" id="trip-return"></label>
+        </div>
+        <div class="flight-list-heading"><h3>Flight segments</h3><button id="add-flight-leg" type="button" class="secondary-btn">+ Add flight leg</button></div>
+        <div id="flight-legs" class="flight-legs"></div>
+        <p class="flight-guidance">Enter times in the respective airport’s local time zone. These are your planned entries—not live schedules or verified connections. Up to six legs.</p>
+        <p id="flight-feedback" class="flight-feedback" role="status" aria-live="polite"></p>
+      </div>
+      <div class="flight-preview-wrap">
+        <div class="panel flight-preview" id="flight-preview"></div>
+        <div class="panel flight-live">
+          <h3>Local times along your route</h3>
+          <div id="trip-clocks" class="trip-clocks" aria-live="off"></div>
+          <p class="flight-guidance">Times update automatically using device time and each airport’s time zone. Confirm local travel-day offsets and daylight saving transitions before booking.</p>
+        </div>
+      </div>
     </section>
     <div class="layout">
       <section class="panel controls" aria-labelledby="plan-title">
