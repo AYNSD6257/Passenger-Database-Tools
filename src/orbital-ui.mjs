@@ -1,4 +1,4 @@
-import {EXPLORER_AIRPORTS,getExplorerAirport,formatAirportClock,getCountryTravelResource} from './explorer-data.mjs';
+import {EXPLORER_AIRPORTS,getExplorerAirport,formatAirportClock,getCountryTravelResource,registerWorldwideAirport} from './explorer-data.mjs';
 import {AIRLINES} from './catalog.mjs';
 import {MAX_FLIGHT_LEGS,buildFlightSummary} from './itinerary.mjs';
 import {createOrbitalGlobe} from './orbital-globe.mjs';
@@ -40,7 +40,7 @@ export function initOrbitalExplorer({onTripChange=()=>{}}={}){
   $('selected-airport-name').textContent=airport.name+' ('+airport.code+')';
   $('selected-airport-city').textContent=airport.city+' · '+airport.country;
   $('selected-airport-time').textContent=formatAirportClock(code);
-  $('selected-timezone').textContent=airport.timezone;
+  $('selected-timezone').textContent=airport.timezone||'Time zone unavailable for this imported airport';
   const source=getCountryTravelResource(airport.country);
   const link=$('selected-document-link');
   if(source){
@@ -137,5 +137,34 @@ export function initOrbitalExplorer({onTripChange=()=>{}}={}){
  updateTrip();
  const clockTimer=setInterval(updateClocks,30000);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateClocks();});
- return {destroy(){clearInterval(clockTimer);globe.destroy();},getPlan(){return currentPlan;}};
+ return {
+  setGlobalClusters(clusters){globe.setGlobalClusters(clusters);},
+  setGlobalMode(mode){globe.setGlobalMode(mode);},
+  focusWorldwide(record){
+    const selectedAirport=registerWorldwideAirport(record);
+    selected=selectedAirport.code;
+    const picker=$('orbital-airport-select');
+    if(![...picker.options].some(o=>o.value===selectedAirport.code)){
+      picker.add(new Option((record.iata||record.icao||record.ident)+' · '+record.name,selectedAirport.code));
+    }
+    showAirport(selectedAirport.code);
+    globe.highlightWorldwide(selectedAirport);
+  },
+  addWorldwideDestination(record){
+    const airport=registerWorldwideAirport(record);
+    if($('flight-legs').children.length>=MAX_FLIGHT_LEGS)return false;
+    const prev=$('flight-legs').lastElementChild;
+    const from=prev?.querySelector('.leg-to')?.value||'IAD';
+    const label=(record.iata||record.icao||record.ident)+' · '+record.name;
+    if(!airportOptions.some(o=>o.value===airport.code))airportOptions.push({value:airport.code,label});
+    for(const select of $('flight-legs').querySelectorAll('select.leg-from,select.leg-to')){
+      if(![...select.options].some(o=>o.value===airport.code))select.add(new Option(label,airport.code));
+    }
+    makeRow({from,to:airport.code});
+    updateTrip();
+    return true;
+  },
+  destroy(){clearInterval(clockTimer);globe.destroy();},
+  getPlan(){return currentPlan;}
+ };
 }

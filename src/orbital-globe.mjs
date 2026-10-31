@@ -24,6 +24,7 @@ export function createOrbitalGlobe(canvas,{onSelect=()=>{}}={}){
  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
  let motion=!reduce.matches,frame=0,destroyed=false,heading=-30,tilt=13,last=0;
  let selected='IAD',routes=[['IAD','LHR']],land=[],points=[],hit=[],pointer=null,drag=false;
+ let globalClusters=[],globalMode='scheduled',highlighted=null;
  let width=1000,height=530,ratio=1;
  const stars=Array.from({length:190},(_,i)=>({
    x:(Math.sin(i*91.17)*9819.33%1+1)%1,y:(Math.sin(i*51.87)*871.91%1+1)%1,
@@ -115,6 +116,26 @@ export function createOrbitalGlobe(canvas,{onSelect=()=>{}}={}){
   ctx.fillStyle=terminator;ctx.fillRect(earthX-radius,earthY-radius,radius*2,radius*2);
   ctx.restore();
   ctx.strokeStyle='rgba(68,204,242,.72)';ctx.lineWidth=2;ctx.beginPath();ctx.arc(earthX,earthY,radius,0,Math.PI*2);ctx.stroke();
+  // Each glowing density dot represents a group of imported airports at zoom-out.
+  // The source index retains individual facilities including heliports and closed sites.
+  for(const cluster of globalClusters){
+    const count=globalMode==='all'?cluster[2]:cluster[3];
+    if(!count)continue;
+    const p=xyz(cluster[0],cluster[1],heading,tilt);
+    if(p.z<=0)continue;
+    const rr=Math.min(6.5,1.1+Math.log2(count+1)*.48);
+    ctx.fillStyle=globalMode==='all'?'rgba(122,210,249,.50)':'rgba(109,237,191,.69)';
+    ctx.beginPath();ctx.arc(earthX+radius*p.x,earthY+radius*p.y,rr,0,Math.PI*2);ctx.fill();
+  }
+  if(highlighted){
+    const p=xyz(highlighted.lat,highlighted.lon,heading,tilt);
+    if(p.z>0){
+      const x=earthX+radius*p.x,y=earthY+radius*p.y;
+      ctx.strokeStyle='#ffdf8b';ctx.lineWidth=2.5;ctx.beginPath();
+      ctx.arc(x,y,9+Math.sin(timestamp*.002)*1.7,0,Math.PI*2);ctx.stroke();
+      ctx.fillStyle='#ffdf8b';ctx.beginPath();ctx.arc(x,y,4,0,Math.PI*2);ctx.fill();
+    }
+  }
   hit=[];
   // Routes are illustrative geographic great-circle paths, not published flight routes.
   for(const [from,to] of routes){
@@ -148,6 +169,13 @@ export function createOrbitalGlobe(canvas,{onSelect=()=>{}}={}){
  function begin(){cancelAnimationFrame(frame);last=0;frame=requestAnimationFrame(draw);}
  begin();
  function setRoutes(next){routes=Array.isArray(next)?next.filter(x=>Array.isArray(x)&&x.length===2):[];if(!motion)begin();}
+ function setGlobalClusters(rows){globalClusters=Array.isArray(rows)?rows:[];if(!motion)begin();}
+ function setGlobalMode(mode){globalMode=mode==='all'?'all':'scheduled';if(!motion)begin();}
+ function highlightWorldwide(record){
+  if(!record||!Number.isFinite(record.lat)||!Number.isFinite(record.lon))return;
+  highlighted=record;heading=record.lon;tilt=Math.max(-58,Math.min(58,record.lat*.45));
+  if(!motion)begin();
+ }
  function setSelected(code){if(!getExplorerAirport(code))return;selected=code;if(!motion)begin();}
  function focus(code){const airport=getExplorerAirport(code);if(!airport)return;selected=code;heading=airport.lon;tilt=Math.max(-55,Math.min(55,airport.lat*.45));onSelect(code);if(!motion)begin();}
  function toggleMotion(){motion=!motion;if(motion)begin();else{cancelAnimationFrame(frame);begin();}return motion;}
@@ -169,7 +197,7 @@ export function createOrbitalGlobe(canvas,{onSelect=()=>{}}={}){
  canvas.addEventListener('pointermove',move);
  canvas.addEventListener('pointerup',up);
  canvas.addEventListener('pointercancel',()=>{pointer=null;drag=false;});
- return {setRoutes,setSelected,focus,toggleMotion,destroy(){
+ return {setRoutes,setSelected,focus,toggleMotion,setGlobalClusters,setGlobalMode,highlightWorldwide,destroy(){
    destroyed=true;cancelAnimationFrame(frame);observer.disconnect();
    canvas.removeEventListener('pointerdown',down);canvas.removeEventListener('pointermove',move);canvas.removeEventListener('pointerup',up);
  }};
