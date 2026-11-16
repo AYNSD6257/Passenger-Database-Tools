@@ -1695,7 +1695,7 @@
 8271,"1F2","small_airport","Plateau Sky Ranch Airport",43.225101,-74.114899,1070,"NA","US","US-NY","Edinburg","no",,,"1F2","1F2",,"https://en.wikipedia.org/wiki/Plateau_Sky_Ranch_Airport",
 8273,"1F7","small_airport","Airpark East Airport",32.81399917602539,-96.35220336914062,510,"NA","US","US-TX","Dallas","no",,,"1F7","1F7",,"https://en.wikipedia.org/wiki/Airpark_East_Airport",
 8274,"1FA1","small_airport","Post Oak Ranch Airport",28.85580062866211,-82.55259704589844,25,"NA","US","US-FL","Crystal River","no",,,"1FA1","1FA1",,,
-8275,"1FA3","small_airport","Pine Island Airport",26.656200408935547,-82.12120056152344,12,"NA","US","US-FL","Fort Myers","no",,,"1FA3","1FA3",,,
+8275,"1FA3","small_airport","Pine Island Airport",26.65792,-82.119844,12,"NA","US","US-FL","Fort Myers","no",,,"1FA3","1FA3",,,
 8276,"1FA5","heliport","Palmetto General Hospital Heliport",25.8865940245,-80.32660312950001,10,"NA","US","US-FL","Hialeah","no",,,"1FA5","1FA5",,,
 335353,"1FA6","heliport","Arrowhead Heliport",28.10499,-82.4826,55,"NA","US","US-FL","Tampa","no",,,"1FA6","1FA6",,,
 335820,"1FA7","heliport","Tampa General Hospital Brooksville Heliport",28.538778,-82.441753,93,"NA","US","US-FL","Brooksville","no",,,"1FA7","1FA7",,,"Bayfront Health Brooksville"
@@ -8002,7 +8002,7 @@
 14592,"83CO","heliport","Snake River Health Services Inc Heliport",39.60419845581055,-105.95899963378906,9300,"NA","US","US-CO","Keystone","no",,,"83CO","83CO",,,
 597678,"83FA","heliport","Ferguson Heliport",28.096101,-82.476674,51,"NA","US","US-FL","Tampa","no",,,"83FA","83FA",,,
 14593,"83FD","small_airport","Lake Montaza Airport",27.580299377441406,-80.81529998779297,52,"NA","US","US-FL","Okeechobee","no",,,"83FD","83FD",,,
-14594,"83FL","small_airport","Nassau Airport",30.618799209594727,-81.53369903564453,20,"NA","US","US-FL","Yulee","no",,,"83FL","83FL",,,
+14594,"83FL","small_airport","Nassau Airport",30.626725,-81.534484,20,"NA","US","US-FL","Yulee","no",,,"83FL","83FL",,,
 14595,"83GA","small_airport","Brock Airpark",30.99970054626465,-84.506103515625,130,"NA","US","US-GA","Bainbridge","no",,,"83GA","83GA",,,
 14596,"83IA","heliport","Keokuk County Health Center Heliport",41.3224983215332,-92.20549774169922,753,"NA","US","US-IA","Sigourney","no",,,"83IA","83IA",,,
 14597,"83IL","small_airport","Oltman-Shuck Airport",40.892799377441406,-89.10399627685547,736,"NA","US","US-IL","Minonk","no",,,"83IL","83IL",,,
@@ -13182,7 +13182,7 @@
 318453,"BO-0011","small_airport","Tres Personas Airport",-14.130654,-61.820904,,"SA","BO","BO-S","Tres Personas","no",,,,,,,
 321671,"BO-0012","small_airport","Ibibobo Airport",-21.532782,-62.971537,,"SA","BO","BO-T","Ibibobo","no",,,,,,,
 322454,"BO-0013","small_airport","Loreto Airport",-15.190029,-64.757926,534,"SA","BO","BO-B","Loreto","no",,,,,,,
-324118,"BO-0014","small_airport","Espiritu Airstrip",-16.226916,-60.546454,,"SA","BO","BO-S","Espiritu","no",,,,,,,
+324118,"BO-0014","small_airport","Santa Anita de Los Robles Airport",-16.226915,-60.546454,950,"SA","BO","BO-S","Espiritu, Velasco","no","SLSL",,"SLSL",,,,
 351497,"BO-0015","small_airport","Nueva Esperanza Airport",-10.05245,-65.33933,344,"SA","BO","BO-N","Nueva Esperanza","no",,,,,,,
 429703,"BO-0016","heliport","Villa Alota Heliport",-21.40185,-67.59456,,"SA","BO","BO-P","Villa Alota","no",,,,,,,
 429704,"BO-0017","heliport","Culpina K Heliport",-21.26314,-67.22413,,"SA","BO","BO-P","Culpina K","no",,,,,,,
@@ -13193,6 +13193,12 @@
 602403,"BO-0022","small_airport","Cobija Southwest Airstrip",-11.092461,-68.86763,825,"SA","BO","BO-N","Cobija","no",,,,,,,
 611643,"BO-0023","closed","Aerodromo San Isidro - El Tambo",-18.017818,-64.452251,5331,"SA","BO","BO-S",,"no",,,,,,,
 611644,"BO-0024","closed","Aeródromo La Cruceña",-17.802249,-62.952743,1151,"SA","BO","BO-S",,"no",,,,,,,"Aeroclub Mondaca"
+611661,"BO-0025","heliport","Yacuses Heliport",-18.894902,-58.422173,509,"SA","BO","BO-S","Germán Busch","no","SLHY",,"SLHY",,,,
+611671,"BO-0026","small_airport","Carrasco Airport",-17.212467,-64.552985,813,"SA","BO","BO-U-A","Carrasco","no","SLCR",,"SLCR",,,,
+611677,"BO-0027","small_airport","El Carmen de Ruiz Airport",-16.034141,-61.066386,1185,"SA","BO","BO-U-A","Velasco","no","SLEC",,"SLEC",,,,
+611682,"BO-0028","small_airport","San Pablo Airport",-17.557214,-59.886755,1048,"SA","BO","BO-U-A","Chiquitos","no","SLSP",,"SLSP",,,,
+611684,"BO-0029","small_airport","San Juan Pando Airport",-10.039906,-65.963019,590,"SA","BO","BO-U-A","Federico Román","no","SLSJ",,"SLSJ",,,,
+611685,"BO-0030","small_airport","Parai(Puerto Rico) Airport",-17.690612,-63.199016,1262,"SA","BO","BO-U-A","Parai, Santa Cruz","no","SLPR","PUR","SLPR",,,,
 41590,"BO-BVL","small_airport","Baures Airport",-13.654426,-63.704718,470,"SA","BO","BO-B","Baures","no",,"BVL","SLBA",,,"https://en.wikipedia.org/wiki/Baures_Airport",
 312780,"BOV","small_airport","Boang Airport",-3.3834,153.2812,85,"OC","PG","PG-NIK","Boang Island","no",,"BOV",,"BOG",,,
 335973,"BQ-0001","closed","Old Flamingo Airport",12.18637,-68.26484,,"NA","BQ","BQ-BO","Kralendijk","no",,,,,,,
@@ -16478,7 +16484,7 @@
 610843,"BR-3304","heliport","Fazenda Bonfim Heliport",-11.014463,-37.63615,361,"SA","BR","BR-SE","Lagarto","no",,,"SJID","SE0007",,,
 611337,"BR-3305","small_airport","Fazenda Caaporã Airport",-22.507594,-51.786595,1217,"SA","BR","BR-MT","Bom Jesus do Araguaia","no",,,"SN03","MT1203",,,
 611360,"BR-3306","small_airport","Fazenda Lajeado - Boi na Grota Airport",-4.431442,-50.522319,548,"SA","BR","BR-PA","Novo Repartimento","no",,,"SI71","PA0451",,,
-611588,"BR-3307","small_airport","Pontalina de Goiás Airport",-17.505782,-49.406429,625,"SA","BR","BR-GO","Pontalina","no",,,,,,,
+611588,"BR-3307","small_airport","Pontalina de Goiás Airport",-17.499461,-49.407793,2247,"SA","BR","BR-GO","Pontalina","no",,,,,,,
 611610,"BR-3308","heliport","Fazenda da Barra Heliport",-18.508717,-44.189694,1800,"SA","BR","BR-U-A","Curvelo","no",,,"SN13","MG0694",,,
 611612,"BR-3309","small_airport","Fazenda Piquiri 5B Airport",-11.135914,-57.271172,890,"SA","BR","BR-U-A","Juara","no",,,"SN18","MT1208",,,
 611620,"BR-3310","small_airport","Fazenda São José do Corrente Airport",-19.107346,-51.08877,1280,"SA","BR","BR-GO","Itarumã","no",,,"SN53","GO0453",,,
@@ -19360,6 +19366,7 @@
 605667,"CL-0044","heliport","Helipuerto Hospital Militar de Santiago",-33.451289,-70.53684,,"SA","CL","CL-U-A","La Reina","no",,,,,,,
 608077,"CL-0045","small_airport","Grupo Tamarena Airport",-33.716163,-70.973665,875,"SA","CL","CL-RM","Talagante","no","SCAD",,"SCAD",,,,
 609431,"CL-0046","heliport","Melipilla Hospital Helistop",-33.680087,-71.187074,587,"SA","CL","CL-RM","Melipilla","no",,,,,"https://hospitaldemelipilla.cl/","https://es.wikipedia.org/wiki/Hospital_San_Jos%C3%A9_de_Melipilla",
+611694,"CL-0047","small_airport","Bureo Airport",-35.871715,-71.832068,371,"SA","CL","CL-ML","Retiro","no","SCBU",,"SCBU",,,,
 1641,"CL-SC49","small_airport","Oficina Victoria Airport",-20.734699249267578,-69.62570190429688,3280,"SA","CL","CL-TA","Oficina Victoria","no",,,"SC49",,,,
 16719,"CL00","heliport","USC University Hospital Heliport",34.061623,-118.201585,476,"NA","US","US-CA","Los Angeles","no",,,"CL00","CL00",,,
 16720,"CL01","small_airport","Eagle Field",36.899899,-120.667999,153,"NA","US","US-CA","Dos Palos","no",,,"CL01","CL01",,"https://en.wikipedia.org/wiki/Eagle_Field_(airport)",
@@ -21009,6 +21016,7 @@
 42293,"CU-0113","closed","Matahambre Airport",22.5875,-83.945,396,"NA","CU","CU-01","Minas de Matahambre","no",,,,,,,"MUMH"
 42301,"CU-0114","closed","Matanzas Airport",23.01,-81.510002,9,"NA","CU","CU-04","Matanzas","no",,,,,,,"MUMT"
 604055,"CU-0115","medium_airport","[Duplicate] Holguín Air Base",20.786418,-76.318513,,"NA","CU","CU-11","Holguin","no",,,,,,,
+611653,"CU-0116","closed","26 De Julio (Aeropuerto Viejo)",20.380941,-76.620453,,"NA","CU","CU-12","Bayamo","no",,,,,,,
 527980,"CUB2","seaplane_base","Buckhorn Water Aerodrome",44.53,-78.355,806,"NA","CA","CA-ON","Upper Buckhorn Lake","no",,,"CUB2","CUB2",,,
 316499,"CUJ","small_airport","Culion Airport",11.8553,119.9378,155,"AS","PH","PH-PLW","Culion","no",,"CUJ",,,,,"Patag Airstrip"
 598853,"CV-0001","closed","Francisco Mendes International Airport",14.9261,-23.4948,229,"AF","CV","CV-S","Praia","no",,,,,,"https://en.wikipedia.org/wiki/Francisco_Mendes_International_Airport","RAI, GVFM"
@@ -21490,7 +21498,7 @@
 1973,"CYYC","large_airport","Calgary International Airport",51.118822,-114.009933,3557,"NA","CA","CA-AB","Calgary","yes","CYYC","YYC","CYYC",,"http://www.calgaryairport.com/","https://en.wikipedia.org/wiki/Calgary_International_Airport","McCall Field"
 1974,"CYYD","medium_airport","Smithers Airport",54.82469940185547,-127.18299865722656,1712,"NA","CA","CA-BC","Smithers","yes","CYYD","YYD","CYYD",,,"https://en.wikipedia.org/wiki/Smithers_Airport",
 1975,"CYYE","medium_airport","Fort Nelson Airport",58.8363990784,-122.597000122,1253,"NA","CA","CA-BC","Fort Nelson","yes","CYYE","YYE","CYYE",,,"https://en.wikipedia.org/wiki/Fort_Nelson_Airport",
-1976,"CYYF","medium_airport","Penticton Airport",49.46310043334961,-119.60199737548828,1129,"NA","CA","CA-BC","Penticton","yes","CYYF","YYF","CYYF",,,"https://en.wikipedia.org/wiki/Penticton_Regional_Airport",
+1976,"CYYF","medium_airport","Penticton Regional Airport",49.4631,-119.601997,1129,"NA","CA","CA-BC","Penticton","yes","CYYF","YYF","CYYF",,"https://yyf.penticton.ca/","https://en.wikipedia.org/wiki/Penticton_Regional_Airport",
 1977,"CYYG","medium_airport","Charlottetown Airport",46.288911,-63.125174,160,"NA","CA","CA-PE","Charlottetown","yes","CYYG","YYG","CYYG",,,"https://en.wikipedia.org/wiki/Charlottetown_Airport","PEI"
 1978,"CYYH","small_airport","Taloyoak Airport",69.5467,-93.576698,92,"NA","CA","CA-NU","Taloyoak","yes","CYYH","YYH","CYYH",,,"https://en.wikipedia.org/wiki/Taloyoak_Airport","Spence Bay"
 1979,"CYYJ","large_airport","Victoria International Airport",48.647201,-123.427792,63,"NA","CA","CA-BC","Victoria","yes","CYYJ","YYJ","CYYJ",,"http://www.victoriaairport.com/","https://en.wikipedia.org/wiki/Victoria_International_Airport",
@@ -24375,7 +24383,7 @@
 2472,"EGQS","medium_airport","RAF Lossiemouth",57.7052,-3.33917,42,"EU","GB","GB-SCT","Lossiemouth, Moray","no","EGQS","LMO","EGQS",,"http://www.raf.mod.uk/raflossiemouth/","https://en.wikipedia.org/wiki/RAF_Lossiemouth",
 29179,"EGSA","small_airport","Shipdham Airfield",52.629398,0.928056,210,"EU","GB","GB-ENG","Thetford, Norfolk","no","EGSA",,"EGSA",,"http://www.shipdhamaeroclub.co.uk/","https://en.wikipedia.org/wiki/RAF_Shipdham","RAF Shipdham"
 2473,"EGSC","medium_airport","Cambridge City Airport",52.205002,0.175,47,"EU","GB","GB-ENG","Cambridge, Cambridgeshire","no","EGSC","CBG","EGSC",,"http://www.cambridgeairport.com/","https://en.wikipedia.org/wiki/Cambridge_City_Airport","Marshall, RAF Cambridge"
-29181,"EGSD","heliport","Great Yarmouth - North Denes Heliport",52.635576,1.723016,6,"EU","GB","GB-ENG","Great Yarmouth, Norfolk","no","EGSD",,"EGSD",,,"https://en.wikipedia.org/wiki/Great_Yarmouth_-_North_Denes_Airport","Yarmouth Heliport"
+29181,"EGSD","heliport","Great Yarmouth - North Denes Heliport",52.635576,1.723016,6,"EU","GB","GB-ENG","Great Yarmouth, Norfolk","no","EGSD",,"EGSD",,"https://yarmouthheliport.co.uk/","https://en.wikipedia.org/wiki/Great_Yarmouth_-_North_Denes_Airport","Yarmouth Heliport"
 2474,"EGSF","small_airport","Peterborough Business Airport",52.468102,-0.251111,26,"EU","GB","GB-ENG","Peterborough, Cambridgeshire","no","EGSF",,"EGSF",,"http://www.aerolease.co.uk/","https://en.wikipedia.org/wiki/Peterborough_Business_Airport","Conington Airport, RAF Glatton"
 29182,"EGSG","small_airport","Stapleford Aerodrome",51.6525,0.155833,183,"EU","GB","GB-ENG","Romford, Greater London","no","EGSG",,"EGSG",,"http://www.flysfc.com/","https://en.wikipedia.org/wiki/Stapleford_Aerodrome","Epping Forest, RAF Stapleford Tawney"
 2475,"EGSH","medium_airport","Norwich Airport",52.6758,1.28278,118,"EU","GB","GB-ENG","Norwich, Norfolk","yes","EGSH","NWI","EGSH",,"https://www.norwichairport.co.uk/","https://en.wikipedia.org/wiki/Norwich_Airport","RAF Horsham St Faith"
@@ -26297,7 +26305,7 @@
 17360,"FD92","small_airport","Southerland Strip",28.732799530029297,-81.07869720458984,15,"NA","US","US-FL","Geneva","no",,,"FD92","FD92",,,
 17361,"FD93","small_airport","Yellow River Airstrip",30.686354,-86.747564,150,"NA","US","US-FL","Holt","no",,,"FD93","FD93",,,
 17362,"FD94","small_airport","Hartzog Field",30.718900680541992,-85.60669708251953,125,"NA","US","US-FL","Chipley","no",,,"FD94","FD94",,,
-17364,"FD96","small_airport","Hilliard's Private Airport",26.832599639892578,-81.0801010131836,13,"NA","US","US-FL","Moore Haven","no",,,"FD96","FD96",,,
+17364,"FD96","closed","Hilliard's Private Airport",26.8326,-81.080101,13,"NA","US","US-FL","Moore Haven","no",,,,,,,"FD96"
 17365,"FD97","heliport","NCH Downtown Hospital Heliport",26.151028,-81.797769,42,"NA","US","US-FL","Naples","no",,,"FD97","FD97",,,"Naples Community Hospital Heliport"
 17366,"FD98","seaplane_base","Ferguson Seaplane Base",28.71470069885254,-81.27010345458984,10,"NA","US","US-FL","Winter Springs","no",,,"FD98","FD98",,,
 17367,"FD99","heliport","Dr. P. Phillips Hospital Heliport",28.429591,-81.477099,98,"NA","US","US-FL","Orlando","no",,,"FD99","FD99",,,"Sand Lake Health Center"
@@ -26384,7 +26392,7 @@
 29933,"FI-0022","closed","Haapamäki Airfield",62.255204,24.349478,531,"EU","FI","FI-08","Haapamäki","no",,,,,,,"EFHI, EFHI"
 30308,"FI-0023","closed","Pyhäselkä Airfield",62.464699,30.035299,322,"EU","FI","FI-13","Joensuu","no",,,,,,,"EFPH, EFPH"
 30430,"FI-0024","closed","Sonkajärvi-Jyrkkä Airfield",63.819401,27.7694,600,"EU","FI","FI-15","Sonkajärvi","no",,,,,,"https://fi.wikipedia.org/wiki/fi:Jyrk%C3%A4n%20lentokentt%C3%A4?uselang=en","EFSJ, EFSJ"
-611645,"FI-0025","heliport","Åland Central Hospital",60.114719,19.932905,52,"EU","FI","FI-01",,"no","EFMH",,,,,,"Ahvenanmaan keskussairaala"
+611645,"FI-0025","heliport","Åland Central Hospital Heliport",60.114719,19.932905,52,"EU","FI","FI-01","Mariehamn","no","EFMH",,,,,,"Ahvenanmaan keskussairaala"
 2878,"FIMP","large_airport","Sir Seewoosagur Ramgoolam International Airport",-20.430201,57.683601,186,"AF","MU","MU-GP","Plaine Magnien","yes","FIMP","MRU","FIMP",,"http://aml.mru.aero/","https://en.wikipedia.org/wiki/Sir_Seewoosagur_Ramgoolam_International_Airport","Plaisance International Airport"
 2879,"FIMR","medium_airport","Sir Charles Gaetan Duval Airport",-19.757668,63.36103,95,"AF","MU","MU-RO","Port Mathurin","yes","FIMR","RRG","FIMR",,,"https://en.wikipedia.org/wiki/Rodrigues_Island_Airport","Plaine Corail"
 352637,"FJ-0002","heliport","Vomo Heliport",-17.5014,177.27288,46,"OC","FJ","FJ-W","Vomo","no",,,,,,,
@@ -29841,7 +29849,7 @@
 345070,"GB-0999","small_airport","Cowbit Airstrip",52.757061,-0.140913,,"EU","GB","GB-ENG",,"no",,,,,,,
 345075,"GB-1000","small_airport","Donnydeade Airstrip",54.47681,-6.74402,,"EU","GB","GB-NIR",,"no",,,,,,,
 345229,"GB-1001","small_airport","Clees Hall Airstrip",51.976581,0.741734,,"EU","GB","GB-ENG","Bures, Suffolk","no",,,,,,,
-345348,"GB-1002","small_airport","Clotton airstrip UL",53.16963,-2.69955,,"EU","GB","GB-ENG",,"no",,,,,,,
+345348,"GB-1002","closed","Clotton Airstrip",53.16963,-2.69955,,"EU","GB","GB-ENG",,"no",,,,,,,
 345395,"GB-1003","small_airport","Hamilton House Airstrip",51.663785,-1.446633,,"EU","GB","GB-ENG","Charney","no",,,,,,,
 345413,"GB-1004","small_airport","Chipstead Private Airstrip",51.291025,-0.166131,,"EU","GB","GB-ENG","Coulsdon, Greater London","no",,,,,,,
 345676,"GB-1005","small_airport","Plains Airstrip",55.014319,-6.538587,,"EU","GB","GB-NIR","Ballymoney, Londonderry","no",,,,,,,
@@ -30141,7 +30149,7 @@
 594997,"GB-1299","heliport","Crosshouse University Hospital",55.613234,-4.544758,,"EU","GB","GB-SCT",,"no",,,,,,,
 594998,"GB-1300","heliport","Dumfries Hospital",55.060637,-3.66087,,"EU","GB","GB-SCT",,"no",,,,,,,
 595000,"GB-1301","heliport","Wishaw Hospital",55.774133,-3.937385,,"EU","GB","GB-SCT",,"no",,,,,,,
-595053,"GB-1302","heliport","Holyrood Palace temp landing site",55.952523,-3.16835,,"EU","GB","GB-SCT",,"no",,,,,,,
+595053,"GB-1302","heliport","Holyrood Palace",55.952523,-3.16835,,"EU","GB","GB-SCT",,"no",,,,,,,
 595054,"GB-1303","heliport","Fettes Police HQ",55.961107,-3.226444,,"EU","GB","GB-SCT",,"no",,,,,,,
 595059,"GB-1304","heliport","Cringletie House Hotel",55.688258,-3.219197,,"EU","GB","GB-SCT",,"no",,,,,,,
 595063,"GB-1305","heliport","Cumbrae Helipad",55.746395,-4.939486,,"EU","GB","GB-SCT",,"no",,,,,,,
@@ -30182,7 +30190,7 @@
 602211,"GB-1341","heliport","Bishopsgate House Heliport",51.4365,-0.59276,259,"EU","GB","GB-ENG","Egham, Surrey","no",,,,,,,
 602212,"GB-1342","heliport","Harefield Hospital Heliport",51.60734,-0.48456,282,"EU","GB","GB-ENG","Uxbridge, Greater London","no",,,,,,,
 602990,"GB-1343","heliport","Windsor/Ascot Heliport",51.540965,-0.673344,198,"EU","GB","GB-ENG","Burnham, Buckinghamshire","no",,,,,,,"Groverfield Hotel"
-602991,"GB-1344","heliport","Broadoaks Country House Heliport",54.401592,-2.917709,351,"EU","GB","GB-ENG","Windermere, Cumbria","no",,,,,,,
+602991,"GB-1344","heliport","Broadoaks Country House Helipad",54.401592,-2.917709,351,"EU","GB","GB-ENG","Windermere, Cumbria","no",,,,,,,
 602992,"GB-1345","heliport","Lainston House Hotel Heliport",51.082346,-1.368216,350,"EU","GB","GB-ENG","Winchester, Hampshire","no",,,,,,,
 603091,"GB-1346","closed","Bowmore Flying Boat Station",55.758889,-6.288056,0,"EU","GB","GB-SCT","Isle of Islay, Argyll and Bute","no",,,,,,"https://en.wikipedia.org/wiki/RAF_Bowmore","Bones Aviation ID X6BM"
 603999,"GB-1347","closed","Samlesbury Aerodrome",53.773281,-2.569377,249,"EU","GB","GB-ENG","Balderstone, Lancashire","no",,,,,,"https://en.wikipedia.org/wiki/Samlesbury_Aerodrome","BAE Systems"
@@ -44827,17 +44835,17 @@
 308663,"LMZ","small_airport","Palma Airport",-10.7506,40.4702,177,"AF","MZ","MZ-P","Palma","no",,"LMZ",,,,,
 30153,"LNMC","heliport","Monaco Heliport",43.725798,7.419673,20,"EU","MC","MC-U-A","Fontvieille","yes","LNMC","MCM","LNMC",,,"https://en.wikipedia.org/w/index.php?title=Monaco_Heliport&oldid=1139229385","Monte Carlo Heliport, Heli Air Monaco"
 29444,"LOAA","small_airport","Ottenschlag Airfield",48.41856,15.215294,2867,"EU","AT","AT-3","Ottenschlag","no","LOAA",,"LOAA",,,"https://en.wikipedia.org/wiki/Flugplatz_Ottenschlag","Union Sportfliegergruppe"
-29445,"LOAB","small_airport","Dobersberg Airfield",48.922113,15.296826,1720,"EU","AT","AT-3","Dobersberg","no","LOAB",,"LOAB",,,"https://en.wikipedia.org/wiki/Dobersberg_Airport",
+29445,"LOAB","small_airport","Dobersberg Airfield",48.922222,15.296944,1713,"EU","AT","AT-3","Dobersberg","no","LOAB",,"LOAB",,,"https://en.wikipedia.org/wiki/Dobersberg_Airport",
 29446,"LOAD","small_airport","Völtendorf Airfield",48.160081,15.58677,1063,"EU","AT","AT-3","Ober-Grafendorf","no","LOAD",,"LOAD",,,"https://en.wikipedia.org/wiki/V%C3%B6ltendorf_Airport",
 28135,"LOAG","small_airport","Krems/Langenlois Airfield",48.446155,15.635011,1017,"EU","AT","AT-3","Krems an der Donau","no","LOAG",,"LOAG",,,"https://en.wikipedia.org/wiki/Krems-Langenlois_Airport",
 515406,"LOAI","heliport","Wiener Neustadt Hospital Heliport",47.8159,16.24713,,"EU","AT","AT-3","Wiener Neustadt","no","LOAI",,"LOAI",,,,
 4428,"LOAN","medium_airport","Wiener Neustadt East Airport",47.8433,16.260099,896,"EU","AT","AT-3","Wiener Neustadt","no","LOAN",,"LOAN",,"http://www.loan-airport.at/","https://en.wikipedia.org/wiki/Wiener_Neustadt_East_Airport",
 43811,"LOAP","heliport","Waidhofen an der Ybbs Hospital Helipad",47.952692,14.788011,1279,"EU","AT","AT-3","Waidhofen an der Ybbs","no","LOAP",,"LOAP",,,,
-28137,"LOAR","small_airport","Altlichtenwarth Gliderfield",48.6661,16.825,604,"EU","AT","AT-3","Altlichtenwarth","no","LOAR",,"LOAR",,"http://www.loar.at/","https://de.wikipedia.org/wiki/Flugplatz_Altlichtenwarth","Flugplatz Altlichtenwarth, Segelflugfeld Altlichtenwarth"
+28137,"LOAR","small_airport","Altlichtenwarth Gliderfield",48.666111,16.825278,604,"EU","AT","AT-3","Altlichtenwarth","no","LOAR",,"LOAR",,"http://www.loar.at/","https://de.wikipedia.org/wiki/Flugplatz_Altlichtenwarth","Flugplatz Altlichtenwarth, Segelflugfeld Altlichtenwarth"
 29447,"LOAS","small_airport","Spitzerberg Airfield",48.099157,16.933527,623,"EU","AT","AT-3","Hundsheim","no","LOAS",,"LOAS",,,"https://en.wikipedia.org/wiki/Spitzerberg_Airport","Flugsportzentrum Spitzerberg"
 598719,"LOAT","heliport","Wiener Neustadt Air Police Base",47.83532,16.208975,927,"EU","AT","AT-3","Wiener Neustadt","no",,,"LOAT",,"https://noe.orf.at/stories/3272377/",,
 29448,"LOAU","small_airport","Stockerau Airfield",48.409121,16.191015,686,"EU","AT","AT-3","Stockerau","no","LOAU",,"LOAU",,,"https://en.wikipedia.org/wiki/Stockerau_Airfield",
-28136,"LOAV","small_airport","Vöslau-Kottingbrunn Airfield",47.965,16.26,765,"EU","AT","AT-3","Bad Vöslau","no","LOAV",,"LOAV",,"http://www.loav.at/","https://en.wikipedia.org/wiki/V%C3%B6slau_Airfield",
+28136,"LOAV","small_airport","Vöslau-Kottingbrunn Airfield",47.964444,16.259444,767,"EU","AT","AT-3","Bad Vöslau","no","LOAV",,"LOAV",,"http://www.loav.at/","https://en.wikipedia.org/wiki/V%C3%B6slau_Airfield",
 514802,"LOBD","heliport","Donaustadt Hospital Heliport",48.21892,16.46347,,"EU","AT","AT-9","Wien","no",,,"LOBD","LOBD",,,
 329105,"LOBF","heliport","Wien-Erdberg ÖAMTC Heliport",48.189198,16.412214,,"EU","AT","AT-9","Vienna","no",,,"LOBF",,,,"Christophorus 9"
 548811,"LOBH","heliport","Hanusch Hospital  Helipad",48.199921,16.291308,828,"EU","AT","AT-9","Wien","no",,,"LOBH",,,,
@@ -44852,15 +44860,15 @@
 312151,"LODO","heliport","Oberwart ÖAMTC Heliport",47.30526,16.18352,1079,"EU","AT","AT-1","Oberwart","no",,,"LODO",,"http://www.christophorus16.at/index.aspx",,"Christophorus 16"
 43826,"LOGA","heliport","Bad Radkersburg Hospital Helipad",46.691607,15.992397,682,"EU","AT","AT-6","Bad Radkersburg","no",,,"LOGA",,,,
 43827,"LOGC","heliport","Niederöblarn ÖAMTC Heliport",47.479664,14.009866,2142,"EU","AT","AT-6","Niederöblarn","no",,,"LOGC",,,,"Christophorus 14"
-29449,"LOGF","small_airport","Fürstenfeld Airfield",47.061873,16.083901,830,"EU","AT","AT-6","Fürstenfeld","no","LOGF",,"LOGF",,"http://logfnet.alfahosting.org/joomla/home.html","https://en.wikipedia.org/wiki/F%C3%BCrstenfeld_Airport","Fuerstenfeld"
-28133,"LOGG","small_airport","Punitz-Güssing Airfield",47.146654,16.317058,950,"EU","AT","AT-1","Punitz","no","LOGG",,"LOGG",,"http://www.logg.at/","https://en.wikipedia.org/wiki/Punitz-G%C3%BCssing_Airport","Güssing, Flugplatz Punitz-Güssing"
+29449,"LOGF","small_airport","Fürstenfeld Airfield",47.062222,16.084444,830,"EU","AT","AT-6","Fürstenfeld","no","LOGF",,"LOGF",,"http://logfnet.alfahosting.org/joomla/home.html","https://en.wikipedia.org/wiki/F%C3%BCrstenfeld_Airport","Fuerstenfeld"
+28133,"LOGG","small_airport","Punitz-Güssing Airfield",47.147222,16.316667,949,"EU","AT","AT-1","Punitz","no","LOGG",,"LOGG",,"http://www.logg.at/","https://en.wikipedia.org/wiki/Punitz-G%C3%BCssing_Airport","Güssing, Flugplatz Punitz-Güssing"
 43828,"LOGH","heliport","Graz University Hospital Helipad",47.08059,15.46381,1427,"EU","AT","AT-6","Graz","no",,,"LOGH",,,,
 29450,"LOGI","small_airport","Trieben Airfield",47.493364,14.49558,2283,"EU","AT","AT-6","Trieben","no",,,"LOGI",,,"https://de.wikipedia.org/wiki/Flugplatz_Trieben",
 29451,"LOGK","small_airport","Kapfenberg Airfield",47.457544,15.331125,1719,"EU","AT","AT-6","Kapfenberg","no","LOGK",,"LOGK",,,"https://en.wikipedia.org/wiki/Kapfenberg_Airport",
 29452,"LOGL","small_airport","Lanzen-Turnau Airfield",47.556155,15.320327,2575,"EU","AT","AT-6","Göriach","no","LOGL",,"LOGL",,,"https://en.wikipedia.org/wiki/Lanzen-Turnau_Airport",
 29453,"LOGM","small_airport","Mariazell Airfield",47.789733,15.300333,2822,"EU","AT","AT-6","Mariazell","no","LOGM",,"LOGM",,,"https://en.wikipedia.org/wiki/Mariazell_Airport","Flugfeld Mariazell, Flugplatz Mariazell"
 29454,"LOGO","small_airport","Niederöblarn Airfield",47.478742,14.007101,2142,"EU","AT","AT-6","Niederöblarn","no","LOGO",,"LOGO",,,"https://de.wikipedia.org/wiki/Flugplatz_Nieder%C3%B6blarn",
-29455,"LOGP","small_airport","Pinkafeld Airfield",47.386684,16.112673,1339,"EU","AT","AT-1","Pinkafeld","no","LOGP",,"LOGP",,,"https://en.wikipedia.org/wiki/Pinkafeld_Airport",
+29455,"LOGP","small_airport","Pinkafeld Airfield",47.386667,16.112778,1332,"EU","AT","AT-1","Pinkafeld","no","LOGP",,"LOGP",,,"https://en.wikipedia.org/wiki/Pinkafeld_Airport",
 29456,"LOGT","small_airport","Leoben/Timmersdorf Airfield",47.379648,14.964044,2060,"EU","AT","AT-6","Timmersdorf","no","LOGT",,"LOGT",,,"https://en.wikipedia.org/wiki/Leoben/Timmersdorf_Airfield",
 29457,"LOGW","small_airport","Weiz-Unterfladnitz Airfield",47.170293,15.664468,1296,"EU","AT","AT-6","Weiz","no","LOGW",,"LOGW",,"https://www.logw.at/","https://en.wikipedia.org/wiki/Weiz-Unterfladnitz_Airport","Thalerhof"
 608956,"LOGX","heliport","Rottenmann Hospital Helistop",47.525022,14.367092,2293,"EU","AT","AT-6","Rottenmann","no","LOGX",,"LOGX",,,,
@@ -44930,8 +44938,8 @@
 4434,"LOWW","large_airport","Vienna International Airport",48.110298,16.5697,600,"EU","AT","AT-9","Vienna","yes","LOWW","VIE","LOWW",,"http://www.viennaairport.com/en/","https://en.wikipedia.org/wiki/Vienna_International_Airport",
 28138,"LOWZ","small_airport","Zell am See Airfield",47.291468,12.790632,2470,"EU","AT","AT-5","Zell am See","no","LOWZ",,"LOWZ",,"http://www.flugplatz-zellamsee.at/","https://en.wikipedia.org/wiki/Zell_am_See_Airport","Flugplatz Zell am See"
 29480,"LOXA","small_airport","Fiala-Fernbrugg Air Base",47.53573,14.141488,2093,"EU","AT","AT-6","Aigen im Ennstal","no","LOXA",,"LOXA",,,"https://en.wikipedia.org/wiki/Austrian_Air_Force#Fliegerhorst_Fiala-Fernbrugg","Horsching Airport, Aigen Air Base, Fliegerhorst Fiala-Fernbrugg"
-29483,"LOXN","medium_airport","Wiener Neustadt West Airport",47.836933,16.221838,935,"EU","AT","AT-3","Wiener Neustadt","no","LOXN",,"LOXN",,,"https://en.wikipedia.org/wiki/Wiener_Neustadt_West_Airport",
-29484,"LOXT","small_airport","Brumowski  Air Base",48.319247,16.114016,574,"EU","AT","AT-3","Tulln an der Donau","no","LOXT",,"LOXT",,,"https://en.wikipedia.org/wiki/Brumowski_Air_Base","Langenlebarn Military Airport, Air Force Station Tulln, Fliegerhorst Brumowski"
+29483,"LOXN","medium_airport","Wiener Neustadt West Airport",47.839722,16.220278,935,"EU","AT","AT-3","Wiener Neustadt","no","LOXN",,"LOXN",,,"https://en.wikipedia.org/wiki/Wiener_Neustadt_West_Airport",
+29484,"LOXT","small_airport","Brumowski  Air Base",48.320278,16.113333,576,"EU","AT","AT-3","Tulln an der Donau","no","LOXT",,"LOXT",,,"https://en.wikipedia.org/wiki/Brumowski_Air_Base","Langenlebarn Military Airport, Air Force Station Tulln, Fliegerhorst Brumowski"
 4436,"LOXZ","medium_airport","Hinterstoisser Air Base",47.202801,14.7442,2264,"EU","AT","AT-6","Zeltweg","no","LOXZ",,"LOXZ",,,"https://en.wikipedia.org/wiki/Zeltweg_Air_Base","RAF Station Zeltweg, Zeltweg Air Base, Zeltweg Airport, Fliegerhorst Hinterstoisser"
 5498,"LP77","small_airport","Military Airfield of Santa Margarida",39.402401,-8.28906,541,"EU","PT","PT-14","Constância","no",,,,,,,
 321238,"LPAG","heliport","Albergaria-a-Velha Heliport",40.707119,-8.4914,460,"EU","PT","PT-01","Albergaria-a-Velha","no","LPAG",,"LPAG",,,,
@@ -54130,7 +54138,7 @@
 604062,"PK-0093","heliport","Muzaffarabad Airport Helipad",34.341521,73.505268,,"AS","PK","PK-JK","Muzaffarabad","no",,,,,,,
 604557,"PK-0094","heliport","SUPARCO Heliport",24.917811,66.924606,85,"AS","PK","PK-SD","Karachi,","no",,,,,,"https://en.wikipedia.org/wiki/SUPARCO",
 605516,"PK-0095","heliport","Badok Checkpoint Heliport",25.396389,63.68479,46,"AS","PK","PK-BA","Pasni","no",,,,,,,
-611525,"PK-0096","heliport","Joint Services HQ",33.595962,73.092311,1658,"AS","PK","PK-PB","Chaklala, Rawalpindi","no",,,,,,"https://en.wikipedia.org/wiki/Joint_Staff_Headquarters_(Pakistan)",
+611525,"PK-0096","heliport","Joint Services HQ HLS",33.595962,73.092311,1658,"AS","PK","PK-PB","Chaklala, Rawalpindi","no",,,,,,"https://en.wikipedia.org/wiki/Joint_Staff_Headquarters_(Pakistan)",
 611539,"PK-0097","heliport","Sakesar Heliport",32.548958,71.942249,4484,"AS","PK","PK-PB","Sakesar","no",,,,,,,
 41628,"PK-BHC","small_airport","Bhurban Heliport",33.96099853515625,73.4520034790039,5750,"AS","PK","PK-KP","Bhurban","no",,"BHC",,,,,
 41629,"PK-CWP","closed","Campbellpore Airport",33.766701,72.366898,1175,"AS","PK","PK-PB","Campbellpore","no",,,,,,,"CWP"
@@ -55799,7 +55807,7 @@
 308326,"RS-0040","closed","Sombor Airport",45.722333,19.057843,275,"EU","RS","RS-05","Sombor","no",,,,,,"https://en.wikipedia.org/wiki/Sombor_Airport","Сомбор, LYSO"
 314542,"RSE","seaplane_base","Rose Bay Seaplane Base",-33.869,151.262,,"OC","AU","AU-NSW","Sydney","no",,"RSE","YRAY",,,"https://en.wikipedia.org/wiki/Rose_Bay_Water_Airport",
 350214,"RSI","large_airport","Red Sea International Airport",25.627975,37.088914,140,"AS","SA","SA-07","Hanak","yes","OERS","RSI","OERS",,"https://www.redseaglobal.com/our-destinations/the-red-sea/red-sea-international-airport","https://en.wikipedia.org/wiki/Red_Sea_International_Airport","RSI"
-34933,"RU-0001","medium_airport","Levashovo Air Base",60.0867,30.1933,60,"EU","RU","RU-SPE","St. Petersburg","no",,,,,,"https://en.wikipedia.org/wiki/Levashovo_%28air_base%29","Levashevo, Leningrad, Petrograd"
+34933,"RU-0001","medium_airport","Levashovo Air Base",60.0867,30.1933,60,"EU","RU","RU-SPE","St. Petersburg","no",,,,"XLLV",,"https://en.wikipedia.org/wiki/Levashovo_%28air_base%29","ЬЛЛЖ, Левашово, Leningrad, Petrograd"
 34935,"RU-0002","closed","Afrikanda Air Base",67.456703,32.786701,505,"EU","RU","RU-MUR","Afrikanda","no",,,,,,"https://en.wikipedia.org/wiki/Afrikanda_air_base","ЬЛМФ, Аэродром Африканда, XLMF"
 34936,"RU-0003","small_airport","Protasovo Regional Airport",54.493301,39.931702,469,"EU","RU","RU-RYA","Listvyanka","no",,,,"UUWP","https://www.aeroprotasovo.ru/","https://en.wikipedia.org/wiki/Protasovo_(air_base)","УУВП, Aleksandrovo Air Base, Protasovo Air Base, Ryazan Alexandrovo, Аэродром Александрово, Аэродром Протасово"
 34937,"RU-0004","closed","Aleysk Air Base",52.48419,82.696788,676,"AS","RU","RU-ALT","Aleysk","no",,,,,,"https://en.wikipedia.org/wiki/Aleysk_%28air_base%29","УНБЙ, Aleisk Air Base, Аэродром Алейск"
@@ -55946,7 +55954,7 @@
 44479,"RU-0147","small_airport","Kurkachi Airfield",55.97999954223633,49.58100128173828,,"EU","RU","RU-TA","Kurkachi","no",,,,,,,"Аэродром Куркачи"
 44480,"RU-0148","small_airport","Maikhe Airfield",43.423353,132.422864,,"AS","RU","RU-PRI","Shtykovo","no",,,"ZA83",,,,"Аэродром Майхэ"
 44481,"RU-0149","small_airport","Uglovaya Air Base",43.347977,132.058755,40,"AS","RU","RU-PRI","Artyom","no",,,"UHIU",,,,"Uglovoye Air Base, Аэродром Угловая, Аэродром Угловое, UHIU, UUGG"
-44555,"RU-0150","heliport","Saint Petersburg Children's Hospital No.1 Helipad",59.836299896240234,30.186500549316406,,"EU","RU","RU-SPE","Saint Petersburg","no",,,,,,,"Вертолётная площадка Детской больницы № 1"
+44555,"RU-0150","heliport","Saint Petersburg Children's Hospital No.1 Helipad",59.8363,30.186501,59,"EU","RU","RU-SPE","Saint Petersburg","no",,,,"HE5A",,,"ХЕ5А, Вертолётная площадка Детской больницы № 1"
 44556,"RU-0151","heliport","Petropavlovskaya Krepost Helipad",59.951484,30.313715,15,"EU","RU","RU-SPE","Saint Petersburg","no",,,"ULLQ",,,,"Peter and Paul Fortress Helipad, Вертолётная площадка Петропавловская Крепость, УЛЛЯ"
 44575,"RU-0152","medium_airport","Mozdok Air Base",43.78499984741211,44.599998474121094,,"EU","RU","RU-SE","Mozdok","no",,,,,,,"Аэродром Моздок"
 44576,"RU-0153","closed","Komendantskiy Airfield",59.99700164794922,30.290000915527344,,"EU","RU","RU-SPE","St. Petersburg","no",,,,,,,"Komendantsky Airfield, Комендантский Аэродром"
@@ -55972,7 +55980,7 @@
 44635,"RU-0173","small_airport","Georgiyevka Airfield",53.28499984741211,51.03099822998047,,"EU","RU","RU-SAM","Georgiyevka","no",,,,,,,"Georgievka Airfield, Аэродром Георгиевка"
 44637,"RU-0174","heliport","Emergency Medicine Research Institute Helipad",59.873600006103516,30.358699798583984,,"EU","RU","RU-SPE","Saint Petersburg","no",,,,,"http://www.emergency.spb.ru/",,"Вертолётная площадка НИИ Скорой помощи"
 44638,"RU-0175","heliport","Ambassador Hotel Helipad",59.924900054932,30.310459136963,,"EU","RU","RU-SPE","Saint Petersburg","no",,,"ULLH","ULLH",,,"УЛЛХ, Вертолётная площадка отеля Амбассадор"
-44639,"RU-0176","heliport","Marli Helipad",59.8904533386,29.8946247101,,"EU","RU","RU-SPE","Saint Petersburg","no",,,,,,,"Вертолётная площадка Марли"
+44639,"RU-0176","heliport","Marli Helipad",59.89045,29.894625,3,"EU","RU","RU-SPE","Saint Petersburg","no",,,"ULLN",,,,"УЛЛН, Вертолётная площадка Марли"
 44640,"RU-0177","heliport","Uglich Fominskoye Helipad",57.548500061035156,38.2953987121582,,"EU","RU","RU-YAR","Uglich","no",,,,,,,"Uglich Fominskoe Helipad, Вертолётная площадка Углич-Фоминское"
 44641,"RU-0178","heliport","Yaskino Helipad",59.170249938964844,39.82509994506836,,"EU","RU","RU-VLG","Vologda","no",,,,,,,"Abramtsevo Helipad, Вертолётная площадка Яскино, Вертолётная площадка Абрамцево"
 44642,"RU-0179","heliport","Tushino Children's Hospital Helipad",55.85139846801758,37.40190124511719,,"EU","RU","RU-MOW","Moscow","no",,,,,"http://tdgb-mos.ru/",,"Вертолётная площадка Тушинской Детской больницы"
@@ -56185,7 +56193,7 @@
 46262,"RU-0387","small_airport","Golovino Airport",56.3665099612,84.7375488281,,"EU","RU","RU-TOM","Golovino","no",,,,,,,"Golovinа Airport, Аэропорт Головино, Аэропорт Головина"
 46275,"RU-0388","heliport","Bor Heliport",55.3596914463,37.729507684699996,,"EU","RU","RU-MOS","Odintsovo","no",,,,,,,"Вертодром Бор"
 46276,"RU-0389","heliport","Noginsk Helicopter Base",55.916097,38.480387,,"EU","RU","RU-MOS","Noginsk","no",,,,"HCP2",,,"Аэродром Ногинск"
-46277,"RU-0390","heliport","Utkina Zavod Helipad",59.8685824318,30.4858160019,,"EU","RU","RU-SPE","Saint Petersburg","no",,,,,,,"Utkina Zavod' Helipad, Вертолётная площадка Уткина Заводь"
+46277,"RU-0390","heliport","Utkina Zavod Helipad",59.868582,30.485816,17,"EU","RU","RU-SPE","Saint Petersburg","no",,,,"HE59",,,"ХЕ59, Вертолётная площадка Уткина Заводь"
 46281,"RU-0391","small_airport","Vikhrevo Airfield",56.240187,38.159867,,"EU","RU","RU-MOS","Sergiyev Posad","no",,,,,"http://www.vihrevo.ru/",,"Аэродром Вихрево"
 46315,"RU-0392","closed","Zvezda Airfield",52.940983295100004,49.6066188812,,"EU","RU","RU-SAM","Chapayevsk","no",,,,,,,"Аэродром Звезда"
 46316,"RU-0393","small_airport","Krasny Yar Airport",53.508635,50.439348,140,"EU","RU","RU-SAM","Krasny Yar","no",,,,"UWWQ",,,"Аэропорт Красный Яр, УВВЯ"
@@ -56223,7 +56231,7 @@
 46352,"RU-0425","closed","Kislovodsk Airport",43.9486,42.627,2702,"EU","RU","RU-STA","Kislovodsk","no",,,,,,,"Аэропорт Кисловодск, URMK, УРМК"
 46353,"RU-0426","small_airport","Psebay Airfield",44.110453,40.818844,,"EU","RU","RU-KDA","Psebay","no",,,,"ZE4B",,,"Аэропорт Псебай"
 46464,"RU-0427","heliport","Bugry Helipad",60.0564926747,30.3958761692,,"EU","RU","RU-LEN",,"no",,,,,,,"Вертолётная площадка Бугры"
-46465,"RU-0428","heliport","Osinovaya Roshcha Helipad",60.1020986078,30.2621734142,,"EU","RU","RU-SPE","Saint Petersburg","no",,,,,,,"Вертолётная площадка Осиновая Роща"
+46465,"RU-0428","heliport","Osinovaya Roshcha Helipad",60.102099,30.262173,110,"EU","RU","RU-SPE","Saint Petersburg","no",,,,"HE6J",,,"ХЕ6Й, Вертолётная площадка Осиновая Роща"
 46479,"RU-0429","small_airport","Morozovo Airstrip",55.3806464897,38.371596336399996,,"EU","RU","RU-MOS","Morozovo","no",,,,,,,"ВПП Морозово"
 46488,"RU-0430","small_airport","Kamyshin Airport",50.0532536947,45.3695440292,,"EU","RU","RU-VGG","Kamyshin","no",,,,,,,"Аэропорт Камышин"
 46649,"RU-0431","heliport","Opalikha Traffic Safety Helipad",56.195249,44.120552,280,"EU","RU","RU-NIZ","Opalikha","no",,,,"H208",,,"Х208, Опаликха"
@@ -56598,7 +56606,7 @@
 352130,"RU-0801","heliport","Kukelevo Heliport",47.77208,134.76139,157,"EU","RU","RU-KHA","Kukelevo","no",,,,,,,
 352227,"RU-0802","small_airport","Aleksandrovsk-Sakhalinskiy Airport",50.877144,142.17561,12,"AS","RU","RU-SAK","Aleksandrovsk-Sakhalinskiy","no",,"UHS","UHSA",,,,"УХСА, Александровск-Сахалинский"
 352482,"RU-0803","heliport","Parus Heliport",48.4793,134.88777,138,"EU","RU","RU-YEV","Priamursky","no",,,,,,,
-35047,"RU-0804","closed","Onega Andozero Air Base",63.923301696799996,38.4117012024,285,"EU","RU","RU-ARK","Onega","no",,,,,,"https://en.wikipedia.org/wiki/Onega_Andozero","Vatega"
+35047,"RU-0804","closed","Onega Andozero Air Base",63.923302,38.411701,285,"EU","RU","RU-ARK","Onega","no",,,,,,"https://en.wikipedia.org/wiki/Onega_Andozero","Vatega, ZA0F, ЗА0Ф, Оне́га"
 352485,"RU-0805","small_airport","Kukan Airport",49.21613,133.46271,466,"AS","RU","RU-KHA","Kukan","no",,,"UHHW",,,,"УХХВ, Кукан"
 352487,"RU-0806","heliport","Voskresenovka Heliport",48.04054,132.8781,230,"EU","RU","RU-YEV","Voskresenovka","no",,,,,,,
 352496,"RU-0807","small_airport","Amurzet Airport",47.70734,131.09247,223,"EU","RU","RU-YEV","Amurzet","no",,,,,,,
@@ -57010,7 +57018,11 @@
 611528,"RU-10195","small_airport","Dugino Airfield",47.179396,39.426574,6,"EU","RU","RU-ROS","Rostov-on-Don","no",,,,"URUD",,,"УРУД, ZCS2, ЗЦС2, Дугино"
 611529,"RU-10196","heliport","Barlak Heliport",55.198834,83.229006,679,"EU","RU","RU-NVS","Barlak","no",,,,"HA76",,,"ХА76, Барлак"
 611629,"RU-10197","small_airport","Yuktali Airstrip",56.588482,121.673151,1350,"AS","RU","RU-AMU","Yuktali","no",,,,,,,"Юктали"
+611698,"RU-10198","heliport","Ptichnoe Helipad",55.513246,37.238343,587,"EU","RU","RU-MOW","Moscow","no",,,,,,,"ptichnoe"
+611699,"RU-10199","heliport","Moscow-City Helipad",55.745903,37.539211,410,"EU","RU","RU-MOW","Moscow","no",,,,,,,"moscow city"
 528461,"RU-1020","heliport","Roman Trebs field",68.624032,57.891887,,"EU","RU","RU-NEN","Varandey","no",,,,,,,"Oil & Gas, GazpromNeft Shelf, HELIOPS"
+611700,"RU-10200","heliport","Angliyskaya naberezhnaya Helipad",59.936073,30.298478,17,"EU","RU","RU-SPE","St. Petersburg","no",,,,,,,
+611701,"RU-10201","heliport","Aleksandrovskaya Bolnitsa Helipad",59.92835,30.487242,40,"EU","RU","RU-SPE","St. Petersburg59.928350","no",,,,"LI02",,,
 528462,"RU-1021","heliport","Roman Trebs field",68.609969,57.715387,,"EU","RU","RU-NEN","Varandey","no",,,,,,,"Oil & Gas, GazpromNeft Shelf, HELIOPS"
 528463,"RU-1022","heliport","Roman Trebs field",68.655715,57.699562,,"EU","RU","RU-NEN","Varandey","no",,,,,,,"Oil & Gas, GazpromNeft Shelf, HELIOPS"
 528464,"RU-1023","heliport","Roman Trebs field",68.573372,57.632571,,"EU","RU","RU-NEN","Varandey","no",,,,,,,"Oil & Gas, GazpromNeft Shelf, HELIOPS"
@@ -57848,80 +57860,80 @@
 39097,"SCAY","small_airport","Ayacara Airport",-42.307818,-72.787643,80,"SA","CL","CL-LL","Ayacara","no","SCAY",,"SCAY",,,"https://en.wikipedia.org/wiki/Ayacara_Airport",
 39098,"SCAZ","small_airport","Azopardo Airport",-54.481014,-68.940689,59,"SA","CL","CL-MA","Timaukel","no","SCAZ",,"SCAZ",,,"https://en.wikipedia.org/wiki/Azopardo_Airport",
 6003,"SCBA","medium_airport","Balmaceda Airport",-45.915968,-71.689499,1722,"SA","CL","CL-AI","Balmaceda","yes","SCBA","BBA","SCBA",,"https://aeropuertodebalmaceda.cl/","https://en.wikipedia.org/wiki/Balmaceda_Airport",
-45055,"SCBB","small_airport","Del Bío Bío Airport",-37.587222,-72.503611,249,"SA","CL","CL-BI","Negrete","no",,,"SCBB",,,,
-39099,"SCBC","small_airport","Cacique Blanco Airport",-44.23111,-71.864166,750,"SA","CL","CL-AI","Lago Verde","no",,,"SCBC",,,"https://en.wikipedia.org/wiki/Cacique_Blanco_Airport",
-39100,"SCBD","small_airport","El Boldal Airport",-34.684444,-71.206108,574,"SA","CL","CL-LI","Santa Cruz","no",,,"SCBD",,,"https://en.wikipedia.org/wiki/El_Boldal_Airport",
+45055,"SCBB","small_airport","Del Bío Bío Airport",-37.587222,-72.503611,249,"SA","CL","CL-BI","Negrete","no","SCBB",,"SCBB",,,,
+39099,"SCBC","small_airport","Cacique Blanco Airport",-44.229586,-71.852056,750,"SA","CL","CL-AI","Lago Verde","no","SCBC",,"SCBC",,,"https://en.wikipedia.org/wiki/Cacique_Blanco_Airport",
+39100,"SCBD","small_airport","El Boldal Airport",-34.679984,-71.284246,601,"SA","CL","CL-LI","Santa Cruz","no","SCBD",,"SCBD",,,"https://en.wikipedia.org/wiki/El_Boldal_Airport",
 6004,"SCBE","medium_airport","Barriles Airport",-22.1411,-70.062897,3475,"SA","CL","CL-AN","Tocopilla","no","SCBE","TOQ","SCBE",,,"https://en.wikipedia.org/wiki/Barriles_Airport",
-39101,"SCBI","small_airport","Pampa Guanaco Airport",-54.049977,-68.809193,591,"SA","CL","CL-MA","Bahia Inutil","no",,"DPB","SCBI",,,"https://en.wikipedia.org/wiki/Pampa_Guanaco_Airport",
+39101,"SCBI","small_airport","Pampa Guanaco Airport",-54.049977,-68.809193,591,"SA","CL","CL-MA","Bahia Inutil","no","SCBI","DPB","SCBI",,,"https://en.wikipedia.org/wiki/Pampa_Guanaco_Airport","Camerón, Timaukel"
 348524,"SCBL","small_airport","El Porvenir Airport",-33.273056,-71.525278,988,"SA","CL","CL-VS","Casablanca","no",,,"SCBL",,,,
-39102,"SCBN","small_airport","Cotreumo Airport",-40.4006,-72.6614,607,"SA","CL","CL-LR","Rio Bueno","no",,,"SCBN",,,"https://en.wikipedia.org/wiki/Cotreumo_Airport",
+39102,"SCBN","small_airport","Cotreumo Airport",-40.39942,-72.660434,607,"SA","CL","CL-LR","Rio Bueno","no","SCBN",,"SCBN",,,"https://en.wikipedia.org/wiki/Cotreumo_Airport",
 308226,"SCBO","small_airport","General Bernardo O'Higgins Base Skyway",-63.344,-57.842,900,"AN","AQ","AQ-U-A","General Bernardo O'Higgins Base","no",,,"SCBO",,,,
-6005,"SCBQ","small_airport","El Bosque Airport",-33.561798,-70.6884,1844,"SA","CL","CL-RM","Santiago","no",,,"SCBQ",,,"https://en.wikipedia.org/wiki/El_Bosque_Airport",
-39103,"SCBR","small_airport","Lago Brown Airport",-47.391945,-72.317497,540,"SA","CL","CL-AI","Lago Brown","no",,,"SCBR",,,"https://en.wikipedia.org/wiki/Lago_Brown_Airport",
-39104,"SCBS","small_airport","Posesión Airport",-52.292588,-68.933029,100,"SA","CL","CL-MA","Bahia Posesion","no",,,"SCBS",,,"https://en.wikipedia.org/wiki/Posesi%C3%B3n_Airport",
-39105,"SCBT","small_airport","Rincón Bonito Airport",-42.028889,-72.096107,705,"SA","CL","CL-LL","Cochamo","no",,,"SCBT",,,"https://es.wikipedia.org/wiki/Aer%C3%B3dromo_Rinc%C3%B3n_Bonito",
-308227,"SCBU","small_airport","El Baúl Airstrip",-35.341435,-70.9108,3070,"SA","CL","CL-ML","Molina","no",,,"SCBU",,,,
-39106,"SCBV","small_airport","Bellavista Airport",-35.189724,-71.296669,885,"SA","CL","CL-ML","Rio Claro","no",,,"SCBV",,,"https://en.wikipedia.org/wiki/Bellavista_Airport_(Chile)",
-39107,"SCCA","small_airport","El Boldo Airport",-35.97139,-72.224998,525,"SA","CL","CL-ML","Cauquenes","no",,,"SCCA",,,"https://en.wikipedia.org/wiki/El_Boldo_Airport",
-39108,"SCCB","small_airport","Pedro Villarroel C. Airport",-31.221945,-71.070274,3002,"SA","CL","CL-CO","Combarbala","no",,,"SCCB",,,"https://en.wikipedia.org/wiki/Pedro_Villarroel_C._Airport",
+6005,"SCBQ","small_airport","El Bosque Airbase",-33.561798,-70.6884,1844,"SA","CL","CL-RM","Santiago","no","SCBQ",,"SCBQ",,,"https://en.wikipedia.org/wiki/El_Bosque_Airport",
+39103,"SCBR","small_airport","Lago Brown Airport",-47.388326,-72.326788,540,"SA","CL","CL-AI","Lago Brown","no","SCBR",,"SCBR",,,"https://en.wikipedia.org/wiki/Lago_Brown_Airport",
+39104,"SCBS","small_airport","Posesión Airport",-52.292588,-68.933029,100,"SA","CL","CL-MA","Bahia Posesion","no","SCBS",,"SCBS",,,"https://en.wikipedia.org/wiki/Posesi%C3%B3n_Airport",
+39105,"SCBT","small_airport","Rincón Bonito Airport",-42.026455,-72.099139,705,"SA","CL","CL-LL","Cochamo","no","SCBT",,"SCBT",,,"https://es.wikipedia.org/wiki/Aer%C3%B3dromo_Rinc%C3%B3n_Bonito",
+308227,"SCBU","small_airport","El Baúl Airstrip",-35.341435,-70.9108,3070,"SA","CL","CL-ML","Molina","no",,,,,,,
+39106,"SCBV","small_airport","Bellavista Airport",-35.185844,-71.296177,885,"SA","CL","CL-ML","Rio Claro","no","SCBV",,"SCBV",,,"https://en.wikipedia.org/wiki/Bellavista_Airport_(Chile)",
+39107,"SCCA","small_airport","El Boldo Airport",-35.97139,-72.224998,525,"SA","CL","CL-ML","Cauquenes","no","SCCA",,"SCCA",,,"https://en.wikipedia.org/wiki/El_Boldo_Airport",
+39108,"SCCB","small_airport","Pedro Villarroel C. Airport",-31.220457,-71.070933,3002,"SA","CL","CL-CO","Combarbala","no",,,"SCCB",,,"https://en.wikipedia.org/wiki/Pedro_Villarroel_C._Airport",
 6006,"SCCC","medium_airport","Chile Chico Airport",-46.5831,-71.686323,1070,"SA","CL","CL-AI","Chile Chico","no","SCCC","CCH","SCCC",,,"https://en.wikipedia.org/wiki/Chile_Chico_Airfield",
 45056,"SCCE","small_airport","El Arenal Airport",-35.896389,-72.055833,397,"SA","CL","CL-ML","Cauquenes","no",,,"SCCE",,,,
 6007,"SCCF","medium_airport","El Loa Airport",-22.498199,-68.903603,7543,"SA","CL","CL-AN","Calama","yes","SCCF","CJC","SCCF",,,"https://en.wikipedia.org/wiki/El_Loa_Airport",
-39109,"SCCG","small_airport","La Pelícana Airport",-31.063889,-70.954445,2790,"SA","CL","CL-CO","Combarbala","no",,,"SCCG",,,"https://en.wikipedia.org/wiki/Cogoti_La_Pelicana_Airport",
+39109,"SCCG","small_airport","La Pelícana Airport",-31.067564,-70.954621,2790,"SA","CL","CL-CO","Combarbala","no","SCCG",,"SCCG",,,"https://en.wikipedia.org/wiki/Cogoti_La_Pelicana_Airport",
 6008,"SCCH","medium_airport","Gral. Bernardo O´Higgins Airport",-36.5825,-72.031403,495,"SA","CL","CL-NB","Chillan","no","SCCH","YAI","SCCH",,,"https://en.wikipedia.org/wiki/General_Bernardo_O'Higgins_Airport",
 6009,"SCCI","large_airport","President Carlos Ibáñez International Airport",-53.002602,-70.854599,139,"SA","CL","CL-MA","Punta Arenas","yes","SCCI","PUQ","SCCI",,,"https://en.wikipedia.org/wiki/Presidente_Carlos_Ibanez_Del_Campo_International_Airport",
-39110,"SCCK","small_airport","Contao Airport",-41.800304,-72.722237,10,"SA","CL","CL-LL","Contao","no",,,"SCCK",,,"https://en.wikipedia.org/wiki/Contao_Airport",
-6010,"SCCL","small_airport","Caldera Airport",-27.0781,-70.795303,180,"SA","CL","CL-AT","Caldera","no",,,"SCCL",,,"https://en.wikipedia.org/wiki/Caldera_Airport",
-39111,"SCCM","small_airport","Molco Airport",-39.825001,-72.082497,479,"SA","CL","CL-LR","Choshuenco","no",,,"SCCM",,,"https://en.wikipedia.org/wiki/Molco_Airport",
-39112,"SCCN","small_airport","Alto Cauquenes Airport",-35.88028,-72.327225,568,"SA","CL","CL-ML","Cauquenes","no",,,"SCCN",,,"https://en.wikipedia.org/wiki/Alto_Cauquenes_Airport",
+39110,"SCCK","small_airport","Contao Airport",-41.800039,-72.721117,10,"SA","CL","CL-LL","Contao","no","SCCK",,"SCCK",,,"https://en.wikipedia.org/wiki/Contao_Airport",
+6010,"SCCL","small_airport","Caldera Airport",-27.0781,-70.795303,180,"SA","CL","CL-AT","Caldera","no","SCCL",,"SCCL",,,"https://en.wikipedia.org/wiki/Caldera_Airport",
+39111,"SCCM","small_airport","Molco Airport",-39.825001,-72.082497,479,"SA","CL","CL-LR","Choshuenco","no","SCCM",,"SCCM",,,"https://en.wikipedia.org/wiki/Molco_Airport",
+39112,"SCCN","small_airport","Alto Cauquenes Airport",-35.88028,-72.327225,568,"SA","CL","CL-ML","Cauquenes","no","SCCN",,"SCCN",,,"https://en.wikipedia.org/wiki/Alto_Cauquenes_Airport",
 45057,"SCCQ","small_airport","Tambillos Airport",-30.198889,-71.246944,656,"SA","CL","CL-CO","Coquimbo","no",,"COW","SCCQ",,,,
-39114,"SCCR","small_airport","Enrique Mayer Soto Airport",-47.787079,-73.533028,4,"SA","CL","CL-AI","Caleta Tortel","no",,,"SCCR",,,"https://en.wikipedia.org/wiki/Caleta_Tortel_Airport",
-39115,"SCCS","small_airport","Santa Rita Airport",-33.2775,-71.45639,738,"SA","CL","CL-VS","Casablanca","no",,,"SCCS",,,"https://en.wikipedia.org/wiki/Santa_Rita_Airport_(Chile)",
-29800,"SCCT","small_airport","Quivolgo Airport",-35.308601,-72.392799,36,"SA","CL","CL-ML","Constitucion","no",,,"SCCT",,,"https://en.wikipedia.org/wiki/Quivolgo_Airport",
-39116,"SCCU","small_airport","Lolco Airport",-38.158054,-71.423889,2132,"SA","CL","CL-AR","Lonquimay","no",,,"SCCU",,,"https://en.wikipedia.org/wiki/Lolco_Airport",
+39114,"SCCR","small_airport","Enrique Mayer Soto Airport",-47.787079,-73.533028,4,"SA","CL","CL-AI","Caleta Tortel","no","SCCR",,"SCCR",,,"https://en.wikipedia.org/wiki/Caleta_Tortel_Airport",
+39115,"SCCS","small_airport","Santa Rita Airport",-33.277097,-71.455964,738,"SA","CL","CL-VS","Casablanca","no","SCCS",,"SCCS",,,"https://en.wikipedia.org/wiki/Santa_Rita_Airport_(Chile)",
+29800,"SCCT","small_airport","Quivolgo Airport",-35.308601,-72.392799,36,"SA","CL","CL-ML","Constitucion","no","SCCT",,"SCCT",,,"https://en.wikipedia.org/wiki/Quivolgo_Airport",
+39116,"SCCU","small_airport","Lolco Airport",-38.158054,-71.423889,2132,"SA","CL","CL-AR","Lonquimay","no","SCCU",,"SCCU",,,"https://en.wikipedia.org/wiki/Lolco_Airport",
 29812,"SCCV","small_airport","Curacaví Airport",-33.4128,-71.165604,666,"SA","CL","CL-RM","Curacaví","no","SCCV",,"SCCV",,,"https://en.wikipedia.org/wiki/Curacav%C3%AD_Airport","Curacaví, Aeródromo de Curacaví"
 6011,"SCCY","medium_airport","Teniente Vidal Airport",-45.5942,-72.106102,1020,"SA","CL","CL-AI","Coyhaique","no","SCCY","GXQ","SCCY",,,"https://en.wikipedia.org/wiki/Teniente_Vidal_Airfield",
 6012,"SCDA","large_airport","Diego Aracena International Airport",-20.536273,-70.181373,155,"SA","CL","CL-TA","Iquique","yes","SCDA","IQQ","SCDA",,"https://www.aeropuertodiegoaracena.cl/","https://en.wikipedia.org/wiki/Diego_Aracena_International_Airport",
-39117,"SCDD","small_airport","Don Dobri Airport",-41.235473,-72.514667,226,"SA","CL","CL-LL","Puerto Varas","no",,,"SCDD",,,"https://en.wikipedia.org/wiki/Don_Dobri_Airport",
-348530,"SCDG","small_airport","Don Aliro Garcia Airport",-34.193889,-71.568056,697,"SA","CL","CL-LI","La Estrella","no",,,"SCDG",,,,
-39118,"SCDH","small_airport","Vodudahue Airport",-42.488888,-72.350555,98,"SA","CL","CL-LL","Chaiten","no",,,"SCDH",,,"https://en.wikipedia.org/wiki/Vodudahue_Airport",
-39119,"SCDI","small_airport","Pichidangui Airport",-32.143055,-71.50528,98,"SA","CL","CL-CO","Pichidangui","no",,,"SCDI",,,"https://en.wikipedia.org/wiki/Pichidangui_Airport",
+39117,"SCDD","small_airport","Don Dobri Airport",-41.235473,-72.514667,226,"SA","CL","CL-LL","Puerto Varas","no","SCDD",,"SCDD",,,"https://en.wikipedia.org/wiki/Don_Dobri_Airport",
+348530,"SCDG","small_airport","Don Aliro Garcia Airport",-34.193889,-71.568056,697,"SA","CL","CL-LI","La Estrella","no","SCDG",,"SCDG",,,,
+39118,"SCDH","small_airport","Vodudahue Airport",-42.488633,-72.353456,98,"SA","CL","CL-LL","Chaiten","no","SCDH",,"SCDH",,,"https://en.wikipedia.org/wiki/Vodudahue_Airport",
+39119,"SCDI","small_airport","Pichidangui Airport",-32.146043,-71.50784,98,"SA","CL","CL-CO","Pichidangui","no","SCDI",,"SCDI",,,"https://en.wikipedia.org/wiki/Pichidangui_Airport",
 348539,"SCDK","small_airport","El Patagual Airport",-37.025519,-72.982733,93,"SA","CL","CL-BI","Concepcion","no",,,"SCDK",,,,
-39120,"SCDL","small_airport","El Algarrobo Airport",-32.471943,-70.993057,951,"SA","CL","CL-VS","Cabildo","no",,,"SCDL",,,"https://en.wikipedia.org/wiki/El_Algarrobo_Airport",
+39120,"SCDL","small_airport","El Algarrobo Airport",-32.471943,-70.993057,951,"SA","CL","CL-VS","Cabildo","no","SCDL",,"SCDL",,,"https://en.wikipedia.org/wiki/El_Algarrobo_Airport",
 39121,"SCDM","small_airport","San Damian Airport",-34.878056,-72.145554,220,"SA","CL","CL-ML","Duao","no",,,"SCDM",,,"https://en.wikipedia.org/wiki/San_Dami%C3%A1n_Airport",
-39122,"SCDQ","small_airport","San Lorenzo Airport",-37.523335,-71.726112,1902,"SA","CL","CL-BI","Duqueco","no",,,"SCDQ",,,"https://en.wikipedia.org/wiki/San_Lorenzo_Airport_(Chile)",
-39123,"SCDS","small_airport","San Andrés Airport",-36.005554,-71.76667,574,"SA","CL","CL-ML","Retiro","no",,,"SCDS",,,"https://en.wikipedia.org/wiki/San_Andr%C3%A9s_Airport",
-6013,"SCDW","small_airport","Almirante Schroeders Airport",-53.610699,-70.470497,160,"SA","CL","CL-MA","Isla Dawson","no",,,"SCDW",,,"https://en.wikipedia.org/wiki/Almirante_Schroeders_Airport",
+39122,"SCDQ","small_airport","San Lorenzo Airport",-37.526971,-71.723498,1902,"SA","CL","CL-BI","Duqueco","no","SCDQ",,"SCDQ",,,"https://en.wikipedia.org/wiki/San_Lorenzo_Airport_(Chile)",
+39123,"SCDS","small_airport","San Andrés Airport",-35.996922,-71.770244,574,"SA","CL","CL-ML","Retiro","no","SCDS",,"SCDS",,,"https://en.wikipedia.org/wiki/San_Andr%C3%A9s_Airport",
+6013,"SCDW","small_airport","Almirante Schroeders Airport",-53.610699,-70.470497,160,"SA","CL","CL-MA","Isla Dawson","no","SCDW",,"SCDW",,,"https://en.wikipedia.org/wiki/Almirante_Schroeders_Airport",
 39124,"SCEA","small_airport","El Amarillo Airport",-43.006111,-72.478333,1083,"SA","CL","CL-LL","Chaiten","no",,,"SCEA",,,"https://en.wikipedia.org/wiki/El_Amarillo_Airport",
-39125,"SCEB","small_airport","Entrada Baker Airport",-47.166974,-71.992496,1640,"SA","CL","CL-AI","Entrada Baker","no",,,"SCEB",,,"https://en.wikipedia.org/wiki/Entrada_Baker_Airport",
+39125,"SCEB","small_airport","Entrada Baker Airport",-47.166974,-71.992496,1640,"SA","CL","CL-AI","Entrada Baker","no","SCEB",,"SCEB",,,"https://en.wikipedia.org/wiki/Entrada_Baker_Airport",
 6014,"SCEC","small_airport","Pelícano Airport",-29.144899,-70.887802,3678,"SA","CL","CL-CO","Estacion Chañaral","no",,,"SCEC",,,"https://en.wikipedia.org/wiki/Pelicano_Airport",
-39126,"SCED","small_airport","Los Cedros Airport",-35.154999,-71.585281,305,"SA","CL","CL-ML","Sagrada Familia","no",,,"SCED",,,"https://en.wikipedia.org/wiki/Los_Cedros_Airport",
-39127,"SCEG","small_airport","El Corte Airport",-33.709999,-70.913055,1024,"SA","CL","CL-RM","Talagante","no",,,"SCEG",,,"https://en.wikipedia.org/wiki/El_Corte_Airport",
+39126,"SCED","small_airport","Los Cedros Airport",-35.155275,-71.605468,305,"SA","CL","CL-ML","Sagrada Familia","no","SCED",,"SCED",,,"https://en.wikipedia.org/wiki/Los_Cedros_Airport",
+39127,"SCEG","small_airport","El Corte Airport",-33.709969,-70.91569,1024,"SA","CL","CL-RM","Talagante","no","SCEG",,"SCEG",,,"https://en.wikipedia.org/wiki/El_Corte_Airport",
 39128,"SCEH","small_airport","El Huachi Airport",-37.647221,-71.753891,1558,"SA","CL","CL-BI","Santa Barbara","no",,,"SCEH",,,"https://en.wikipedia.org/wiki/El_Huachi_Airport",
-348542,"SCEI","small_airport","Potrerillos Airport",-26.380144,-69.475458,8606,"SA","CL","CL-AT","Diego de Almagro","no",,,"SCEI",,,,
+348542,"SCEI","small_airport","Potrerillos Airport",-26.380144,-69.475458,8606,"SA","CL","CL-AT","Diego de Almagro","no","SCEI",,"SCEI",,,,
 39129,"SCEK","small_airport","Chépica Airport",-34.739723,-71.324722,610,"SA","CL","CL-LI","Chepica","no",,,"SCEK",,,"https://en.wikipedia.org/wiki/Chepica_Airport",
-6015,"SCEL","large_airport","Comodoro Arturo Merino Benítez International Airport",-33.393001556396484,-70.78579711914062,1555,"SA","CL","CL-RM","Santiago","yes","SCEL","SCL","SCEL",,"http://www.aeropuertosantiago.cl/ingles/index.php","https://en.wikipedia.org/wiki/Comodoro_Arturo_Merino_Ben%C3%ADtez_International_Airport",
-39130,"SCEO","small_airport","El Salto Airport",-36.13028,-71.857498,564,"SA","CL","CL-ML","Parral","no",,,"SCEO",,,"https://en.wikipedia.org/wiki/El_Salto_Airport",
-30265,"SCEP","small_airport","El Principal Airport",-33.724998,-70.5103,2592,"SA","CL","CL-RM","Pirque","no",,,"SCEP",,,"https://en.wikipedia.org/wiki/El_Principal_Airport",
-6016,"SCER","small_airport","Quintero Airport",-32.790199,-71.521698,12,"SA","CL","CL-VS","Quintero","no",,,"SCER",,,"https://en.wikipedia.org/wiki/Quintero_Airport",
+6015,"SCEL","large_airport","Comodoro Arturo Merino Benítez International Airport",-33.390252,-70.794697,1555,"SA","CL","CL-RM","Santiago","yes","SCEL","SCL","SCEL",,"http://www.aeropuertosantiago.cl/ingles/index.php","https://en.wikipedia.org/wiki/Comodoro_Arturo_Merino_Ben%C3%ADtez_International_Airport",
+39130,"SCEO","small_airport","El Salto Airport",-36.129822,-71.858845,564,"SA","CL","CL-ML","Parral","no","SCEO",,"SCEO",,,"https://en.wikipedia.org/wiki/El_Salto_Airport",
+30265,"SCEP","small_airport","El Principal Airport",-33.725224,-70.510909,2592,"SA","CL","CL-RM","Pirque","no","SCEP",,"SCEP",,,"https://en.wikipedia.org/wiki/El_Principal_Airport",
+6016,"SCER","small_airport","Quintero Airport",-32.798575,-71.519465,12,"SA","CL","CL-VS","Quintero","no","SCER",,"SCER",,,"https://en.wikipedia.org/wiki/Quintero_Airport",
 6017,"SCES","medium_airport","Ricardo García Posada Airport",-26.3111,-69.765198,5240,"SA","CL","CL-AT","El Salvador","yes","SCES","ESR","SCES",,,"https://en.wikipedia.org/wiki/Ricardo_Garc%C3%ADa_Posada_Airport",
 39131,"SCET","small_airport","El Tambo Airport",-34.475555,-71.014168,748,"SA","CL","CL-LI","San Vicente De Tagua Tagua","no",,,"SCET",,,"https://en.wikipedia.org/wiki/San_Vicente_de_Tagua_Tagua_Airport",
-39132,"SCEV","small_airport","El Avellano Airport",-41.051666,-73.35111,489,"SA","CL","CL-LL","Frutillar","no",,"FRT","SCEV",,,,
-45058,"SCEX","small_airport","Río Exploradores Airport",-46.353611,-73.327778,59,"SA","CL","CL-AI","Aysén","no",,,"SCEX",,,,
-39133,"SCEY","small_airport","Entrada Mayer Airport",-48.201452,-72.32759,1550,"SA","CL","CL-AI","Entrada Mayer","no",,,"SCEY",,,"https://en.wikipedia.org/wiki/Entrada_Mayer_Airport",
+39132,"SCEV","small_airport","El Avellano Airport",-41.051666,-73.35111,489,"SA","CL","CL-LL","Frutillar","no","SCEV","FRT","SCEV",,,,
+45058,"SCEX","small_airport","Río Exploradores Airport",-46.353611,-73.327778,59,"SA","CL","CL-AI","Aysén","no","SCEX",,"SCEX",,,,
+39133,"SCEY","small_airport","Entrada Mayer Airport",-48.201452,-72.32759,1550,"SA","CL","CL-AI","Entrada Mayer","no","SCEY",,"SCEY",,,"https://en.wikipedia.org/wiki/Entrada_Mayer_Airport",
 6018,"SCFA","large_airport","Andrés Sabella Gálvez International Airport",-23.445274,-70.445232,455,"SA","CL","CL-AN","Antofagasta","yes","SCFA","ANF","SCFA",,"https://aeropuertoantofagasta.cl","https://en.wikipedia.org/wiki/Andr%C3%A9s_Sabella_G%C3%A1lvez_International_Airport","Cerro Moreno Airport"
-39134,"SCFC","small_airport","Fachinal Airport",-46.548343,-72.218714,693,"SA","CL","CL-AI","Fachinal","no",,,"SCFC",,,"https://en.wikipedia.org/wiki/Fachinal_Airport",
-39135,"SCFF","small_airport","Freirina Airport",-28.526388,-71.061943,738,"SA","CL","CL-AT","Freirina","no",,,"SCFF",,,"https://en.wikipedia.org/wiki/Freirina_Airport",
+39134,"SCFC","small_airport","Fachinal Airport",-46.548343,-72.218714,693,"SA","CL","CL-AI","Chile Chico","no","SCFC",,"SCFC",,,"https://en.wikipedia.org/wiki/Fachinal_Airport",
+39135,"SCFF","small_airport","Freirina Airport",-28.526205,-71.06352,738,"SA","CL","CL-AT","Freirina","no","SCFF",,"SCFF",,,"https://en.wikipedia.org/wiki/Freirina_Airport",
 39136,"SCFI","small_airport","Fundo Tehuén Airport",-41.091965,-73.127023,377,"SA","CL","CL-LL","Frutillar","no",,,"SCFI",,,"https://en.wikipedia.org/wiki/Fundo_Tehu%C3%A9n_Airport",
-39137,"SCFJ","small_airport","Fray Jorge Airport",-30.68,-71.578613,492,"SA","CL","CL-CO","Ovalle","no",,,"SCFJ",,,"https://en.wikipedia.org/wiki/Fray_Jorge_Airport",
-39138,"SCFK","small_airport","Fundo El Carmen Airport",-36.641796,-72.011862,557,"SA","CL","CL-NB","Chillan","no",,,"SCFK",,,"https://en.wikipedia.org/wiki/Chill%C3%A1n_Fundo_El_Carmen_Airport",
-29883,"SCFL","small_airport","Fundo Loma Larga Airport",-33.279999,-71.379204,869,"SA","CL","CL-VS","Casablanca","no",,,"SCFL",,,"https://en.wikipedia.org/wiki/Fundo_Loma_Larga_Airport",
+39137,"SCFJ","small_airport","Fray Jorge Airport",-30.665047,-71.582669,492,"SA","CL","CL-CO","Ovalle","no","SCFJ",,"SCFJ",,,"https://en.wikipedia.org/wiki/Fray_Jorge_Airport",
+39138,"SCFK","small_airport","Fundo El Carmen Airport",-36.641796,-72.011862,557,"SA","CL","CL-NB","Chillan","no","SCFK",,"SCFK",,,"https://en.wikipedia.org/wiki/Chill%C3%A1n_Fundo_El_Carmen_Airport",
+29883,"SCFL","small_airport","Fundo Loma Larga Airport",-33.27871,-71.377281,869,"SA","CL","CL-VS","Casablanca","no","SCFL",,"SCFL",,,"https://en.wikipedia.org/wiki/Fundo_Loma_Larga_Airport",
 6019,"SCFM","medium_airport","Captain Fuentes Martinez Airport",-53.2537,-70.319199,104,"SA","CL","CL-MA","Porvenir","no","SCFM","WPR","SCFM",,,"https://en.wikipedia.org/wiki/Capit%C3%A1n_Fuentes_Mart%C3%ADnez_Airport",
 32258,"SCFN","small_airport","Russfin Airport",-53.799,-69.12,684,"SA","CL","CL-MA","Timaukel","no",,,"SCFN",,,"https://en.wikipedia.org/wiki/Russfin_Airport",
 39139,"SCFO","small_airport","La Reforma Airport",-35.458057,-71.281113,853,"SA","CL","CL-ML","Pelarco","no",,,"SCFO",,,"https://en.wikipedia.org/wiki/La_Reforma_Airport",
-39140,"SCFR","small_airport","Frutillar Airport",-41.130833,-73.06472,469,"SA","CL","CL-LL","Frutillar","no","SCFR",,"SCFR",,,"https://en.wikipedia.org/wiki/Frutillar_Airport",
-39141,"SCFS","small_airport","Los Calafates Airport",-42.67889,-73.896667,82,"SA","CL","CL-LL","Chonchi","no",,,"SCFS",,,"https://en.wikipedia.org/wiki/Los_Calafates_Airport",
-6020,"SCFT","small_airport","Futaleufú Airport",-43.189201,-71.851097,1148,"SA","CL","CL-LL","Futaleufu","no","SCFT","FFU","SCFT",,,"https://en.wikipedia.org/wiki/Futaleuf%C3%BA_Airfield",
+39140,"SCFR","small_airport","Frutillar Airport",-41.130091,-73.064405,469,"SA","CL","CL-LL","Frutillar","no","SCFR",,"SCFR",,,"https://en.wikipedia.org/wiki/Frutillar_Airport",
+39141,"SCFS","small_airport","Los Calafates Airport",-42.678565,-73.896421,82,"SA","CL","CL-LL","Chonchi","no","SCFS",,"SCFS",,,"https://en.wikipedia.org/wiki/Los_Calafates_Airport",
+6020,"SCFT","small_airport","Futaleufú Airport",-43.188879,-71.850775,1148,"SA","CL","CL-LL","Futaleufu","no","SCFT","FFU","SCFT",,,"https://en.wikipedia.org/wiki/Futaleuf%C3%BA_Airfield",
 39142,"SCFU","small_airport","Loncopan Airport",-40.066399,-72.537804,886,"SA","CL","CL-LR","Futrono","no",,,"SCFU",,,"https://en.wikipedia.org/wiki/Loncopan_Airport",
 6021,"SCFX","small_airport","Isla San Felix Airport",-26.2939,-80.096199,165,"SA","CL","CL-AT","Isla San Felix","no",,,"SCFX",,,"https://en.wikipedia.org/wiki/Isla_San_Felix_Airport",
 39143,"SCGA","small_airport","Punta Galera Airport",-40.0019,-73.696404,118,"SA","CL","CL-LR","La Union","no",,,"SCGA",,,"https://en.wikipedia.org/wiki/Punta_Galera_Airport",
@@ -57931,7 +57943,7 @@
 45060,"SCGF","small_airport","Golfo Azul Airport",-40.140833,-72.283611,486,"SA","CL","CL-LR","Futrono","no",,,"SCGF",,,,
 39145,"SCGH","small_airport","Cholguahue Airport",-37.469723,-72.138611,732,"SA","CL","CL-BI","Los Angeles","no",,,"SCGH",,,"https://en.wikipedia.org/wiki/Cholguahue_Airport",
 39146,"SCGI","small_airport","San Guillermo Airport",-36.00111,-71.829445,495,"SA","CL","CL-ML","Retiro","no",,,"SCGI",,,"https://en.wikipedia.org/wiki/San_Guillermo_Airport",
-39147,"SCGL","small_airport","Las Aguilas Airport",-34.169167,-71.531113,450,"SA","CL","CL-LI","Rapel","no",,,"SCGL",,,"https://en.wikipedia.org/wiki/Las_Agullas_Airport",
+39147,"SCGL","small_airport","Las Aguilas Airport",-34.1706,-71.53208,450,"SA","CL","CL-LI","Rapel","no","SCGL",,"SCGL",,,"https://en.wikipedia.org/wiki/Las_Agullas_Airport",
 39148,"SCGM","small_airport","Los Gomeros Airport",-34.361111,-70.881943,1034,"SA","CL","CL-LI","Rengo","no",,,"SCGM",,,"https://en.wikipedia.org/wiki/Los_Gomeros_Airport",
 39149,"SCGN","small_airport","Caleta Gonzalo Airport",-42.56361,-72.599724,33,"SA","CL","CL-LL","Chaiten","no",,,"SCGN",,,"https://en.wikipedia.org/wiki/Caleta_Gonzalo_Airport",
 32259,"SCGO","small_airport","Los Confines Airport",-37.794701,-72.687202,240,"SA","CL","CL-AR","Angol","no",,,"SCGO",,,"https://en.wikipedia.org/wiki/Angol_Los_Confines_Airport",
@@ -58024,9 +58036,9 @@
 45062,"SCML","small_airport","Melipeuco Airport",-38.856111,-71.8125,1388,"SA","CL","CL-AR","Melipeuco","no",,,"SCML",,,"https://es.wikipedia.org/wiki/Aer%C3%B3dromo_Melipeuco",
 39218,"SCMO","small_airport","Los Monos Airport",-35.190277,-71.41861,574,"SA","CL","CL-ML","Molina","no",,,"SCMO",,,"https://en.wikipedia.org/wiki/Los_Monos_Airport",
 39219,"SCMP","small_airport","Melipilla Airport",-33.673889,-71.193611,574,"SA","CL","CL-RM","Melipilla","no",,,"SCMP",,,"https://en.wikipedia.org/wiki/Melipilla_Airport",
-45063,"SCMR","small_airport","Las Aguilas Oriente Airport",-34.169167,-71.531111,450,"SA","CL","CL-LI","Rapel","no",,,"SCMR",,,"https://es.wikipedia.org/wiki/Aer%C3%B3dromo_Las_%C3%81guilas_Oriente",
+45063,"SCMR","small_airport","Las Aguilas Oriente Airport",-34.156378,-71.515004,568,"SA","CL","CL-LI","Rapel","no","SCMR",,"SCMR",,,"https://es.wikipedia.org/wiki/Aer%C3%B3dromo_Las_%C3%81guilas_Oriente",
 45064,"SCMS","small_airport","Las Moras Airport",-36.010278,-71.594444,512,"SA","CL","CL-ML","Longavi","no",,,"SCMS",,,"https://es.wikipedia.org/wiki/Aer%C3%B3dromo_Las_Moras",
-39220,"SCMU","small_airport","Panilonco Airport",-34.281113,-71.946945,574,"SA","CL","CL-LI","Pichilemu","no",,,"SCMU",,,"https://en.wikipedia.org/wiki/Panilonco_Aerodrome",
+39220,"SCMU","small_airport","Panilonco Airport",-34.285884,-71.949519,574,"SA","CL","CL-LI","Pichilemu","no","SCMU",,"SCMU",,,"https://en.wikipedia.org/wiki/Panilonco_Aerodrome",
 39221,"SCMV","small_airport","Viña San Pedro Airport",-35.105835,-71.327774,738,"SA","CL","CL-ML","Molina","no",,,"SCMV",,,"https://en.wikipedia.org/wiki/Vi%C3%B1a_San_Pedro_Airport",
 39222,"SCMY","small_airport","Carolina Airport",-22.703611,-70.282501,128,"SA","CL","CL-AN","Michilla","no",,,"SCMY",,,"https://en.wikipedia.org/wiki/Carolina_Airport",
 39223,"SCMZ","small_airport","Marina de Rapel Airport",-34.151669,-71.445831,344,"SA","CL","CL-LI","El Manzano","no",,,"SCMZ",,,"https://en.wikipedia.org/wiki/Marina_de_Rapel_Airport",
@@ -59641,8 +59653,8 @@
 39333,"SHAU","heliport","Santa Rosa Heliport",-34.2552,-71.030606,971,"SA","CL","CL-LI","Coltauco","no","SHAU",,"SHAU",,,,
 600435,"SHAV","heliport","Alta Vista Heliport",-32.621739,-71.399487,440,"SA","CL","CL-VS","Zapallar","no","SHAV",,"SHAV",,,,
 45086,"SHBC","heliport","Las Brisas De Chicureo Heliport",-33.239722,-70.696111,1175,"SA","CL","CL-RM","Santiago","no",,,"SHBC",,,,
-39334,"SHBE","heliport","Banco Exterior Heliport",-33.43611145019531,-70.6449966430664,2000,"SA","CL","CL-RM","Santiago","no",,,"SHBE",,,,
-596072,"SHBH","heliport","Eagle Copters Heliport",-33.27136,-70.650136,1887,"SA","CL","CL-RM","Colina","no",,,"SHBH",,,,
+39334,"SHBE","heliport","Banco Exterior Helistop",-33.440027,-70.6465,2000,"SA","CL","CL-RM","Santiago","no","SHBE",,"SHBE",,,,
+596072,"SHBH","heliport","Eagle Copters Heliport",-33.27136,-70.650136,1887,"SA","CL","CL-RM","Colina","no","SHBH",,"SHBH",,,,
 39335,"SHBL","heliport","Hospital Ramón Barros Luco Heliport",-33.48527908325195,-70.64444732666016,1805,"SA","CL","CL-RM","Santiago","no",,,"SHBL",,,,
 39336,"SHBP","heliport","Bahía Los Primos Heliport",-34.11083221435547,-71.5352783203125,574,"SA","CL","CL-LI","La Estrella","no",,,"SHBP",,,,
 39337,"SHBS","heliport","Banco Santander Heliport",-33.43611145019531,-70.6513900756836,2067,"SA","CL","CL-RM","Santiago","no",,,"SHBS",,,,
@@ -62299,6 +62311,7 @@
 39416,"SLAQ","small_airport","Aiquile Airport",-18.215401,-65.187798,7208,"SA","BO","BO-C","Campero","no",,,"SLAQ",,,"https://en.wikipedia.org/wiki/Aiquile_Airport",
 29671,"SLAS","small_airport","Ascención de Guarayos Airport",-15.933365,-63.155575,807,"SA","BO","BO-S","Ascensión de Guarayos","no","SLAS","ASC","SLAS",,,"https://en.wikipedia.org/wiki/Ascensi%C3%B3n_de_Guarayos_Airport",
 39420,"SLBB","small_airport","Bulo Bulo Airport",-17.257334,-64.366669,886,"SA","BO","BO-C","Carrasco","no",,,"SLBB",,,"https://en.wikipedia.org/wiki/Bulo_Bulo_Airport",
+611660,"SLBE","small_airport","Beirut Airstrip",-17.6525,-62.654722,925,"SA","BO","BO-S","Chiquitos","no","SLBE",,"SLBE",,,,
 39481,"SLBF","small_airport","Blanca Flor Airport",-11.7272,-66.9263,598,"SA","BO","BO-N","Madre De Dios","no",,,"SLBF",,,"https://en.wikipedia.org/wiki/Blanca_Flor_Airport",
 39484,"SLBH","small_airport","Buena Hora Airport",-12.133333,-66.533333,656,"SA","BO","BO-B","Ballivian","no",,,"SLBH",,,"https://en.wikipedia.org/wiki/Buena_Hora_Airport",
 6179,"SLBJ","medium_airport","Bermejo Airport",-22.7733001709,-64.31289672850001,1249,"SA","BO","BO-T","Bermejo","no","SLBJ","BJO","SLBJ",,,"https://en.wikipedia.org/wiki/Bermejo_Airport",
@@ -62315,11 +62328,11 @@
 39428,"SLCG","small_airport","Charagua Airport",-19.785601,-63.1884,2040,"SA","BO","BO-S","Cordillera","no",,,"SLCG",,,"https://en.wikipedia.org/wiki/Charagua_Airport",
 39486,"SLCI","small_airport","Caigua Airport",-21.136389,-63.752778,1685,"SA","BO","BO-T","Gran Chaco","no",,,"SLCI",,,"https://en.wikipedia.org/wiki/Caigua_Airport","Carapari, Caigua"
 39492,"SLCL","small_airport","Collpani Airport",-18.882706,-66.796671,12185,"SA","BO","BO-O","Abaroa","no",,,"SLCL",,,"https://en.wikipedia.org/wiki/Challapata_Airport",
-39487,"SLCM","small_airport","Camacho Airport",-11.505,-67.6847,690,"SA","BO","BO-N","Camacho","no",,,"SLCM",,,,
+39487,"SLCM","small_airport","Camacho Airport",-11.505062,-67.685006,690,"SA","BO","BO-N","Camacho","no","SLCM",,"SLCM",,,,
 29776,"SLCN","small_airport","Charaña Airport",-17.5947,-69.433098,13339,"SA","BO","BO-L","Charaña","no",,,"SLCN",,,"https://en.wikipedia.org/wiki/Chara%C3%B1a_Airport",
 6182,"SLCO","medium_airport","Capitán Aníbal Arab Airport",-11.039109,-68.782774,889,"SA","BO","BO-N","Cobija","yes","SLCO","CIJ","SLCO",,,"https://en.wikipedia.org/wiki/Cap._Anibal_Arab_Airport",
 29797,"SLCP","small_airport","Concepción Airport",-16.142688,-62.026595,1620,"SA","BO","BO-S","Concepción","no","SLCP","CEP","SLCP",,,"https://en.wikipedia.org/wiki/Concepci%C3%B3n_Airport",
-39431,"SLCR","small_airport","Comarapa Airport",-17.913601,-64.517799,6186,"SA","BO","BO-S","M. Caballero","no",,,"SLCR",,,"https://en.wikipedia.org/wiki/Comarapa_Airport",
+39431,"SLCR","small_airport","Comarapa Airport",-17.913601,-64.517799,6186,"SA","BO","BO-S","M. Caballero","no",,,,,,"https://en.wikipedia.org/wiki/Comarapa_Airport",
 39425,"SLCS","small_airport","Cerdas Airport",-20.808333,-66.401111,12640,"SA","BO","BO-P","Nor Lipez","no",,,"SLCS",,,"https://en.wikipedia.org/wiki/Cerdas_Airport",
 39429,"SLCT","small_airport","Choreti Airport",-13.5145,-64.965202,656,"SA","BO","BO-B","Mamore","no",,,"SLCT",,,"https://en.wikipedia.org/wiki/Choreti_Airport",
 39496,"SLCU","small_airport","Culpina Airport",-20.833334,-64.966667,9676,"SA","BO","BO-H","Sud Cinti","no",,,"SLCU",,,"https://en.wikipedia.org/wiki/Culpina_Airport",
@@ -62327,10 +62340,12 @@
 39491,"SLCX","small_airport","Chive Airport",-12.377833366394043,-68.56766510009766,618,"SA","BO","BO-L","Iturralde","no",,,"SLCX",,,,
 39430,"SLCY","small_airport","Collpa Airport",-17.565000534057617,-63.17470169067383,1170,"SA","BO","BO-S","A. Ibañez","no",,,"SLCY",,,,
 39423,"SLDA","small_airport","Caranda Airport",-17.512562,-63.537002,1082,"SA","BO","BO-S","Ichilo","no",,,"SLDA",,,"https://en.wikipedia.org/wiki/Caranda_Airport",
-314417,"SLDL","small_airport","Dalmacia Airport",-17.4426,-62.2442,888,"SA","BO","BO-S",,"no",,,"SLDL",,,,
+611674,"SLDF","small_airport","Doña Francisca Airstrip",-17.945267,-62.101059,955,"SA","BO","BO-S","Chiquitos","no","SLDF",,"SLDF",,,,
+314417,"SLDL","small_airport","Dalmacia Airport",-17.4426,-62.2442,888,"SA","BO","BO-S",,"no","SLDL",,"SLDL",,,,
+611673,"SLDM","small_airport","Don Mario Airport",-17.363041,-59.701439,1364,"SA","BO","BO-S","Chiquitos","no","SLDM",,"SLDM",,,,
 39435,"SLDN","small_airport","El Desengano Airport",-14.2736,-65.440002,730,"SA","BO","BO-B","Yacuma","no",,,"SLDN",,,"https://en.wikipedia.org/wiki/El_Desenga%C3%B1o_Airport",
 39433,"SLEA","small_airport","El Cocal Airport",-13.569948,-66.071841,722,"SA","BO","BO-B","Yacuma","no",,,"SLEA",,,"https://en.wikipedia.org/wiki/El_Cocal_Airport",
-39498,"SLEC","small_airport","El Cairo Airport",-13.783334,-66.400002,722,"SA","BO","BO-B","Yacuma","no",,,"SLEC",,,"https://en.wikipedia.org/wiki/El_Cairo_Airport",
+39498,"SLEC","small_airport","El Cairo Airport",-13.783334,-66.400002,722,"SA","BO","BO-B","Yacuma","no",,,,,,"https://en.wikipedia.org/wiki/El_Cairo_Airport",
 39436,"SLEE","small_airport","El Escondido Airport",-21.466999,-63.352798,1246,"SA","BO","BO-T","Tesoro","no",,,"SLEE",,,"https://en.wikipedia.org/wiki/El_Escondido_Airport",
 39503,"SLEF","small_airport","El Triunfo Airport",-13.883333,-65.76667,486,"SA","BO","BO-B","Yacuma","no",,,"SLEF",,,"https://en.wikipedia.org/wiki/El_Triunfo_Airport",
 39502,"SLEH","small_airport","El Rancho Airport",-13.05,-65.033333,722,"SA","BO","BO-B","Mamore","no",,,"SLEH",,,"https://en.wikipedia.org/wiki/El_Rancho_Airport",
@@ -62349,12 +62364,13 @@
 39507,"SLFR","small_airport","Florencia Airport",-15.683333,-65.566666,574,"SA","BO","BO-B","Moxos","no",,,"SLFR",,,"https://en.wikipedia.org/wiki/Florencia_Airport",
 512154,"SLGM","medium_airport","Guayaramerín Airport",-10.88856,-65.380955,456,"SA","BO","BO-B","Guayaramerín","yes","SLGM","GYA","SLGM",,,"https://en.wikipedia.org/wiki/Guayaramer%C3%ADn_Airport",
 39508,"SLGP","small_airport","Guirapembi Airport",-18.056,-63.163166,1493,"SA","BO","BO-S","Cordillera","no",,,"SLGP",,,"https://en.wikipedia.org/wiki/Guirapembi_Airport",
-314416,"SLGQ","small_airport","Chiquitos Airport",-18.5222,-60.6804,1058,"SA","BO","BO-S",,"no",,,"SLGQ",,,,
+314416,"SLGQ","small_airport","Chiquitos Airport",-18.5222,-60.6804,1058,"SA","BO","BO-S",,"no","SLCQ",,"SLCQ",,,,
 29926,"SLGY","small_airport","Capitán de Av. Emilio Beltrán Airport",-10.820306,-65.346494,557,"SA","BO","BO-B","Guayaramerín","no","SLGY",,"SLGY",,,"https://web.archive.org/web/20160928075315/https://en.wikipedia.org/wiki/Guayaramer%C3%ADn_Airport","GYA"
 39485,"SLHA","small_airport","Cachascani Airport",-13.5,-64.199997,722,"SA","BO","BO-B","Itenes","no",,,"SLHA",,,"https://en.wikipedia.org/wiki/Cachascani_Airport",
 39442,"SLHC","small_airport","Huacareta Airport",-20.3908,-64.015404,4668,"SA","BO","BO-H","H. Silez","no",,,"SLHC",,,"https://en.wikipedia.org/wiki/Huacareta_Airport",
 6181,"SLHI","small_airport","Chimore Airport",-16.976834,-65.145568,875,"SA","BO","BO-C","Chimore","yes","SLHI","CCA","SLHI",,,"https://en.wikipedia.org/wiki/Chimore_Airport",
 39441,"SLHJ","small_airport","Huacaraje Airport",-13.605556,-63.879444,846,"SA","BO","BO-B","Itenes","no","SLHJ","BVK","SLHJ",,,"https://en.wikipedia.org/wiki/Huacaraje_Airport",
+611659,"SLHM","heliport","Mutun Heliport",-19.108898,-57.822845,494,"SA","BO","BO-S","Carnen de la Frontera","no","SLHM",,"SLHM",,,,
 39427,"SLHS","small_airport","Chacobos Airport",-19.594801,-62.565701,1437,"SA","BO","BO-S","Parapeti","no",,,"SLHS",,,"https://en.wikipedia.org/wiki/Chacobos_Airport",
 308773,"SLHT","heliport","Transierra Helipuerto",-21.3385,-63.479,1486,"SA","BO","BO-T","Transierra Natural Gas Co.","no",,,"SLHT",,,,
 39443,"SLIG","small_airport","Inglaterra Airport",-13.4438,-66.505997,780,"SA","BO","BO-B","Ballivian","no",,,"SLIG",,,"https://en.wikipedia.org/wiki/Inglaterra_Airport",
@@ -62366,11 +62382,13 @@
 39510,"SLIY","small_airport","Intiraymi Airport",-17.795833,-67.434722,12467,"SA","BO","BO-O","La Joya","no",,,"SLIY",,,"https://en.wikipedia.org/wiki/Intiraymi_Airport",
 39446,"SLIZ","small_airport","Izozog Airport",-18.663834,-63.002335,1082,"SA","BO","BO-S","Cordillera","no",,,"SLIZ",,,"https://en.wikipedia.org/wiki/Izozog_Airport",
 39447,"SLJA","small_airport","Jatata Airport",-11.772833,-67.255997,575,"SA","BO","BO-N","Madre De Dios","no",,,"SLJA",,,"https://en.wikipedia.org/wiki/Jatata_Airport",
+611683,"SLJD","small_airport","San Judas Tadeo Airport",-17.236212,-61.906415,842,"SA","BO","BO-S","Ñuflo de Chávez","no","SLJD",,"SLJD",,,,
 30376,"SLJE","small_airport","San José De Chiquitos Airport",-17.830799,-60.743099,974,"SA","BO","BO-S","San José de Chiquitos","no","SLJE","SJS","SLJE",,,"https://en.wikipedia.org/wiki/San_Jos%C3%A9_de_Chiquitos_Airport",
 30386,"SLJO","small_airport","San Joaquín Airport",-13.067209,-64.675205,456,"SA","BO","BO-B","San Joaquín","no","SLJO","SJB","SLJO",,,"https://en.wikipedia.org/wiki/San_Joaqu%C3%ADn_Airport",
 39511,"SLJS","small_airport","Josuani Airport",-13.083333,-66.166664,498,"SA","BO","BO-B","Yacuma","no",,,"SLJS",,,"https://en.wikipedia.org/wiki/Josuani_Airport",
 30375,"SLJV","small_airport","San Javier Airport",-16.2708,-62.470299,1702,"SA","BO","BO-S","San Javier","no","SLJV","SJV","SLJV",,,"https://en.wikipedia.org/wiki/San_Javier_Airport_(Bolivia)",
 39515,"SLLB","small_airport","Las Brizas Airport",-14.516666,-65.76667,722,"SA","BO","BO-B","Yacuma","no",,,"SLLB",,,"https://en.wikipedia.org/wiki/Las_Brizas_Airport",
+611679,"SLLC","small_airport","Santa Lucia Airport",-17.770393,-62.805924,1050,"SA","BO","BO-S","Chiquitos","no","SLLC",,"SLLC",,,,
 39513,"SLLH","small_airport","Lago Huachi Airport",-14.016666412353516,-63.53333282470703,700,"SA","BO","BO-B","Itenes","no",,,"SLLH",,,,
 39448,"SLLI","small_airport","La India Airport",-13.573833,-66.83567,540,"SA","BO","BO-B","Ballivian","no",,,"SLLI",,,"https://en.wikipedia.org/wiki/La_India_Airport",
 30059,"SLLJ","small_airport","Laja Airport",-16.533899307250977,-68.30059814453125,12103,"SA","BO","BO-L","Los Andes","no",,,"SLLJ",,,,
@@ -62400,7 +62418,7 @@
 39525,"SLPM","small_airport","Palmira Airport",-13.737951,-66.409333,530,"SA","BO","BO-B","Yacuma","no",,,"SLPM",,,"https://en.wikipedia.org/wiki/Palmira_Airport",
 39529,"SLPN","small_airport","Porvenir Norte Airport",-13.987333,-61.545666,595,"SA","BO","BO-S","Velasco","no",,,"SLPN",,,"https://en.wikipedia.org/wiki/Porvenir_Velasco_Airport",
 6186,"SLPO","medium_airport","Capitan Nicolas Rojas Airport",-19.543331,-65.723734,12922,"SA","BO","BO-P","Potosí","no","SLPO","POI","SLPO",,,"https://en.wikipedia.org/wiki/Cap._Nicolas_Rojas_Airport",
-39530,"SLPR","small_airport","Puerto Rico Airport",-11.107663,-67.551155,597,"SA","BO","BO-N","Puerto Rico/Manuripi","yes","SLPR","PUR","SLPR",,,"https://en.wikipedia.org/wiki/Puerto_Rico_Airport",
+39530,"SLPR","small_airport","Puerto Rico Airport",-11.107663,-67.551155,597,"SA","BO","BO-N","Puerto Rico/Manuripi","yes",,,,,,"https://en.wikipedia.org/wiki/Puerto_Rico_Airport",
 6187,"SLPS","medium_airport","Capitán Av. Salvador Ogaya G. airport",-18.975301,-57.820599,440,"SA","BO","BO-S","Puerto Suárez","yes","SLPS","PSZ","SLPS",,,"https://en.wikipedia.org/wiki/Puerto_Su%C3%A1rez_International_Airport",
 32322,"SLPW","small_airport","El Porvenir Sur Airport",-20.7547,-63.2094,2238,"SA","BO","BO-H","Luis Calvo","no",,,"SLPW",,,"https://en.wikipedia.org/wiki/El_Porvenir_Sur_Airport",
 39526,"SLPY","small_airport","Piray Airport",-18.333499908447266,-63.192501068115234,1730,"SA","BO","BO-S","Sanja Honda","no",,,"SLPY",,,,
@@ -62426,14 +62444,14 @@
 39462,"SLSG","small_airport","San Miguel De Gaser Airport",-13.9021,-66.1567,700,"SA","BO","BO-B","Yacuma","no",,,"SLSG",,,"https://en.wikipedia.org/wiki/San_Miguel_de_Gaser_Airport",
 39543,"SLSH","small_airport","Santa Ana De Huachi Airport",-15.494724,-67.442415,1640,"SA","BO","BO-L","Sud Yungas","no",,,"SLSH",,,"https://en.wikipedia.org/wiki/Santa_Ana_de_Huachi_Airport",
 30372,"SLSI","small_airport","Capitán Av. Juan Cochamanidis S. Airport",-16.38719,-60.962318,1354,"SA","BO","BO-S","San Ignacio de Velasco","no","SLSI","SNG","SLSI",,,"https://en.wikipedia.org/wiki/Capitán_Av._Juan_Cochamanidis_Airport",
-39535,"SLSJ","small_airport","Salinas Airport",-19.5,-67.33333587646484,12027,"SA","BO","BO-O","Ladislao Cabrera","no",,,"SLSJ",,,,
+39535,"SLSJ","small_airport","Salinas Airport",-19.5,-67.333336,12027,"SA","BO","BO-O","Ladislao Cabrera","no",,,,,,,
 39546,"SLSK","small_airport","Santa Rosa Del Sara Airport",-17.104719,-63.608372,850,"SA","BO","BO-S","A. Ibañez","no",,,"SLSK",,,"https://en.wikipedia.org/wiki/Santa_Rosa_del_Sara_Airport",
 30371,"SLSM","small_airport","San Ignacio de Moxos Airport",-14.9658,-65.6338,545,"SA","BO","BO-B","San Ignacio de Moxos","no","SLSM","SNM","SLSM",,,"https://en.wikipedia.org/wiki/San_Ignacio_de_Moxos_Airport",
 39542,"SLSN","small_airport","Sanandita Airport",-21.649999618530273,-63.599998474121094,3200,"SA","BO","BO-T","Gran Chaco","no",,,"SLSN",,,,
-39468,"SLSP","small_airport","Sipuati Airport",-21.0735,-63.109501,1400,"SA","BO","BO-T","Gran Chaco","no",,,"SLSP",,,"https://en.wikipedia.org/wiki/Sipuati_Airport",
+39468,"SLSP","small_airport","Sipuati Airport",-21.068746,-63.109594,1400,"SA","BO","BO-T","Gran Chaco","no",,,,,,"https://en.wikipedia.org/wiki/Sipuati_Airport",
 39467,"SLSQ","small_airport","Santiago De Chiquitos Airport",-18.3458,-59.604801,1990,"SA","BO","BO-S","Santiago de Chiquitos","no",,,"SLSQ",,,"https://en.wikipedia.org/wiki/Saahaqui_Airport",
 39464,"SLSR","small_airport","Santa Rosa de Yacuma Airport",-14.073072,-66.787391,738,"SA","BO","BO-B","Santa Rosa","no","SLSR","SRB","SLSR",,,"https://en.wikipedia.org/wiki/Santa_Rosa_Airport_(Bolivia)",
-39458,"SLSS","small_airport","Sunsas Airport",-18.4754,-58.2767,855,"SA","BO","BO-S","Sunsas","no",,,"SLSS",,,,
+39458,"SLSS","small_airport","Sunsas Airport",-18.475358,-58.276458,855,"SA","BO","BO-S","Sunsas, Germán Busch","no","SLSS",,"SLSS",,,,
 6189,"SLSU","medium_airport","Juana Azurduy de Padilla Air Force Base",-19.007099,-65.288696,9540,"SA","BO","BO-H","Sucre","no","SLSU",,"SLSU",,,"https://en.wikipedia.org/wiki/Juana_Azurduy_de_Padilla_International_Airport","SRE, military, Juana Azurduy de Padilla International Airport"
 345118,"SLSV","medium_airport","San Ignacio de Velasco Airport",-16.401239,-61.0452,1477,"SA","BO","BO-S","San Ignacio de Velasco","no",,,"SLSV",,,,
 39547,"SLTA","small_airport","Taquipirenda Airport",-20.3433,-63.1394,2340,"SA","BO","BO-S","Cordillera","no",,,"SLTA",,,"https://en.wikipedia.org/wiki/Taquipirenda_Airport",
@@ -62442,7 +62460,7 @@
 39466,"SLTG","small_airport","Santiago Airport",-15.2278,-65.450104,1000,"SA","BO","BO-B","Moxos","no",,,"SLTG",,,"https://en.wikipedia.org/wiki/Santiago_Airport_(Bolivia)",
 30387,"SLTI","small_airport","San Matías Airport",-16.339199,-58.401901,403,"SA","BO","BO-S","San Matías","no","SLTI","MQK","SLTI",,,"https://en.wikipedia.org/wiki/San_Mat%C3%ADas_Airport",
 6190,"SLTJ","medium_airport","Capitan Oriel Lea Plaza Airport",-21.5557,-64.701302,6079,"SA","BO","BO-T","Tarija","yes","SLTJ","TJA","SLTJ",,,"https://en.wikipedia.org/wiki/Cap._Oriel_Lea_Plaza_Airport",
-39470,"SLTL","small_airport","San Cristóbal Toldos Airport",-21.175602,-67.166689,11800,"SA","BO","BO-P","Nor Lipez","no","SLTL",,"SLTL",,,"https://en.wikipedia.org/wiki/Ventilla_Airport",
+39470,"SLTL","small_airport","San Cristóbal Toldos Airport",-21.175602,-67.166689,12467,"SA","BO","BO-P","Nor Lipez","no","SLTL",,"SLTL",,,"https://en.wikipedia.org/wiki/Ventilla_Airport",
 39551,"SLTO","small_airport","Totora Airport",-17.798166275024414,-68.09349822998047,12530,"SA","BO","BO-O","Oruro","no",,,"SLTO",,,,
 6191,"SLTR","medium_airport","Teniente Av. Jorge Henrich Arauz Airport",-14.8187,-64.917999,509,"SA","BO","BO-B","Trinidad","yes","SLTR","TDD","SLTR",,,"https://en.wikipedia.org/wiki/Tte._Av._Jorge_Henrich_Arauz_Airport",
 39472,"SLTU","small_airport","Turco Airport",-18.195833206176758,-68.14199829101562,12500,"SA","BO","BO-O","Sajama","no",,,"SLTU",,,,
@@ -67340,7 +67358,7 @@
 43964,"ULPK","small_airport","Kalevala Airfield",65.209999,31.135,377,"EU","RU","RU-KR","Kalevala","no",,,"ULPK",,,,"Аэропорт Калевала, УЛПК"
 43334,"ULPP","medium_airport","Peski Airfield",61.831944,34.295555,154,"EU","RU","RU-KR","Petrozavodsk","no","ULPP",,"ULPP",,,"https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%81%D0%BA%D0%B8_(%D0%B0%D1%8D%D1%80%D0%BE%D0%BF%D0%BE%D1%80%D1%82)","Пески, УЛПП"
 44752,"ULPS","small_airport","Segezha Airfield",63.758999,34.283001,377,"EU","RU","RU-KR","Segezha","no",,,"ULPS",,,,"Аэропорт Сегежа, УЛПС"
-44773,"ULSR","heliport","Strelna Heliport",59.86050033569336,30.052000045776367,16,"EU","RU","RU-SPE","Saint Petersburg","no",,,"ULSR",,,,"Вертодром Стрельна"
+44773,"ULSR","heliport","Strelna Heliport",59.8605,30.052,16,"EU","RU","RU-SPE","Saint Petersburg","no",,,"ULSR",,,,"УЛСР, Вертодром Стрельна"
 331712,"ULSW","small_airport","Severniy veter",59.835311,31.480533,194,"EU","RU","RU-LEN","Putilovo","no",,,"ULSW",,"http://paracentr.ru",,"Северный ветер,Putilovo"
 324862,"ULSZ","seaplane_base","Lake Krasnogvardeyskoye Water Aerodrome",60.268033,29.234033,112,"EU","RU","RU-LEN","Utkino","no",,,"ULSZ",,,,
 30819,"ULWC","medium_airport","Cherepovets Airport",59.273601532,38.015800476100004,377,"EU","RU","RU-VLG","Cherepovets","yes","ULWC","CEE","ULWC",,,"https://en.wikipedia.org/wiki/Cherepovets_Airport","УЛВЦ, Череповец"
@@ -76417,7 +76435,7 @@
 350098,"US-5892","small_airport","Monolith Airport",34.57805,-116.95685,3015,"NA","US","US-CA","Lucerne Valley","no",,,,,,,
 350099,"US-5893","small_airport","Harrod Airport",34.52872,-116.85341,3038,"NA","US","US-CA","Lucerne Valley","no",,,,,,,
 350100,"US-5894","closed","Butterfield Lake Estates Heliport",33.47892,-116.9612,1506,"NA","US","US-CA","Aguanga","no",,,,,,,
-350101,"US-5895","small_airport","Alico Ranch Airport",26.5979,-81.13205,26,"NA","US","US-FL","Clewiston","no",,,,,,,
+350101,"US-5895","closed","Alico Ranch Airport",26.5979,-81.13205,26,"NA","US","US-FL","Clewiston","no",,,,,,,"9FL6"
 350102,"US-5896","small_airport","The Florida Ridge Airsports Park",26.76282,-81.23091,20,"NA","US","US-FL","Clewiston","no",,,,,,,
 350103,"US-5897","closed","Alico Felda Grove Airport",26.51924,-81.38166,34,"NA","US","US-FL","LaBelle","no",,,,,,,
 350104,"US-5898","small_airport","Felda Airport",26.52105,-81.40396,33,"NA","US","US-FL","LaBelle","no",,,,,,,
@@ -77686,7 +77704,7 @@
 430514,"US-7160","heliport","Baptist Health Bethesda Hospital West Heliport",26.52929,-80.19844,21,"NA","US","US-FL","Boynton Beach","no",,,,"FL47",,,
 430530,"US-7161","heliport","Englewood Community Hospital Heliport",26.95098,-82.32641,12,"NA","US","US-FL","Englewood","no",,,"0FL4","0FL4",,,"HCA Florida"
 430536,"US-7162","small_airport","BNCFL Airport",29.58089,-81.59189,13,"NA","US","US-FL","San Mateo","no",,,"34FL","34FL",,,
-430543,"US-7163","heliport","HCA Florida Citrus Hospital Heliport",28.83402,-82.3354,82,"NA","US","US-FL","Inverness","no",,,,,,,
+430543,"US-7163","heliport","HCA Florida Citrus Hospital Heliport",28.83402,-82.3354,82,"NA","US","US-FL","Inverness","no",,,,"FD96",,,
 430544,"US-7164","closed","Holtsmans Airport",38.689446,-121.524131,25,"NA","US","US-CA","Rio Linda","no",,,,,,,"CA16"
 430545,"US-7165","heliport","VA Medical Center Livermore Heliport",37.6271,-121.75961,558,"NA","US","US-CA","Livermore","no",,,,,,,
 430546,"US-7166","closed","Davis Airport",35.61022,-117.67256,2299,"NA","US","US-CA","Ridgecrest","no",,,,,,,
